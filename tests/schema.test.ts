@@ -7,7 +7,7 @@ import { analyzeStars } from '../skills/github-star-analyzer/scripts/analyze.js'
 import { selectStudyCandidates } from '../skills/study-candidate-selector/scripts/select.js';
 import type { DailyBundle } from '../src/core/types.js';
 
-const paths = getProjectPaths();
+const paths = getProjectPaths(undefined, 'data');
 const readJson = async (p: string) => JSON.parse(await readFile(p, 'utf8'));
 let v: SchemaValidator;
 

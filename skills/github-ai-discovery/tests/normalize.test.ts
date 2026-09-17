@@ -33,11 +33,26 @@ describe('normalizeSearchResults', () => {
 });
 
 describe('FixtureGitHubAdapter', () => {
-  it('applies minimum stars and limit', async () => {
-    const mk = (repository: string, stars: number) => ({ repository, url: `https://github.com/${repository}`, description: null, stars });
-    const adapter = new FixtureGitHubAdapter({ llm: [mk('a/a', 50), mk('b/b', 500), mk('c/c', 900)] }, { 'b/b': { studyExists: true, prOpen: false } });
-    const res = await adapter.searchByTopic({ topic: 'llm', minimumStars: 100, limit: 1 });
-    expect(res.map((r) => r.repository)).toEqual(['c/c']);
+  const mk = (full_name: string, stars: number, extra: Partial<GitHubSearchItem> = {}): GitHubSearchItem => ({
+    full_name, html_url: `https://github.com/${full_name}`, description: null, stargazers_count: stars,
+    topics: ['llm'], created_at: '2026-09-01T00:00:00Z', pushed_at: '2026-09-10T00:00:00Z', archived: false, fork: false, ...extra,
+  });
+
+  it('interprets search qualifiers and limit', async () => {
+    const adapter = new FixtureGitHubAdapter([
+      mk('a/a', 50), mk('b/b', 500), mk('c/c', 900), mk('d/d', 800, { archived: true }),
+      mk('e/e', 700, { created_at: '2025-01-01T00:00:00Z' }), mk('f/f', 600, { topics: ['rag'] }),
+    ]);
+    const res = await adapter.searchRepositories('topic:llm stars:>=100 created:>=2026-08-01 archived:false fork:false', 2);
+    expect(res.map((r) => r.full_name)).toEqual(['c/c', 'b/b']);
+    expect(adapter.queries).toHaveLength(1);
+    await expect(adapter.searchRepositories('language:go', 1)).rejects.toThrow(/unsupported/);
+  });
+
+  it('looks up repositories case-insensitively and returns study states', async () => {
+    const adapter = new FixtureGitHubAdapter([mk('Owner/Repo', 10)], { 'b/b': { studyExists: true, prOpen: false } });
+    expect((await adapter.getRepository('owner/repo'))?.full_name).toBe('Owner/Repo');
+    expect(await adapter.getRepository('x/y')).toBeNull();
     expect(await adapter.getStudyStates(['b/b', 'c/c'])).toEqual({
       'b/b': { studyExists: true, prOpen: false },
       'c/c': { studyExists: false, prOpen: false },

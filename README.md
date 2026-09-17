@@ -3,7 +3,7 @@
 AI 관련 GitHub Repository 트렌드를 매일 수집하고, Study 후보를 선정해 Claude Cowork가 Study 초안을 작성하는 시스템.
 이 Repository는 **Claude Custom Skill의 Source of Truth**이며, 운영용 Skill은 ZIP으로 빌드해 Claude에 업로드한다.
 
-> 현재 단계: **Phase 0~2** (프로젝트 기반 · 결정적 Skill 구현 · Skill 골격/빌드)
+> 현재 단계: **Phase 3 진행 중** — GitHub 실검색(discovery) 연동 완료
 
 ## 역할 분담
 
@@ -32,9 +32,11 @@ github-ai-discovery ──► github-star-analyzer ──► study-candidate-sel
 
 ```
 config/                 discovery.yml, study-policy.yml (Zod로 검증)
-schemas/                repository / ranking / study-queue / snapshot / daily-bundle (JSON Schema 2020-12)
-src/core/               types.ts(공통 타입), config.ts, schema.ts(Ajv), paths.ts, json-io.ts, slug.ts
-src/adapters/           github.ts — 외부 서비스 adapter 인터페이스 + Fixture 구현
+schemas/                repository / ranking / study-queue / snapshot / registry / daily-bundle (JSON Schema 2020-12)
+src/core/               types.ts(공통 타입), config.ts, env.ts, schema.ts(Ajv), paths.ts, json-io.ts,
+                        slug.ts, dates.ts, registry.ts, local-store.ts
+src/adapters/           github.ts — adapter 인터페이스 + Fixture 구현
+                        github-rest.ts — GitHub REST 클라이언트 (검색·조회·페이지·rate limit·재시도)
 skills/{name}/
   SKILL.md              Claude가 읽는 지침 (frontmatter name = 디렉터리명)
   skill.json            빌드/테스트 메타데이터 (ZIP 제외)
@@ -45,14 +47,16 @@ templates/              daily-report / study / study-pr / telegram-daily
 data/                   registry.json, study-queue.json, snapshots/
 reports/daily/, studies/  GitHub Actions가 채우는 산출물
 tests/                  공통 테스트 (schema·config), fixtures/
-scripts/                test-skills.ts, build-skills.ts, lib/skill-package.ts
+scripts/                discover.ts, demo.ts, test-skills.ts, build-skills.ts, lib/skill-package.ts
+output/                 로컬 실행 결과 (git 제외): discovery/, demo/, local-data/
+.env.example            환경변수 예시 (.env 는 git 제외)
 ```
 
 ## Skill 현황
 
 | Skill | 종류 | 상태 | 번들 스크립트 |
 |---|---|---|---|
-| github-ai-discovery | generative | 골격 + 정규화 스크립트 | `scripts/normalize.mjs` |
+| github-ai-discovery | generative | **GitHub 실검색 구현** | `scripts/discover.mjs`, `scripts/normalize.mjs` |
 | github-star-analyzer | deterministic | **구현 완료** | `scripts/analyze.mjs` |
 | study-candidate-selector | deterministic | **구현 완료** | `scripts/select.mjs` |
 | github-researcher | generative | 골격 | — |
@@ -60,21 +64,49 @@ scripts/                test-skills.ts, build-skills.ts, lib/skill-package.ts
 | daily-report-writer | generative | 골격 | — |
 | study-writer | generative | 골격 | — |
 
-## 실행
+## 환경 설정
 
 ```bash
 npm install
+cp .env.example .env      # GITHUB_TOKEN 입력 (공개 저장소 읽기 전용 Fine-grained token)
+```
 
+| 변수 | 설명 | 기본값 |
+|---|---|---|
+| `GITHUB_TOKEN` | GitHub 토큰. 비우면 비인증 호출 (검색 분당 10회, 일반 API 시간당 60회) | 없음 |
+| `AGS_DATA_DIR` | Snapshot/Registry 위치. 로컬은 `output/local-data` 권장 (`data/`는 운영용) | `data` |
+| `AGS_TIMEZONE` | 실행 날짜 기준 시간대 | `Asia/Seoul` |
+| `GITHUB_MAX_RETRIES` 등 | 재시도·타임아웃·rate limit 대기 한도 (`.env.example` 참고) | — |
+
+셸에 이미 `export` 된 환경변수는 `.env` 값보다 우선한다.
+
+## 실행
+
+```bash
 npm test              # Vitest: 결정적 로직 unit test + schema/config test
 npm run test:skills   # Skill 패키지 테스트 (업로드 형태로 조립 → 구조 검증 → 번들 CLI를 fixture로 실행)
 npm run build:skills  # dist/skills/{name}.zip 생성
 npm run typecheck     # tsc --noEmit
 npm run demo          # fixture로 분석→선정 실행, 결과를 표로 출력 + output/demo/*.json 저장
+npm run discover      # 실제 GitHub 수집 → output/discovery/{date}.json
 
 # 일부 Skill만
 npm run test:skills -- --only github-star-analyzer
 npm run build:skills -- --only study-candidate-selector
 ```
+
+### 실제 데이터로 하루 실행하기
+
+```bash
+npm run discover -- --dry-run     # 실행할 검색어만 확인 (API 호출 없음)
+npm run discover                  # 수집 (토큰 있으면 약 20초, 없으면 rate limit 대기로 약 1분)
+npm run demo -- --input output/discovery/<날짜>.analyzer-input.json --save
+```
+
+- `--save`는 오늘 Snapshot과 Registry를 `AGS_DATA_DIR`에 저장한다. 다음 날 실행하면 이 기록과 비교해 증가량이 계산된다.
+- 첫 실행은 비교 기록이 없어 모든 저장소가 신규이고 Growth TOP10이 비어 있다.
+- `AGS_DATA_DIR`이 `data`(운영 폴더)이면 `--save`는 `--force` 없이는 저장하지 않는다.
+- 수집 방식: topic 검색 + 최근 생성 저장소 보완 검색 + Registry 등록 저장소 개별 추적 (`config/discovery.yml`)
 
 ### 결과 확인 (demo)
 
@@ -136,6 +168,9 @@ github-star-analyzer.zip
 - [x] Phase 0 — 프로젝트 세팅, 타입, 스키마, config
 - [x] Phase 1 — github-star-analyzer, study-candidate-selector + unit test
 - [x] Phase 2 — Skill 골격, test:skills, build:skills
-- [ ] Phase 3 — 생성형 Skill 본 구현 (discovery 실검색, researcher, writing-style 리소스, writers 렌더러)
+- [ ] Phase 3 — 생성형 Skill 본 구현
+  - [x] discovery 실검색 (REST 클라이언트, 신규 보완 검색, 등록 저장소 추적, env 설정)
+  - [ ] daily-report-writer 렌더러
+  - [ ] researcher → writing-style → study-writer
 - [ ] Phase 4 — Handoff (Cowork → GitHub Actions), Actions workflow, Registry 갱신
 - [ ] Phase 5 — PR 생성, Telegram 알림, Cowork Scheduled Task 연결

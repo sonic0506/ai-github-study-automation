@@ -13,10 +13,24 @@ export const DiscoveryConfigSchema = z.object({
   minimum_stars: z.number().int().nonnegative(),
   search: z
     .object({
-      max_results_per_topic: z.number().int().positive().default(50),
+      max_results_per_topic: z.number().int().positive().max(1000).default(50),
       pushed_within_days: z.number().int().nonnegative().default(0),
       exclude_archived: z.boolean().default(true),
       exclude_forks: z.boolean().default(true),
+    })
+    .default({}),
+  new_repositories: z
+    .object({
+      enabled: z.boolean().default(true),
+      created_within_days: z.number().int().positive().default(30),
+      minimum_stars: z.number().int().nonnegative().default(100),
+      max_results_per_topic: z.number().int().positive().max(1000).default(30),
+    })
+    .default({}),
+  tracking: z
+    .object({
+      registered: z.boolean().default(true),
+      max_lookups: z.number().int().nonnegative().default(300),
     })
     .default({}),
   ranking: z

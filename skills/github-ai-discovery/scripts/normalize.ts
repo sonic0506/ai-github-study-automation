@@ -1,3 +1,4 @@
+import type { GitHubRepoItem } from '../../../src/adapters/github.js';
 import type { IsoDate, RepositoryObservation } from '../../../src/core/types.js';
 
 /**
@@ -8,17 +9,7 @@ import type { IsoDate, RepositoryObservation } from '../../../src/core/types.js'
  */
 
 /** GitHub REST `GET /search/repositories` items[] 의 필요한 부분 */
-export interface GitHubSearchItem {
-  full_name: string;
-  html_url: string;
-  description: string | null;
-  stargazers_count: number;
-  topics?: string[];
-  language?: string | null;
-  pushed_at?: string | null;
-  archived?: boolean;
-  fork?: boolean;
-}
+export type GitHubSearchItem = GitHubRepoItem;
 
 export interface NormalizeOptions {
   minimumStars: number;

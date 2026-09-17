@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-17",
+  "queries": [
+    { "kind": "topic", "topic": "llm", "q": "topic:llm stars:>=100 pushed:>=2026-03-21 archived:false fork:false", "limit": 50 },
+    { "kind": "topic", "topic": "mcp", "q": "topic:mcp stars:>=100 pushed:>=2026-03-21 archived:false fork:false", "limit": 50 },
+    { "kind": "new", "topic": "llm", "q": "topic:llm stars:>=100 created:>=2026-08-18 archived:false fork:false", "limit": 30 },
+    { "kind": "new", "topic": "mcp", "q": "topic:mcp stars:>=100 created:>=2026-08-18 archived:false fork:false", "limit": 30 }
+  ]
+}

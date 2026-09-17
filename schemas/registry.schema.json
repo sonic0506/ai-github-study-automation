@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-github-study.local/schemas/registry.schema.json",
+  "title": "Registry",
+  "description": "data/registry.json — 지금까지 발견한 모든 Repository. firstSeen 이 isNew 판단 기준",
+  "type": "object",
+  "required": [
+    "version",
+    "updatedAt",
+    "repositories"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "repositories": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "repository.schema.json#/$defs/repositoryId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "firstSeen",
+          "lastSeen"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "firstSeen": {
+            "$ref": "repository.schema.json#/$defs/isoDate"
+          },
+          "lastSeen": {
+            "$ref": "repository.schema.json#/$defs/isoDate"
+          }
+        }
+      }
+    }
+  }
+}

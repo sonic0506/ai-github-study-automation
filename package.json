@@ -8,7 +8,8 @@
     "test:skills": "tsx scripts/test-skills.ts",
     "build:skills": "tsx scripts/build-skills.ts",
     "typecheck": "tsc --noEmit",
-    "demo": "tsx scripts/demo.ts"
+    "demo": "tsx scripts/demo.ts",
+    "discover": "tsx scripts/discover.ts"
   },
   "license": "UNLICENSED",
   "devDependencies": {

@@ -14,14 +14,23 @@ export interface ProjectPaths {
   schemas: string;
   skills: string;
   templates: string;
-  data: { registry: string; studyQueue: string; snapshots: string };
+  data: { dir: string; registry: string; studyQueue: string; snapshots: string };
+  output: string;
   reports: { daily: string };
   studies: string;
   dist: { skills: string };
 }
 
-export function getProjectPaths(root: string = process.env.AGS_ROOT ?? DEFAULT_ROOT): ProjectPaths {
+/**
+ * @param root    프로젝트 루트 (기본: AGS_ROOT 또는 이 파일 기준)
+ * @param dataDir Snapshot/Registry 위치 (기본: AGS_DATA_DIR 또는 data). 로컬 실험은 output/local-data 권장
+ */
+export function getProjectPaths(
+  root: string = process.env.AGS_ROOT || DEFAULT_ROOT,
+  dataDir: string = process.env.AGS_DATA_DIR || 'data',
+): ProjectPaths {
   const r = (...p: string[]) => resolve(root, ...p);
+  const d = (...p: string[]) => resolve(root, dataDir, ...p);
   return {
     root,
     config: { discovery: r('config/discovery.yml'), studyPolicy: r('config/study-policy.yml') },
@@ -29,10 +38,12 @@ export function getProjectPaths(root: string = process.env.AGS_ROOT ?? DEFAULT_R
     skills: r('skills'),
     templates: r('templates'),
     data: {
-      registry: r('data/registry.json'),
-      studyQueue: r('data/study-queue.json'),
-      snapshots: r('data/snapshots'),
+      dir: d(),
+      registry: d('registry.json'),
+      studyQueue: d('study-queue.json'),
+      snapshots: d('snapshots'),
     },
+    output: r('output'),
     reports: { daily: r('reports/daily') },
     studies: r('studies'),
     dist: { skills: r('dist/skills') },

@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-17",
+  "dryRun": true,
+  "config": {
+    "topics": ["llm", "mcp"],
+    "minimum_stars": 100,
+    "search": { "max_results_per_topic": 50, "pushed_within_days": 180 },
+    "new_repositories": { "enabled": true, "created_within_days": 30, "minimum_stars": 100, "max_results_per_topic": 30 }
+  }
+}
