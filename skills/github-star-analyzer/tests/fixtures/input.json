@@ -167,6 +167,14 @@
   },
   "firstSeen": {
     "acme-ai/agent-kit": "2026-08-01",
-    "acme-ai/rag-engine": "2026-08-01"
+    "acme-ai/rag-engine": "2026-08-01",
+    "nova-labs/mcp-server-hub": "2026-08-01",
+    "nova-labs/tiny-llm": "2026-08-01",
+    "orbit/genai-studio": "2026-08-01",
+    "orbit/vector-cache": "2026-08-01",
+    "pixel/llm-router": "2026-08-01",
+    "pixel/eval-harness": "2026-08-01",
+    "quanta/agentflow": "2026-08-01",
+    "quanta/prompt-lab": "2026-08-01"
   }
 }

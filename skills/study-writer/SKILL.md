@@ -19,5 +19,5 @@ description: 스타일이 적용된 Research Note를 Study Markdown 문서와 Pu
 { "repository": "owner/name", "branch": "study/owner__name", "path": "studies/owner__name.md",
   "title": "[Study] owner/name", "markdown": "...", "prBody": "..." }
 ```
-- `branch`, `path`는 `owner/name`의 `/`를 `__`로 바꿔 만든다 (소문자 유지 여부는 원문 그대로).
+- `branch`, `path`는 `owner/name`을 **소문자**로 바꾸고 `/`를 `__`로 바꿔 만든다. 예: `Acme-AI/Agent-Kit` → `study/acme-ai__agent-kit`, `studies/acme-ai__agent-kit.md` (구현: `src/core/slug.ts`)
 - 모든 사실 문장은 Research Note의 `sources`로 각주 링크를 단다.

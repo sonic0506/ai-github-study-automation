@@ -33,7 +33,7 @@ github-ai-discovery ──► github-star-analyzer ──► study-candidate-sel
 ```
 config/                 discovery.yml, study-policy.yml (Zod로 검증)
 schemas/                repository / ranking / study-queue / snapshot / daily-bundle (JSON Schema 2020-12)
-src/core/               types.ts(공통 타입), config.ts, schema.ts(Ajv), paths.ts, json-io.ts
+src/core/               types.ts(공통 타입), config.ts, schema.ts(Ajv), paths.ts, json-io.ts, slug.ts
 src/adapters/           github.ts — 외부 서비스 adapter 인터페이스 + Fixture 구현
 skills/{name}/
   SKILL.md              Claude가 읽는 지침 (frontmatter name = 디렉터리명)
@@ -102,6 +102,15 @@ github-star-analyzer.zip
    ├─ resources/discovery.yml, resources/schemas/*.json   ← skill.json.bundle 로 복사
    └─ scripts/analyze.mjs                                  ← esbuild 단일 번들
 ```
+
+## 확정된 설계 결정
+
+| 항목 | 결정 |
+|---|---|
+| 신규(`isNew`) 판단 | Registry에 한 번도 등록된 적 없는 Repository만 신규. 목록에서 빠졌다 돌아온 Repository는 신규 아님 |
+| Snapshot 누락일 | 오늘 이전의 가장 최근 Snapshot과 비교 (`selectBaselineDate`). `baseline.gapDays`로 기간을 리포트에 표시 |
+| 템플릿 렌더링 | 표·숫자·순위는 코드가 채우고, Claude는 한 줄 요약·본문만 작성 (Phase 3) |
+| Study 파일/브랜치 이름 | 소문자 + `owner__name` (`src/core/slug.ts`, 스키마에서 강제) |
 
 ## 설정 변경
 

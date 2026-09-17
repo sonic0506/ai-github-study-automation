@@ -5,6 +5,7 @@ import type {
   RepositoryId,
   RepositoryInfo,
   RepositoryObservation,
+  Baseline,
   Snapshot,
 } from '../../../src/core/types.js';
 
@@ -25,14 +26,23 @@ export const DEFAULT_ANALYZER_OPTIONS: AnalyzerOptions = { topN: 10, growthMinDe
 export interface AnalyzerInput {
   date: IsoDate;
   current: RepositoryObservation[];
+  /**
+   * 비교 기준 Snapshot = date 이전의 가장 최근 Snapshot (전날이 없으면 며칠 전일 수 있음).
+   * selectBaselineDate() 로 고른다. 기록이 전혀 없으면 null.
+   */
   previousSnapshot: Snapshot | null;
-  /** registry 에 기록된 최초 발견일 (repository → date). 없으면 오늘 날짜 */
-  firstSeen?: Record<RepositoryId, IsoDate>;
+  /**
+   * Registry 에 등록된 Repository → 최초 발견일.
+   * 여기에 없는 Repository 가 신규(isNew=true)다. 첫 실행이면 {}.
+   */
+  firstSeen: Record<RepositoryId, IsoDate>;
   options?: Partial<AnalyzerOptions>;
 }
 
 export interface AnalyzerOutput {
   date: IsoDate;
+  /** delta24h 계산 기준. gapDays > 1 이면 리포트에 "N일 전 대비"로 표시 */
+  baseline: Baseline | null;
   repositories: RepositoryInfo[];
   rankings: RankingResult;
   snapshot: Snapshot;
@@ -94,6 +104,8 @@ export function toRepositoryInfo(
   const key = repoKey(o.repository);
   const previousStars = previous.get(key) ?? null;
   const knownFirstSeen = findFirstSeen(firstSeen, key);
+  // 신규 여부는 Registry 기준: 한 번도 등록된 적 없는 Repository 만 신규.
+  // (Registry 에 있지만 기준 Snapshot 에 없으면 isNew=false, delta24h=null)
   return {
     repository: o.repository,
     url: o.url,
@@ -102,7 +114,7 @@ export function toRepositoryInfo(
     previousStars,
     delta24h: computeDelta(o.stars, previousStars),
     firstSeen: knownFirstSeen ?? date,
-    isNew: previousStars === null,
+    isNew: knownFirstSeen === undefined,
   };
 }
 
@@ -137,19 +149,40 @@ export function buildSnapshot(date: IsoDate, repos: RepositoryInfo[]): Snapshot 
   };
 }
 
+/** 두 ISO 날짜 사이의 일수 (b - a) */
+export function daysBetween(a: IsoDate, b: IsoDate): number {
+  if (!DATE_RE.test(a) || !DATE_RE.test(b)) throw new Error(`Invalid date: ${a} / ${b}`);
+  return Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86_400_000);
+}
+
+/**
+ * 사용 가능한 Snapshot 날짜 중 date 이전의 가장 최근 날짜를 고른다.
+ * maxGapDays 를 넘으면 비교하지 않는다(null).
+ */
+export function selectBaselineDate(available: IsoDate[], date: IsoDate, maxGapDays = Infinity): IsoDate | null {
+  const candidates = available.filter((d) => DATE_RE.test(d) && d < date).sort();
+  const latest = candidates.at(-1);
+  return latest !== undefined && daysBetween(latest, date) <= maxGapDays ? latest : null;
+}
+
 export function analyzeStars(input: AnalyzerInput): AnalyzerOutput {
   if (!DATE_RE.test(input.date)) throw new Error(`Invalid date: ${input.date}`);
+  if (!input.firstSeen || typeof input.firstSeen !== 'object') {
+    throw new Error('firstSeen is required (use {} on the first run)');
+  }
   if (input.previousSnapshot && input.previousSnapshot.date >= input.date) {
     throw new Error(`previousSnapshot.date (${input.previousSnapshot.date}) must be before date (${input.date})`);
   }
   const opts: AnalyzerOptions = { ...DEFAULT_ANALYZER_OPTIONS, ...input.options };
   const previous = indexSnapshot(input.previousSnapshot);
   const repositories = dedupeObservations(input.current)
-    .map((o) => toRepositoryInfo(o, previous, input.firstSeen ?? {}, input.date))
+    .map((o) => toRepositoryInfo(o, previous, input.firstSeen, input.date))
     .sort(byRepository);
 
+  const prev = input.previousSnapshot;
   return {
     date: input.date,
+    baseline: prev ? { date: prev.date, gapDays: daysBetween(prev.date, input.date) } : null,
     repositories,
     rankings: {
       totalStarsTop10: rankByTotalStars(repositories, opts.topN),

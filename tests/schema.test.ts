@@ -72,6 +72,19 @@ describe('schemas', () => {
     expect(v.validate('daily-bundle', badStatus).valid).toBe(false);
   });
 
+  it('enforce baseline shape and lowercase study slugs', async () => {
+    const bundle = (await readJson(new URL('./fixtures/daily-bundle.valid.json', import.meta.url).pathname)) as DailyBundle;
+    expect(v.validate('daily-bundle', { ...bundle, baseline: null }).valid).toBe(true);
+    expect(v.validate('daily-bundle', { ...bundle, baseline: { date: '2026-09-16', gapDays: 0 } }).valid).toBe(false);
+    const { baseline: _b, ...noBaseline } = bundle;
+    expect(v.validate('daily-bundle', noBaseline).valid).toBe(false);
+    const draft = bundle.studyDrafts[0]!;
+    const upper = { ...bundle, studyDrafts: [{ ...draft, branch: 'study/Nova-Labs__mcp-server-hub' }] };
+    const badPath = { ...bundle, studyDrafts: [{ ...draft, path: 'studies/nova-labs/mcp-server-hub.md' }] };
+    expect(v.validate('daily-bundle', upper).valid).toBe(false);
+    expect(v.validate('daily-bundle', badPath).valid).toBe(false);
+  });
+
   it('throw on unknown schema name', () => {
     expect(() => v.validate('nope', {})).toThrow(/Unknown schema/);
   });

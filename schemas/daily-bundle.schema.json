@@ -4,23 +4,63 @@
   "title": "DailyBundle",
   "description": "Claude Cowork 가 생성하여 GitHub Actions 로 전달하는 일일 결과물",
   "type": "object",
-  "required": ["version", "runId", "date", "generatedAt", "repositories", "rankings", "studyQueue", "dailyReport", "studyDrafts"],
+  "required": [
+    "version",
+    "runId",
+    "date",
+    "generatedAt",
+    "baseline",
+    "repositories",
+    "rankings",
+    "studyQueue",
+    "dailyReport",
+    "studyDrafts"
+  ],
   "additionalProperties": false,
   "properties": {
-    "version": { "const": 1 },
-    "runId": { "type": "string", "minLength": 1 },
-    "date": { "$ref": "repository.schema.json#/$defs/isoDate" },
-    "generatedAt": { "type": "string", "format": "date-time" },
-    "repositories": { "type": "array", "items": { "$ref": "repository.schema.json" } },
-    "rankings": { "$ref": "ranking.schema.json" },
-    "studyQueue": { "$ref": "study-queue.schema.json" },
+    "version": {
+      "const": 1
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "$ref": "repository.schema.json#/$defs/isoDate"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "baseline": {
+      "$ref": "#/$defs/baseline"
+    },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "$ref": "repository.schema.json"
+      }
+    },
+    "rankings": {
+      "$ref": "ranking.schema.json"
+    },
+    "studyQueue": {
+      "$ref": "study-queue.schema.json"
+    },
     "dailyReport": {
       "type": "object",
-      "required": ["path", "markdown"],
+      "required": [
+        "path",
+        "markdown"
+      ],
       "additionalProperties": false,
       "properties": {
-        "path": { "$ref": "#/$defs/relativePath" },
-        "markdown": { "type": "string" }
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "markdown": {
+          "type": "string"
+        }
       }
     },
     "studyDrafts": {
@@ -28,15 +68,40 @@
       "maxItems": 10,
       "items": {
         "type": "object",
-        "required": ["repository", "branch", "path", "title", "markdown", "prBody"],
+        "required": [
+          "repository",
+          "branch",
+          "path",
+          "title",
+          "markdown",
+          "prBody"
+        ],
         "additionalProperties": false,
         "properties": {
-          "repository": { "$ref": "repository.schema.json#/$defs/repositoryId" },
-          "branch": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" },
-          "path": { "$ref": "#/$defs/relativePath" },
-          "title": { "type": "string", "minLength": 1 },
-          "markdown": { "type": "string", "minLength": 1 },
-          "prBody": { "type": "string" }
+          "repository": {
+            "$ref": "repository.schema.json#/$defs/repositoryId"
+          },
+          "branch": {
+            "description": "study/{slug}. slug = owner__name 소문자 (src/core/slug.ts)",
+            "type": "string",
+            "pattern": "^study/[a-z0-9._-]+__[a-z0-9._-]+$"
+          },
+          "path": {
+            "description": "studies/{slug}.md",
+            "type": "string",
+            "pattern": "^studies/[a-z0-9._-]+__[a-z0-9._-]+\\.md$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "markdown": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prBody": {
+            "type": "string"
+          }
         }
       }
     }
@@ -46,6 +111,27 @@
       "description": "Repository 루트 기준 상대 경로. 절대 경로 및 '..' 금지",
       "type": "string",
       "pattern": "^(?!/)(?!.*(^|/)\\.\\.(/|$))[A-Za-z0-9._/-]+\\.md$"
+    },
+    "baseline": {
+      "description": "delta24h 비교 기준 Snapshot. 기록이 없으면 null",
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "date",
+        "gapDays"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "$ref": "repository.schema.json#/$defs/isoDate"
+        },
+        "gapDays": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
     }
   }
 }

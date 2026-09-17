@@ -23,15 +23,25 @@ export interface RepositoryObservation {
   pushedAt?: IsoDateTime | null;
 }
 
+/** Star 증감 비교 기준 Snapshot 정보 */
+export interface Baseline {
+  date: IsoDate;
+  /** 오늘과 기준일 사이 일수. 1 이면 전날 */
+  gapDays: number;
+}
+
 /** 분석 완료된 표준 Repository 모델 */
 export interface RepositoryInfo {
   repository: RepositoryId;
   url: string;
   description: string | null;
   stars: number;
+  /** 기준 Snapshot(baseline)의 stars. 기준에 없으면 null */
   previousStars: number | null;
+  /** stars - previousStars. 기준일이 전날이 아니면 baseline.gapDays 기간의 증가량 */
   delta24h: number | null;
   firstSeen: IsoDate;
+  /** Registry 에 처음 등록되는 Repository */
   isNew: boolean;
 }
 
@@ -108,6 +118,7 @@ export interface DailyBundle {
   runId: string;
   date: IsoDate;
   generatedAt: IsoDateTime;
+  baseline: Baseline | null;
   repositories: RepositoryInfo[];
   rankings: RankingResult;
   studyQueue: StudyQueue;

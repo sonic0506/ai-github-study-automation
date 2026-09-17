@@ -8,6 +8,8 @@ import {
   dedupeObservations,
   rankByGrowth,
   rankByTotalStars,
+  selectBaselineDate,
+  daysBetween,
   type AnalyzerInput,
 } from '../scripts/analyze.js';
 
@@ -81,11 +83,49 @@ describe('analyzeStars', () => {
     expect(analyzeStars(base).rankings.newlyDiscovered.map((r) => r.repository)).toEqual(['a/new']);
   });
 
-  it('treats every repository as new when there is no previous snapshot', () => {
-    const out = analyzeStars({ ...base, previousSnapshot: null });
+  it('treats every repository as new on the first run (no snapshot, empty registry)', () => {
+    const out = analyzeStars({ ...base, previousSnapshot: null, firstSeen: {} });
     expect(out.repositories.every((r) => r.isNew && r.delta24h === null)).toBe(true);
     expect(out.rankings.growth24hTop10).toEqual([]);
     expect(out.rankings.newlyDiscovered).toHaveLength(4);
+    expect(out.baseline).toBeNull();
+  });
+
+  it('does not mark registered repositories as new when the baseline is missing', () => {
+    const out = analyzeStars({ ...base, previousSnapshot: null });
+    expect(out.rankings.newlyDiscovered.map((r) => r.repository)).toEqual(['a/new']);
+    expect(out.repositories.find((r) => r.repository === 'b/zero')).toMatchObject({ isNew: false, delta24h: null });
+  });
+
+  it('keeps a registered repository that re-entered the list as not new (delta null)', () => {
+    const out = analyzeStars({
+      ...base,
+      current: [...base.current, obs('e/back', 700)],
+      firstSeen: { ...base.firstSeen, 'e/back': '2026-08-01' },
+    });
+    expect(out.repositories.find((r) => r.repository === 'e/back')).toMatchObject({
+      isNew: false, previousStars: null, delta24h: null, firstSeen: '2026-08-01',
+    });
+    expect(out.rankings.newlyDiscovered.map((r) => r.repository)).toEqual(['a/new']);
+  });
+
+  it('marks an unregistered repository as new even if it exists in the baseline', () => {
+    const out = analyzeStars({ ...base, firstSeen: {} });
+    expect(out.repositories.find((r) => r.repository === 'd/up')).toMatchObject({ isNew: true, delta24h: 200 });
+  });
+
+  it('reports a 1-day baseline for the previous day', () => {
+    expect(analyzeStars(base).baseline).toEqual({ date: '2026-09-16', gapDays: 1 });
+  });
+
+  it('compares against an older snapshot when days are missing', () => {
+    const out = analyzeStars({ ...base, previousSnapshot: { ...base.previousSnapshot!, date: '2026-09-13' } });
+    expect(out.baseline).toEqual({ date: '2026-09-13', gapDays: 4 });
+    expect(out.repositories.find((r) => r.repository === 'd/up')!.delta24h).toBe(200);
+  });
+
+  it('requires firstSeen', () => {
+    expect(() => analyzeStars({ ...base, firstSeen: undefined as never })).toThrow(/firstSeen is required/);
   });
 
   it('returns fewer than 10 entries when there are fewer candidates', () => {
@@ -96,7 +136,7 @@ describe('analyzeStars', () => {
   it('caps rankings at topN', () => {
     const current = Array.from({ length: 15 }, (_, i) => obs(`o/r${String(i).padStart(2, '0')}`, 1000 + i * 10));
     const prev = snap('2026-09-16', current.map((c) => [c.repository, 1000]));
-    const out = analyzeStars({ date: '2026-09-17', current, previousSnapshot: prev });
+    const out = analyzeStars({ date: '2026-09-17', current, previousSnapshot: prev, firstSeen: {} });
     expect(out.rankings.totalStarsTop10).toHaveLength(10);
     expect(out.rankings.growth24hTop10).toHaveLength(10);
     expect(out.rankings.totalStarsTop10[0]!.repository).toBe('o/r14');
@@ -114,6 +154,7 @@ describe('analyzeStars', () => {
       date: '2026-09-17',
       current: [obs('Owner/Repo', 150)],
       previousSnapshot: snap('2026-09-16', [['owner/repo', 100]]),
+      firstSeen: { 'OWNER/REPO': '2026-09-01' },
     });
     expect(out.repositories[0]).toMatchObject({ delta24h: 50, isNew: false });
   });
@@ -137,7 +178,7 @@ describe('analyzeStars', () => {
   });
 
   it('breaks ties by repository name', () => {
-    const out = analyzeStars({ date: '2026-09-17', current: [obs('z/z', 100), obs('a/a', 100)], previousSnapshot: null });
+    const out = analyzeStars({ date: '2026-09-17', current: [obs('z/z', 100), obs('a/a', 100)], previousSnapshot: null, firstSeen: {} });
     expect(out.rankings.totalStarsTop10.map((r) => r.repository)).toEqual(['a/a', 'z/z']);
   });
 
@@ -178,10 +219,26 @@ describe('dedupeObservations', () => {
       date: '2026-09-17',
       current: [obs('a/x', 10), obs('a/x', 12)],
       previousSnapshot: snap('2026-09-16', [['a/x', 5]]),
+      firstSeen: {},
     });
     expect(out.repositories).toHaveLength(1);
     expect(out.rankings.growth24hTop10).toHaveLength(1);
     expect(out.rankings.growth24hTop10[0]!.delta24h).toBe(7);
+  });
+});
+
+describe('baseline helpers', () => {
+  it('daysBetween counts calendar days across months', () => {
+    expect(daysBetween('2026-08-31', '2026-09-01')).toBe(1);
+    expect(daysBetween('2026-09-10', '2026-09-17')).toBe(7);
+  });
+
+  it('selectBaselineDate picks the latest date before today', () => {
+    const dates = ['2026-09-10', '2026-09-17', '2026-09-14', 'junk', '2026-09-18'];
+    expect(selectBaselineDate(dates, '2026-09-17')).toBe('2026-09-14');
+    expect(selectBaselineDate(dates, '2026-09-17', 2)).toBeNull();
+    expect(selectBaselineDate([], '2026-09-17')).toBeNull();
+    expect(selectBaselineDate(['2026-09-17'], '2026-09-17')).toBeNull();
   });
 });
 

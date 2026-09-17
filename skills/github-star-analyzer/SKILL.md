@@ -21,8 +21,8 @@ LLM이 Star 수를 직접 더하거나 빼거나 정렬하지 않는다.
 ```
 
 - `current`: `github-ai-discovery` 출력의 `repositories`
-- `previousSnapshot`: 전날 Snapshot. 없으면 `null`
-- `firstSeen`: Registry의 최초 발견일 (선택)
+- `previousSnapshot`: 오늘 이전의 **가장 최근** Snapshot (전날이 없으면 며칠 전 것). 기록이 전혀 없으면 `null`
+- `firstSeen` (필수): Registry에 등록된 Repository → 최초 발견일. 첫 실행이면 `{}`
 - `options`: 생략 시 `resources/discovery.yml`의 `ranking` 값과 동일한 기본값(10, 1)
 
 ## 실행
@@ -33,6 +33,7 @@ node scripts/analyze.mjs input.json > analysis.json
 
 ## 출력 (AnalyzerOutput)
 
+- `baseline`: `{ "date": "비교 기준일", "gapDays": 1 }` 또는 `null`. `gapDays`가 2 이상이면 리포트에 "N일 전 대비"로 표시해야 한다
 - `repositories`: RepositoryInfo[] (`resources/schemas/repository.schema.json`)
 - `rankings`: `totalStarsTop10`, `growth24hTop10`, `newlyDiscovered` (`resources/schemas/ranking.schema.json`)
 - `snapshot`: 오늘자 Snapshot (`resources/schemas/snapshot.schema.json`) — GitHub Actions가 `data/snapshots/{date}.json`으로 저장
@@ -41,7 +42,9 @@ node scripts/analyze.mjs input.json > analysis.json
 
 | 상황 | 결과 |
 |---|---|
-| 전날 데이터 없음 | `previousStars=null`, `delta24h=null`, `isNew=true` |
+| Registry에 없음 | `isNew=true`, `firstSeen=오늘` → `newlyDiscovered`에 포함 |
+| Registry에는 있지만 기준 Snapshot에 없음 | `isNew=false`, `previousStars=null`, `delta24h=null` |
+| 전날 Snapshot 누락 | 가장 최근 Snapshot과 비교, `baseline.gapDays`로 기간 표시 |
 | Star 변화 없음 / 감소 | `delta24h`는 0 / 음수. Growth TOP10에서는 제외 (`growthMinDelta` 미만) |
 | 중복 Repository (대소문자 무시) | Star가 큰 관측값 1개만 유지 |
 | 후보가 N개 미만 | 있는 만큼만 반환 |
