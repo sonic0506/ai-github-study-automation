@@ -9,7 +9,8 @@
     "build:skills": "tsx scripts/build-skills.ts",
     "typecheck": "tsc --noEmit",
     "demo": "tsx scripts/demo.ts",
-    "discover": "tsx scripts/discover.ts"
+    "discover": "tsx scripts/discover.ts",
+    "registry": "tsx scripts/registry.ts"
   },
   "license": "UNLICENSED",
   "devDependencies": {

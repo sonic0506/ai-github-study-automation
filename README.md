@@ -47,7 +47,7 @@ templates/              daily-report / study / study-pr / telegram-daily
 data/                   registry.json, study-queue.json, snapshots/
 reports/daily/, studies/  GitHub Actions가 채우는 산출물
 tests/                  공통 테스트 (schema·config), fixtures/
-scripts/                discover.ts, demo.ts, test-skills.ts, build-skills.ts, lib/skill-package.ts
+scripts/                discover.ts, demo.ts, registry.ts, test-skills.ts, build-skills.ts, lib/skill-package.ts
 output/                 로컬 실행 결과 (git 제외): discovery/, demo/, local-data/
 .env.example            환경변수 예시 (.env 는 git 제외)
 ```
@@ -89,6 +89,7 @@ npm run build:skills  # dist/skills/{name}.zip 생성
 npm run typecheck     # tsc --noEmit
 npm run demo          # fixture로 분석→선정 실행, 결과를 표로 출력 + output/demo/*.json 저장
 npm run discover      # 실제 GitHub 수집 → output/discovery/{date}.json
+npm run registry      # 로컬 Registry 조회 / Study 적합성 수동 판정
 
 # 일부 Skill만
 npm run test:skills -- --only github-star-analyzer
@@ -107,6 +108,21 @@ npm run demo -- --input output/discovery/<날짜>.analyzer-input.json --save
 - 첫 실행은 비교 기록이 없어 모든 저장소가 신규이고 Growth TOP10이 비어 있다.
 - `AGS_DATA_DIR`이 `data`(운영 폴더)이면 `--save`는 `--force` 없이는 저장하지 않는다.
 - 수집 방식: topic 검색 + 최근 생성 저장소 보완 검색 + Registry 등록 저장소 개별 추적 (`config/discovery.yml`)
+
+### AI와 무관한 저장소 거르기
+
+| 방법 | 언제 | 효과 |
+|---|---|---|
+| `config/discovery.yml`의 `exclude.repositories` | AI 도구가 아닌 게 명확할 때 | 수집·순위·추적에서 완전히 제외 |
+| Study 적합성 판정 (`github-researcher` 1단계) | awesome-list, 튜토리얼, 면접 가이드 등 | 순위에는 남고 Study 후보에서만 제외 (Registry에 저장) |
+
+```bash
+npm run registry -- list --not-studyable
+npm run registry -- mark punkpeye/awesome-mcp-servers --category awesome-list --reason "MCP 서버 링크 목록"
+npm run registry -- unmark punkpeye/awesome-mcp-servers
+```
+
+판정 기준과 category 목록: `skills/github-researcher/resources/studyability.md`
 
 ### 결과 확인 (demo)
 
@@ -155,11 +171,13 @@ github-star-analyzer.zip
 | Snapshot 누락일 | 오늘 이전의 가장 최근 Snapshot과 비교 (`selectBaselineDate`). `baseline.gapDays`로 기간을 리포트에 표시 |
 | 템플릿 렌더링 | 표·숫자·순위는 코드가 채우고, Claude는 한 줄 요약·본문만 작성 (Phase 3) |
 | Study 파일/브랜치 이름 | 소문자 + `owner__name` (`src/core/slug.ts`, 스키마에서 강제) |
+| AI 무관 저장소 | 명확한 것은 제외 목록, 애매한 것은 researcher가 Study 적합성 판정 → Registry `studyability` 저장 → selector `skipped_not_studyable` + 다음 후보 승격 |
 
 ## 설정 변경
 
 - `config/discovery.yml`: topics, minimum_stars, 검색 옵션, ranking(top_n, growth_min_delta)
-- `config/study-policy.yml`: max_daily_drafts, priority 가중치, repeated_top10_window_days, skip_if
+- `config/discovery.yml`의 `exclude.repositories`: 수집 제외 목록
+- `config/study-policy.yml`: max_daily_drafts, priority 가중치, repeated_top10_window_days, skip_if(study_exists, pr_open, not_studyable)
 
 설정은 빌드 시 각 Skill의 `resources/`에 복사되며, 실행 시 입력 JSON의 `policy`/`config`로 덮어쓸 수 있다.
 
@@ -170,6 +188,7 @@ github-star-analyzer.zip
 - [x] Phase 2 — Skill 골격, test:skills, build:skills
 - [ ] Phase 3 — 생성형 Skill 본 구현
   - [x] discovery 실검색 (REST 클라이언트, 신규 보완 검색, 등록 저장소 추적, env 설정)
+  - [x] AI 무관 저장소 필터 (제외 목록 + Study 적합성 판정)
   - [ ] daily-report-writer 렌더러
   - [ ] researcher → writing-style → study-writer
 - [ ] Phase 4 — Handoff (Cowork → GitHub Actions), Actions workflow, Registry 갱신

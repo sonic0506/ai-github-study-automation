@@ -71,7 +71,8 @@ export type StudyCandidateStatus =
   | 'selected'
   | 'queued'
   | 'skipped_study_exists'
-  | 'skipped_pr_open';
+  | 'skipped_pr_open'
+  | 'skipped_not_studyable';
 
 export interface StudyCandidate {
   repository: RepositoryId;
@@ -91,6 +92,28 @@ export interface StudyQueue {
 export interface StudyState {
   studyExists: boolean;
   prOpen: boolean;
+  /** github-researcher 가 Study 대상이 아니라고 판정한 저장소 */
+  notStudyable?: boolean;
+}
+
+/** Study 적합성 분류 (github-researcher 가 판정) */
+export const STUDYABLE_CATEGORIES = ['library', 'framework', 'tool', 'application', 'model', 'platform'] as const;
+export const NOT_STUDYABLE_CATEGORIES = ['awesome-list', 'tutorial', 'course', 'interview-guide', 'documentation', 'other'] as const;
+export type StudyabilityCategory =
+  | (typeof STUDYABLE_CATEGORIES)[number]
+  | (typeof NOT_STUDYABLE_CATEGORIES)[number];
+
+export interface Studyability {
+  studyable: boolean;
+  category: StudyabilityCategory;
+  /** 판정 근거 한 문장 */
+  reason: string;
+  checkedAt: IsoDate;
+}
+
+export interface StudyabilityUpdate {
+  repository: RepositoryId;
+  studyability: Studyability;
 }
 
 /** 최근 기간 동안 TOP10 등장 횟수 */
@@ -124,4 +147,6 @@ export interface DailyBundle {
   studyQueue: StudyQueue;
   dailyReport: DailyReport;
   studyDrafts: StudyDraft[];
+  /** 이번 실행에서 판정한 Study 적합성 → GitHub Actions 가 Registry 에 반영 */
+  studyabilityUpdates: StudyabilityUpdate[];
 }

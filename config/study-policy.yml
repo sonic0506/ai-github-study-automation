@@ -15,3 +15,5 @@ repeated_top10_window_days: 7
 skip_if:
   study_exists: true
   pr_open: true
+  # github-researcher 가 Study 대상 아님(awesome-list, 면접 가이드 등)으로 판정한 저장소
+  not_studyable: true

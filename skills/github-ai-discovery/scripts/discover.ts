@@ -10,6 +10,7 @@ import { normalizeSearchResults, toObservation, type DiscoveryOutput } from './n
  * 1. topic 검색   : topic:{t} stars:>=N pushed:>=D archived:false fork:false   (Star 순)
  * 2. 신규 검색    : topic:{t} stars:>=M created:>=D archived:false fork:false  (Star 순)
  * 3. 정규화       : 필터 · 중복 제거 · topic 병합 (normalize.ts)
+ * 3-1. 제외 목록  : config.exclude.repositories 는 검색·추적 모두에서 제외
  * 4. 등록 저장소 추적: Registry 에 있지만 1~2 에 없는 저장소를 개별 조회해 Star 수 기록
  *    (Star/push 기준은 적용하지 않음. 삭제·접근 불가·archived 는 제외)
  */
@@ -27,6 +28,8 @@ export interface DiscoverStats {
   queries: number;
   rawResults: Record<QueryKind, number>;
   searched: number;
+  /** 제외 목록에 걸려 빠진 저장소 */
+  excluded: RepositoryId[];
   tracking: {
     candidates: number;
     checked: number;
@@ -101,15 +104,28 @@ export async function discoverRepositories(input: DiscoverInput): Promise<Discov
     excludeForks: config.search.exclude_forks,
   });
 
-  const tracking = await trackRegistered(searched.repositories, input.registered ?? [], config, adapter, log);
-  const repositories = sortRepos([...searched.repositories, ...tracking.observations]);
+  const excludedKeys = new Set(config.exclude.repositories.map((r) => r.toLowerCase()));
+  const isExcluded = (id: RepositoryId) => excludedKeys.has(id.toLowerCase());
+  const excluded = searched.repositories.filter((r) => isExcluded(r.repository)).map((r) => r.repository);
+  const kept = searched.repositories.filter((r) => !isExcluded(r.repository));
+
+  const tracking = await trackRegistered(
+    kept,
+    (input.registered ?? []).filter((id) => !isExcluded(id)),
+    config,
+    adapter,
+    log,
+    isExcluded,
+  );
+  const repositories = sortRepos([...kept, ...tracking.observations]);
 
   return {
     output: { date, repositories },
     stats: {
       queries: queries.length,
       rawResults,
-      searched: searched.repositories.length,
+      searched: kept.length,
+      excluded,
       tracking: tracking.stats,
       total: repositories.length,
     },
@@ -122,6 +138,7 @@ async function trackRegistered(
   config: DiscoveryConfig,
   adapter: GitHubReadAdapter,
   log: (m: string) => void,
+  isExcluded: (id: RepositoryId) => boolean,
 ): Promise<{ observations: RepositoryObservation[]; stats: DiscoverStats['tracking'] }> {
   const foundKeys = new Set(found.map((r) => r.repository.toLowerCase()));
   const seen = new Set<string>();
@@ -162,6 +179,7 @@ async function trackRegistered(
     }
     if (!item) stats.missing.push(id);
     else if (item.archived) stats.archived.push(id);
+    else if (isExcluded(item.full_name)) continue; // 이름 변경 후 제외 대상이 된 경우
     else if (foundKeys.has(item.full_name.toLowerCase())) continue; // 이름 변경으로 이미 수집된 경우
     else {
       observations.push(toObservation(item));

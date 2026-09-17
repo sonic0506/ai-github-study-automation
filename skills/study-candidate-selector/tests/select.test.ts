@@ -3,6 +3,7 @@ import type { RankingEntry, RankingResult, RepositoryInfo } from '../../../src/c
 import { parseStudyPolicy, type StudyPolicy } from '../../../src/core/config.js';
 import {
   buildCandidatePool,
+  markNotStudyable,
   selectedRepositories,
   selectStudyCandidates,
   skipStatus,
@@ -110,8 +111,16 @@ describe('selectStudyCandidates', () => {
     expect(selectedRepositories(q)).not.toContain('o/c');
   });
 
+  it('skips repositories judged not studyable', () => {
+    const q = selectStudyCandidates(input({ studyStates: { 'o/b': { studyExists: false, prOpen: false, notStudyable: true } } }));
+    const b = q.candidates.find((c) => c.repository === 'o/b')!;
+    expect(b.status).toBe('skipped_not_studyable');
+    expect(b.reasons).toContain('skip: not_studyable');
+    expect(selectedRepositories(q)).toEqual(['o/c', 'o/a', 'o/new']);
+  });
+
   it('does not skip when the policy disables the rule', () => {
-    const relaxed = { ...policy, skip_if: { study_exists: false, pr_open: false } };
+    const relaxed = { ...policy, skip_if: { study_exists: false, pr_open: false, not_studyable: false } };
     const q = selectStudyCandidates(
       input({ policy: relaxed, studyStates: { 'o/b': { studyExists: true, prOpen: true } } }),
     );
@@ -160,6 +169,51 @@ describe('selectStudyCandidates', () => {
   });
 });
 
+describe('markNotStudyable', () => {
+  const base = selectStudyCandidates(input({ studyStates: { 'o/d': { studyExists: true, prOpen: false } } }));
+  // base: selected b,c,a · queued new · skipped d
+
+  it('replaces a selected candidate with the next queued one', () => {
+    const { queue, promoted } = markNotStudyable(base, 'O/C');
+    expect(promoted).toBe('o/new');
+    expect(selectedRepositories(queue)).toEqual(['o/b', 'o/a', 'o/new']);
+    const c = queue.candidates.find((x) => x.repository === 'o/c')!;
+    expect(c.status).toBe('skipped_not_studyable');
+    expect(c.reasons.at(-1)).toBe('skip: not_studyable');
+    // skip 후보는 priority 순서: c(40.6) 가 d(19.3) 보다 앞
+    expect(queue.candidates.map((x) => x.status)).toEqual([
+      'selected', 'selected', 'selected', 'skipped_not_studyable', 'skipped_study_exists',
+    ]);
+  });
+
+  it('does not mutate the input queue', () => {
+    const before = structuredClone(base);
+    markNotStudyable(base, 'o/c');
+    expect(base).toEqual(before);
+  });
+
+  it('promotes nothing when no queued candidate remains', () => {
+    const first = markNotStudyable(base, 'o/b').queue; // new 승격
+    const { queue, promoted } = markNotStudyable(first, 'o/c');
+    expect(promoted).toBeNull();
+    expect(selectedRepositories(queue)).toEqual(['o/a', 'o/new']);
+  });
+
+  it('marks queued or skipped candidates without promotion and is idempotent', () => {
+    const r1 = markNotStudyable(base, 'o/new');
+    expect(r1.promoted).toBeNull();
+    expect(selectedRepositories(r1.queue)).toEqual(['o/b', 'o/c', 'o/a']);
+    const r2 = markNotStudyable(r1.queue, 'o/new');
+    expect(r2.queue).toEqual(r1.queue);
+    const r3 = markNotStudyable(base, 'o/d');
+    expect(r3.queue.candidates.find((x) => x.repository === 'o/d')!.status).toBe('skipped_not_studyable');
+  });
+
+  it('throws for unknown repositories', () => {
+    expect(() => markNotStudyable(base, 'x/y')).toThrow(/Not in study queue/);
+  });
+});
+
 describe('helpers', () => {
   it('skipStatus prefers study_exists over pr_open', () => {
     expect(skipStatus({ studyExists: true, prOpen: true }, policy.skip_if)).toBe('skipped_study_exists');
@@ -177,7 +231,7 @@ describe('config', () => {
   it('applies defaults and rejects invalid policy', () => {
     const p = parseStudyPolicy('max_daily_drafts: 1\npriority: { growth_24h: 1, repeated_top10: 1, total_stars: 1, new_repository: 1 }');
     expect(p.repeated_top10_window_days).toBe(7);
-    expect(p.skip_if).toEqual({ study_exists: true, pr_open: true });
+    expect(p.skip_if).toEqual({ study_exists: true, pr_open: true, not_studyable: true });
     expect(() => parseStudyPolicy('max_daily_drafts: -1')).toThrow();
   });
 });

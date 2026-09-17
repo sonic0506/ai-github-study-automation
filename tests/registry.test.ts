@@ -4,7 +4,16 @@ import { join } from 'node:path';
 import { afterAll, describe, expect, it } from 'vitest';
 import { addDays } from '../src/core/dates.js';
 import { listSnapshotDates, readRegistry, readSnapshot, writeJson, writeSnapshot } from '../src/core/local-store.js';
-import { emptyRegistry, firstSeenMap, registeredRepositories, updateRegistry } from '../src/core/registry.js';
+import {
+  applyStudyability,
+  applyStudyabilityUpdates,
+  emptyRegistry,
+  firstSeenMap,
+  registeredRepositories,
+  studyStatesFromRegistry,
+  updateRegistry,
+} from '../src/core/registry.js';
+import type { Studyability } from '../src/core/types.js';
 import { loadValidator } from '../src/core/schema.js';
 import { getProjectPaths } from '../src/core/paths.js';
 
@@ -44,6 +53,48 @@ describe('registry', () => {
     v.assert('registry', reg);
     v.assert('registry', await readRegistry(getProjectPaths(undefined, 'data').data.registry));
     expect(v.validate('registry', { ...reg, repositories: { 'bad id': { firstSeen: '2026-09-16', lastSeen: '2026-09-16' } } }).valid).toBe(false);
+  });
+});
+
+describe('studyability', () => {
+  const reg = updateRegistry(emptyRegistry(), '2026-09-17', [{ repository: 'Snailclimb/JavaGuide' }, { repository: 'a/lib' }], 'T');
+  const guide: Studyability = { studyable: false, category: 'interview-guide', reason: '면접 가이드 문서', checkedAt: '2026-09-17' };
+  const lib: Studyability = { studyable: true, category: 'library', reason: 'LLM 라이브러리', checkedAt: '2026-09-17' };
+
+  it('stores judgments case-insensitively and exposes not-studyable states', () => {
+    const next = applyStudyability(reg, [{ repository: 'snailclimb/javaguide', studyability: guide }, { repository: 'a/lib', studyability: lib }], 'T2');
+    expect(next.repositories['Snailclimb/JavaGuide']!.studyability).toEqual(guide);
+    expect(studyStatesFromRegistry(next)).toEqual({
+      'Snailclimb/JavaGuide': { studyExists: false, prOpen: false, notStudyable: true },
+    });
+    expect(reg.repositories['Snailclimb/JavaGuide']!.studyability).toBeUndefined();
+  });
+
+  it('keeps judgments when the registry is updated by a later run', () => {
+    const marked = applyStudyabilityUpdates(reg, [{ repository: 'Snailclimb/JavaGuide', studyability: guide }], 'T2');
+    const later = updateRegistry(marked, '2026-09-18', [{ repository: 'Snailclimb/JavaGuide' }], 'T3');
+    expect(later.repositories['Snailclimb/JavaGuide']).toMatchObject({ lastSeen: '2026-09-18', studyability: guide });
+  });
+
+  it('clears a judgment with null', () => {
+    const marked = applyStudyability(reg, [{ repository: 'a/lib', studyability: lib }], 'T2');
+    const cleared = applyStudyability(marked, [{ repository: 'a/lib', studyability: null }], 'T3');
+    expect(cleared.repositories['a/lib']).not.toHaveProperty('studyability');
+  });
+
+  it('rejects inconsistent or unknown updates', () => {
+    expect(() => applyStudyability(reg, [{ repository: 'x/y', studyability: lib }], 'T')).toThrow(/Not in registry/);
+    expect(() => applyStudyability(reg, [{ repository: 'a/lib', studyability: { ...lib, studyable: false } }], 'T')).toThrow(/requires studyable=true/);
+    expect(() => applyStudyability(reg, [{ repository: 'a/lib', studyability: { ...guide, reason: ' ' } }], 'T')).toThrow(/reason/);
+  });
+
+  it('schema enforces category/studyable consistency', async () => {
+    const v = await loadValidator(getProjectPaths(undefined, 'data').schemas);
+    const withS = (s: unknown) => ({ ...reg, updatedAt: null, repositories: { 'a/lib': { firstSeen: '2026-09-17', lastSeen: '2026-09-17', studyability: s } } });
+    expect(v.validate('registry', withS(lib)).valid).toBe(true);
+    expect(v.validate('registry', withS(guide)).valid).toBe(true);
+    expect(v.validate('registry', withS({ ...lib, studyable: false })).valid).toBe(false);
+    expect(v.validate('registry', withS({ ...guide, category: 'blog' })).valid).toBe(false);
   });
 });
 

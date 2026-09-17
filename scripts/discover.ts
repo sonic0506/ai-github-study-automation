@@ -87,7 +87,7 @@ async function main(): Promise<void> {
   console.log(`
 ■ 결과
   검색어 ${stats.queries}개 · 원본 결과 topic ${stats.rawResults.topic}건 / 신규 ${stats.rawResults.new}건
-  정리 후 ${stats.searched}개 + 등록 저장소 추적 ${t.added.length}개 = 총 ${stats.total}개
+  정리 후 ${stats.searched}개${stats.excluded.length ? ` (제외 목록 ${stats.excluded.length}개 뺌)` : ''} + 등록 저장소 추적 ${t.added.length}개 = 총 ${stats.total}개
   추적: 대상 ${t.candidates} · 조회 ${t.checked} · 추가 ${t.added.length} · 없음 ${t.missing.length} · archived ${t.archived.length}${t.skippedOverLimit ? ` · 설정 한도로 생략 ${t.skippedOverLimit}` : ''}${t.stoppedByRateLimit ? ` · API 한도로 중단 ${t.stoppedByRateLimit}` : ''}
   API 요청 ${client.requestCount}회 · ${((Date.now() - started) / 1000).toFixed(1)}s${rl.remaining !== null ? ` · 남은 한도(${rl.resource}) ${rl.remaining}/${rl.limit}` : ''}
   비교 기준 Snapshot: ${baselineDate ?? '없음 (첫 실행 — 증가량은 다음 실행부터)'}
@@ -100,6 +100,7 @@ async function main(): Promise<void> {
   npm run demo -- --input ${rel(analyzerPath)}          # 결과 보기
   npm run demo -- --input ${rel(analyzerPath)} --save   # 결과 보기 + 오늘 Snapshot/Registry 저장
 `);
+  if (stats.excluded.length) console.log(`※ 제외 목록으로 뺀 저장소: ${stats.excluded.join(', ')}`);
   if (t.missing.length) console.log(`※ 조회되지 않은 등록 저장소: ${t.missing.join(', ')}`);
 }
 

@@ -1,1 +1,7 @@
-{ "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.", "kind": "generative", "entries": [], "bundle": [], "cliTests": [] }
+{
+  "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.",
+  "kind": "generative",
+  "entries": [],
+  "bundle": [{ "from": "schemas/registry.schema.json", "to": "resources/schemas/registry.schema.json" }],
+  "cliTests": []
+}

@@ -14,7 +14,8 @@
     "rankings",
     "studyQueue",
     "dailyReport",
-    "studyDrafts"
+    "studyDrafts",
+    "studyabilityUpdates"
   ],
   "additionalProperties": false,
   "properties": {
@@ -101,6 +102,25 @@
           },
           "prBody": {
             "type": "string"
+          }
+        }
+      }
+    },
+    "studyabilityUpdates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "repository",
+          "studyability"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "repository": {
+            "$ref": "repository.schema.json#/$defs/repositoryId"
+          },
+          "studyability": {
+            "$ref": "registry.schema.json#/$defs/studyability"
           }
         }
       }

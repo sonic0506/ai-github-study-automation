@@ -491,5 +491,16 @@
       "markdown": "# nova-labs/mcp-server-hub\n\n(fixture draft)\n",
       "prBody": "Study draft for nova-labs/mcp-server-hub"
     }
+  ],
+  "studyabilityUpdates": [
+    {
+      "repository": "Snailclimb/JavaGuide",
+      "studyability": {
+        "studyable": false,
+        "category": "interview-guide",
+        "reason": "Java 백엔드 면접 대비 문서 모음으로 라이브러리/도구가 아님",
+        "checkedAt": "2026-09-17"
+      }
+    }
   ]
 }

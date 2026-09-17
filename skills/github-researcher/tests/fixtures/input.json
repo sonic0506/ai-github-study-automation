@@ -3,5 +3,8 @@
   "url": "https://github.com/acme-ai/agent-kit",
   "description": "Agent toolkit",
   "stars": 48210,
-  "delta24h": 210
+  "delta24h": 210,
+  "expected": {
+    "studyable": true
+  }
 }

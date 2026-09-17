@@ -1,0 +1,129 @@
+{
+  "queue": {
+    "version": 1,
+    "date": "2026-09-17",
+    "maxDailyDrafts": 3,
+    "candidates": [
+      {
+        "repository": "acme-ai/agent-kit",
+        "priority": 55.77,
+        "reasons": [
+          "growth_24h: +210 stars",
+          "repeated_top10: 7/7 days",
+          "total_stars: 48210"
+        ],
+        "status": "selected"
+      },
+      {
+        "repository": "zen/new-agent",
+        "priority": 28.9,
+        "reasons": [
+          "total_stars: 1800",
+          "new_repository"
+        ],
+        "status": "selected"
+      },
+      {
+        "repository": "zen/mcp-bridge",
+        "priority": 27.02,
+        "reasons": [
+          "total_stars: 650",
+          "new_repository"
+        ],
+        "status": "selected"
+      },
+      {
+        "repository": "quanta/agentflow",
+        "priority": 26.08,
+        "reasons": [
+          "growth_24h: +150 stars",
+          "repeated_top10: 1/7 days",
+          "total_stars: 2950"
+        ],
+        "status": "queued"
+      },
+      {
+        "repository": "orbit/vector-cache",
+        "priority": 24.02,
+        "reasons": [
+          "growth_24h: +90 stars",
+          "repeated_top10: 1/7 days",
+          "total_stars: 5100"
+        ],
+        "status": "queued"
+      },
+      {
+        "repository": "nova-labs/tiny-llm",
+        "priority": 20.46,
+        "reasons": [
+          "repeated_top10: 1/7 days",
+          "total_stars: 9020"
+        ],
+        "status": "queued"
+      },
+      {
+        "repository": "orbit/genai-studio",
+        "priority": 20.07,
+        "reasons": [
+          "repeated_top10: 1/7 days",
+          "total_stars: 7300"
+        ],
+        "status": "queued"
+      },
+      {
+        "repository": "pixel/eval-harness",
+        "priority": 18.86,
+        "reasons": [
+          "growth_24h: +2 stars",
+          "repeated_top10: 1/7 days",
+          "total_stars: 3600"
+        ],
+        "status": "queued"
+      },
+      {
+        "repository": "quanta/prompt-lab",
+        "priority": 18.27,
+        "reasons": [
+          "growth_24h: +10 stars",
+          "repeated_top10: 1/7 days",
+          "total_stars: 2100"
+        ],
+        "status": "queued"
+      },
+      {
+        "repository": "nova-labs/mcp-server-hub",
+        "priority": 61.12,
+        "reasons": [
+          "growth_24h: +780 stars",
+          "repeated_top10: 1/7 days",
+          "total_stars: 12880",
+          "skip: study_exists"
+        ],
+        "status": "skipped_study_exists"
+      },
+      {
+        "repository": "acme-ai/rag-engine",
+        "priority": 44.73,
+        "reasons": [
+          "growth_24h: +150 stars",
+          "repeated_top10: 5/7 days",
+          "total_stars: 31050",
+          "skip: not_studyable"
+        ],
+        "status": "skipped_not_studyable"
+      },
+      {
+        "repository": "pixel/llm-router",
+        "priority": 34.43,
+        "reasons": [
+          "growth_24h: +300 stars",
+          "repeated_top10: 1/7 days",
+          "total_stars: 4200",
+          "skip: pr_open"
+        ],
+        "status": "skipped_pr_open"
+      }
+    ]
+  },
+  "promoted": "zen/mcp-bridge"
+}

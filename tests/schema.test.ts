@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import { readFile } from 'node:fs/promises';
-import { loadDiscoveryConfig, loadStudyPolicy } from '../src/core/config.js';
+import { loadDiscoveryConfig, loadStudyPolicy, parseDiscoveryConfig } from '../src/core/config.js';
 import { getProjectPaths } from '../src/core/paths.js';
 import { loadValidator, type SchemaValidator } from '../src/core/schema.js';
 import { analyzeStars } from '../skills/github-star-analyzer/scripts/analyze.js';
@@ -96,6 +96,8 @@ describe('config files', () => {
     expect(d.topics).toContain('mcp');
     expect(d.minimum_stars).toBe(100);
     expect(d.ranking.top_n).toBe(10);
+    expect(d.exclude.repositories).toContain('Snailclimb/JavaGuide');
+    expect(() => parseDiscoveryConfig({ topics: ['x'], minimum_stars: 1, exclude: { repositories: ['no-slash'] } })).toThrow(/owner\/name/);
     const p = await loadStudyPolicy(paths.config.studyPolicy);
     expect(p.max_daily_drafts).toBe(3);
     expect(p.priority.growth_24h).toBe(40);

@@ -1,19 +1,83 @@
 {
   "repository": "owner/name",
+  "studyability": {
+    "studyable": true,
+    "category": "library",
+    "reason": "pip로 설치해 코드에서 사용하는 LLM 애플리케이션 라이브러리",
+    "checkedAt": "2026-09-17"
+  },
   "researchedAt": "2026-09-17T06:10:00+09:00",
   "summary": "한두 문장 사실 요약",
   "problem": "이 프로젝트가 해결하려는 문제",
-  "architecture": ["핵심 구성 요소 1", "핵심 구성 요소 2"],
-  "keyFeatures": [{ "name": "기능", "detail": "설명", "sourceIds": ["s1"] }],
-  "gettingStarted": { "install": "pip install ...", "minimalExample": "코드", "sourceIds": ["s1"] },
-  "recentReleases": [{ "version": "v1.2.0", "date": "2026-09-10", "highlights": ["..."], "sourceIds": ["s2"] }],
-  "communitySignals": [{ "topic": "반복 이슈 주제", "sourceIds": ["s3"] }],
-  "facts": [{ "claim": "검증 가능한 사실", "sourceIds": ["s1"] }],
-  "limitations": ["알려진 제약"],
-  "openQuestions": ["확인하지 못한 내용"],
+  "architecture": [
+    "핵심 구성 요소 1",
+    "핵심 구성 요소 2"
+  ],
+  "keyFeatures": [
+    {
+      "name": "기능",
+      "detail": "설명",
+      "sourceIds": [
+        "s1"
+      ]
+    }
+  ],
+  "gettingStarted": {
+    "install": "pip install ...",
+    "minimalExample": "코드",
+    "sourceIds": [
+      "s1"
+    ]
+  },
+  "recentReleases": [
+    {
+      "version": "v1.2.0",
+      "date": "2026-09-10",
+      "highlights": [
+        "..."
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    }
+  ],
+  "communitySignals": [
+    {
+      "topic": "반복 이슈 주제",
+      "sourceIds": [
+        "s3"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "검증 가능한 사실",
+      "sourceIds": [
+        "s1"
+      ]
+    }
+  ],
+  "limitations": [
+    "알려진 제약"
+  ],
+  "openQuestions": [
+    "확인하지 못한 내용"
+  ],
   "sources": [
-    { "id": "s1", "type": "readme", "url": "https://github.com/owner/name#readme" },
-    { "id": "s2", "type": "release", "url": "https://github.com/owner/name/releases" },
-    { "id": "s3", "type": "issues", "url": "https://github.com/owner/name/issues" }
+    {
+      "id": "s1",
+      "type": "readme",
+      "url": "https://github.com/owner/name#readme"
+    },
+    {
+      "id": "s2",
+      "type": "release",
+      "url": "https://github.com/owner/name/releases"
+    },
+    {
+      "id": "s3",
+      "type": "issues",
+      "url": "https://github.com/owner/name/issues"
+    }
   ]
 }

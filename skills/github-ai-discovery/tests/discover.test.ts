@@ -81,6 +81,7 @@ describe('discoverRepositories', () => {
       queries: 4,
       rawResults: { topic: 5, new: 2 },
       searched: 6,
+      excluded: [],
       tracking: {
         candidates: 3,
         checked: 3,
@@ -106,6 +107,27 @@ describe('discoverRepositories', () => {
     const b = await discoverRepositories({ date: DATE, config: off, adapter, registered: ['reg/dropped'] });
     expect(adapter.lookups).toEqual([]);
     expect(b.stats.tracking).toMatchObject({ candidates: 1, checked: 0, skippedOverLimit: 0 });
+  });
+
+  it('drops excluded repositories from search and tracking (case-insensitive)', async () => {
+    const cfg = { ...config, exclude: { repositories: ['BIG/Two', 'reg/dropped'] } };
+    const adapter = new FixtureGitHubAdapter(universe);
+    const { output, stats } = await discoverRepositories({ date: DATE, config: cfg, adapter, registered: ['Reg/Dropped', 'big/two'] });
+    const names = output.repositories.map((r) => r.repository);
+    expect(names).not.toContain('big/two');
+    expect(names).not.toContain('reg/dropped');
+    expect(stats.excluded).toEqual(['big/two']);
+    expect(stats.searched).toBe(5);
+    expect(adapter.lookups).toEqual([]); // 제외 대상은 추적 조회도 하지 않음
+  });
+
+  it('skips a tracked repository that was renamed into the exclude list', async () => {
+    const cfg = { ...config, exclude: { repositories: ['big/four'] } };
+    const adapter = new FixtureGitHubAdapter(universe);
+    adapter.getRepository = async () => universe.find((u) => u.full_name === 'big/four')!;
+    const { output, stats } = await discoverRepositories({ date: DATE, config: cfg, adapter, registered: ['old/four'] });
+    expect(output.repositories.map((r) => r.repository)).not.toContain('big/four');
+    expect(stats.tracking.added).toEqual([]);
   });
 
   it('stops tracking (but keeps search results) when the rate limit is exhausted', async () => {

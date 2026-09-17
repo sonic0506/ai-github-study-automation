@@ -33,6 +33,13 @@ export const DiscoveryConfigSchema = z.object({
       max_lookups: z.number().int().nonnegative().default(300),
     })
     .default({}),
+  exclude: z
+    .object({
+      repositories: z
+        .array(z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/, 'owner/name 형식이어야 합니다'))
+        .default([]),
+    })
+    .default({}),
   ranking: z
     .object({
       top_n: z.number().int().positive().default(10),
@@ -55,6 +62,7 @@ export const StudyPolicySchema = z.object({
     .object({
       study_exists: z.boolean().default(true),
       pr_open: z.boolean().default(true),
+      not_studyable: z.boolean().default(true),
     })
     .default({}),
 });

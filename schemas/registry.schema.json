@@ -39,6 +39,78 @@
           },
           "lastSeen": {
             "$ref": "repository.schema.json#/$defs/isoDate"
+          },
+          "studyability": {
+            "$ref": "#/$defs/studyability"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "studyability": {
+      "description": "github-researcher 의 Study 적합성 판정",
+      "type": "object",
+      "required": [
+        "studyable",
+        "category",
+        "reason",
+        "checkedAt"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "studyable": {
+          "type": "boolean"
+        },
+        "category": {
+          "enum": [
+            "library",
+            "framework",
+            "tool",
+            "application",
+            "model",
+            "platform",
+            "awesome-list",
+            "tutorial",
+            "course",
+            "interview-guide",
+            "documentation",
+            "other"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checkedAt": {
+          "$ref": "repository.schema.json#/$defs/isoDate"
+        }
+      },
+      "if": {
+        "properties": {
+          "category": {
+            "enum": [
+              "library",
+              "framework",
+              "tool",
+              "application",
+              "model",
+              "platform"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "studyable": {
+            "const": true
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "studyable": {
+            "const": false
           }
         }
       }

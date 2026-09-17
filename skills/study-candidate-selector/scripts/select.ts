@@ -105,6 +105,7 @@ export function skipStatus(state: StudyState | undefined, skipIf: StudyPolicy['s
   if (!state) return null;
   if (skipIf.study_exists && state.studyExists) return 'skipped_study_exists';
   if (skipIf.pr_open && state.prOpen) return 'skipped_pr_open';
+  if (skipIf.not_studyable && state.notStudyable) return 'skipped_not_studyable';
   return null;
 }
 
@@ -148,6 +149,39 @@ export function selectStudyCandidates(input: SelectorInput): StudyQueue {
     maxDailyDrafts: policy.max_daily_drafts,
     candidates: [...eligible, ...skipped].map((x) => x.candidate),
   };
+}
+
+/**
+ * 선정된 후보가 조사 단계에서 Study 대상이 아니라고 판정되었을 때 호출한다.
+ * - 대상은 skipped_not_studyable 로 바꾸고 skip 사유를 추가한다.
+ * - 대상이 selected 였다면 queued 중 가장 우선순위가 높은 후보를 selected 로 올린다.
+ * 입력 queue 는 변경하지 않는다.
+ */
+export function markNotStudyable(queue: StudyQueue, repository: RepositoryId): { queue: StudyQueue; promoted: RepositoryId | null } {
+  const k = key(repository);
+  const candidates = queue.candidates.map((c) => ({ ...c, reasons: [...c.reasons] }));
+  const target = candidates.find((c) => key(c.repository) === k);
+  if (!target) throw new Error(`Not in study queue: ${repository}`);
+  if (target.status === 'skipped_not_studyable') return { queue: { ...queue, candidates }, promoted: null };
+
+  const wasSelected = target.status === 'selected';
+  target.status = 'skipped_not_studyable';
+  target.reasons.push('skip: not_studyable');
+
+  let promoted: RepositoryId | null = null;
+  if (wasSelected) {
+    const next = candidates.find((c) => c.status === 'queued');
+    if (next) {
+      next.status = 'selected';
+      promoted = next.repository;
+    }
+  }
+  // 순서: 선정·대기 후보(기존 순서) → skip 후보(기존 순서, 대상은 priority 위치에 삽입)
+  const active = candidates.filter((c) => c !== target && !c.status.startsWith('skipped_'));
+  const skipped = candidates.filter((c) => c !== target && c.status.startsWith('skipped_'));
+  const at = skipped.findIndex((c) => c.priority < target.priority);
+  skipped.splice(at === -1 ? skipped.length : at, 0, target);
+  return { queue: { ...queue, candidates: [...active, ...skipped] }, promoted };
 }
 
 export const selectedRepositories = (queue: StudyQueue): RepositoryId[] =>

@@ -33,6 +33,13 @@ tracking:
   # 하루 최대 개별 조회 수 (일반 API 한도 보호: 인증 시 시간당 5,000회)
   max_lookups: 300
 
+# 수집에서 완전히 제외할 저장소 (대소문자 무시)
+# AI 도구/라이브러리가 아니지만 AI 관련 topic 태그 때문에 잡히는 경우에 사용.
+# 애매한 경우는 여기 넣지 말고 Study 단계의 적합성 판정(github-researcher)에 맡긴다.
+exclude:
+  repositories:
+    - Snailclimb/JavaGuide   # Java 백엔드 면접 가이드 (mcp/agent 태그로 수집됨)
+
 ranking:
   top_n: 10
   # Growth TOP10에 포함되기 위한 최소 24h 증가량 (0 이하 증가는 제외)

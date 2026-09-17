@@ -15,7 +15,7 @@ import { loadStudyPolicy } from '../src/core/config.js';
 import { loadEnv } from '../src/core/env.js';
 import { readRegistry, writeJson, writeSnapshot } from '../src/core/local-store.js';
 import { getProjectPaths } from '../src/core/paths.js';
-import { updateRegistry } from '../src/core/registry.js';
+import { studyStatesFromRegistry, updateRegistry } from '../src/core/registry.js';
 import type { RankingEntry, RepositoryInfo, StudyCandidate } from '../src/core/types.js';
 import { analyzeStars, type AnalyzerInput } from '../skills/github-star-analyzer/scripts/analyze.js';
 import { selectStudyCandidates, type SelectorInput } from '../skills/study-candidate-selector/scripts/select.js';
@@ -68,12 +68,14 @@ async function main(): Promise<void> {
     ? (JSON.parse(await readFile(selectorInputPath, 'utf8')) as Partial<SelectorInput>)
     : {};
   const policy = await loadStudyPolicy(paths.config.studyPolicy);
+  // 실데이터 실행이면 Registry 의 Study 적합성 판정을 반영한다
+  const registryStates = customInput ? studyStatesFromRegistry(await readRegistry(paths.data.registry)) : {};
   const queue = selectStudyCandidates({
     date: analysis.date,
     rankings: analysis.rankings,
     policy,
     history: selectorExtra.history ?? {},
-    studyStates: selectorExtra.studyStates ?? {},
+    studyStates: { ...registryStates, ...(selectorExtra.studyStates ?? {}) },
   });
 
   console.log(`\nAI GitHub Study — demo run (${analysis.date})`);
