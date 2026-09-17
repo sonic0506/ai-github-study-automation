@@ -69,11 +69,23 @@ npm test              # Vitest: 결정적 로직 unit test + schema/config test
 npm run test:skills   # Skill 패키지 테스트 (업로드 형태로 조립 → 구조 검증 → 번들 CLI를 fixture로 실행)
 npm run build:skills  # dist/skills/{name}.zip 생성
 npm run typecheck     # tsc --noEmit
+npm run demo          # fixture로 분석→선정 실행, 결과를 표로 출력 + output/demo/*.json 저장
 
 # 일부 Skill만
 npm run test:skills -- --only github-star-analyzer
 npm run build:skills -- --only study-candidate-selector
 ```
+
+### 결과 확인 (demo)
+
+```bash
+npm run demo                                   # 기본 fixture
+npm run demo -- --input my-input.json          # 직접 만든 analyzer 입력
+npm run demo -- --selector my-selector.json    # history / studyStates 지정
+```
+
+TOP10, Growth TOP10, 신규 목록, Study Queue(점수·상태·사유)를 표로 출력하고
+`output/demo/analysis.json`, `output/demo/study-queue.json`에 저장한다 (`output/`은 git 제외).
 
 ### 스크립트 단독 실행 (로컬)
 
