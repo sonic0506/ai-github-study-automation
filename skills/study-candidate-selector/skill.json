@@ -1,0 +1,18 @@
+{
+  "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.",
+  "kind": "deterministic",
+  "entries": [{ "source": "scripts/cli.ts", "output": "scripts/select.mjs" }],
+  "bundle": [
+    { "from": "config/study-policy.yml", "to": "resources/study-policy.yml" },
+    { "from": "schemas/repository.schema.json", "to": "resources/schemas/repository.schema.json" },
+    { "from": "schemas/study-queue.schema.json", "to": "resources/schemas/study-queue.schema.json" }
+  ],
+  "cliTests": [
+    {
+      "entry": "scripts/select.mjs",
+      "input": "tests/fixtures/input.json",
+      "expected": "tests/fixtures/expected-queue.json",
+      "schema": "study-queue.schema.json"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.",
+  "kind": "generative",
+  "entries": [],
+  "bundle": [
+    { "from": "templates/daily-report.md", "to": "resources/daily-report.md" },
+    { "from": "templates/telegram-daily.md", "to": "resources/telegram-daily.md" }
+  ],
+  "cliTests": [],
+  "fixtureSchemas": [{ "file": "tests/fixtures/bundle-input.json", "schema": "daily-bundle.schema.json" }]
+}

@@ -1,0 +1,10 @@
+{
+  "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.",
+  "kind": "generative",
+  "entries": [],
+  "bundle": [
+    { "from": "templates/study.md", "to": "resources/study.md" },
+    { "from": "templates/study-pr.md", "to": "resources/study-pr.md" }
+  ],
+  "cliTests": []
+}

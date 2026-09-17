@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-github-study.local/schemas/snapshot.schema.json",
+  "title": "Snapshot",
+  "description": "data/snapshots/YYYY-MM-DD.json",
+  "type": "object",
+  "required": ["version", "date", "repositories"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "date": { "$ref": "repository.schema.json#/$defs/isoDate" },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["repository", "stars"],
+        "additionalProperties": false,
+        "properties": {
+          "repository": { "$ref": "repository.schema.json#/$defs/repositoryId" },
+          "stars": { "$ref": "repository.schema.json#/$defs/stars" }
+        }
+      }
+    }
+  }
+}

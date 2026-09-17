@@ -1,0 +1,405 @@
+{
+  "date": "2026-09-17",
+  "repositories": [
+    {
+      "repository": "acme-ai/agent-kit",
+      "url": "https://github.com/acme-ai/agent-kit",
+      "description": "Fixture repository acme-ai/agent-kit",
+      "stars": 48210,
+      "previousStars": 48000,
+      "delta24h": 210,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "repository": "acme-ai/rag-engine",
+      "url": "https://github.com/acme-ai/rag-engine",
+      "description": "Fixture repository acme-ai/rag-engine",
+      "stars": 31050,
+      "previousStars": 30900,
+      "delta24h": 150,
+      "firstSeen": "2026-08-01",
+      "isNew": false
+    },
+    {
+      "repository": "nova-labs/mcp-server-hub",
+      "url": "https://github.com/nova-labs/mcp-server-hub",
+      "description": "Fixture repository nova-labs/mcp-server-hub",
+      "stars": 12880,
+      "previousStars": 12100,
+      "delta24h": 780,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "nova-labs/tiny-llm",
+      "url": "https://github.com/nova-labs/tiny-llm",
+      "description": "Fixture repository nova-labs/tiny-llm",
+      "stars": 9020,
+      "previousStars": 9020,
+      "delta24h": 0,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "orbit/genai-studio",
+      "url": "https://github.com/orbit/genai-studio",
+      "description": "Fixture repository orbit/genai-studio",
+      "stars": 7300,
+      "previousStars": 7350,
+      "delta24h": -50,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "orbit/vector-cache",
+      "url": "https://github.com/orbit/vector-cache",
+      "description": "Fixture repository orbit/vector-cache",
+      "stars": 5100,
+      "previousStars": 5010,
+      "delta24h": 90,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "pixel/eval-harness",
+      "url": "https://github.com/pixel/eval-harness",
+      "description": "Fixture repository pixel/eval-harness",
+      "stars": 3600,
+      "previousStars": 3598,
+      "delta24h": 2,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "pixel/llm-router",
+      "url": "https://github.com/pixel/llm-router",
+      "description": "Fixture repository pixel/llm-router",
+      "stars": 4200,
+      "previousStars": 3900,
+      "delta24h": 300,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "quanta/agentflow",
+      "url": "https://github.com/quanta/agentflow",
+      "description": "Fixture repository quanta/agentflow",
+      "stars": 2950,
+      "previousStars": 2800,
+      "delta24h": 150,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "quanta/prompt-lab",
+      "url": "https://github.com/quanta/prompt-lab",
+      "description": "Fixture repository quanta/prompt-lab",
+      "stars": 2100,
+      "previousStars": 2090,
+      "delta24h": 10,
+      "firstSeen": "2026-09-17",
+      "isNew": false
+    },
+    {
+      "repository": "zen/mcp-bridge",
+      "url": "https://github.com/zen/mcp-bridge",
+      "description": "Fixture repository zen/mcp-bridge",
+      "stars": 650,
+      "previousStars": null,
+      "delta24h": null,
+      "firstSeen": "2026-09-17",
+      "isNew": true
+    },
+    {
+      "repository": "zen/new-agent",
+      "url": "https://github.com/zen/new-agent",
+      "description": "Fixture repository zen/new-agent",
+      "stars": 1800,
+      "previousStars": null,
+      "delta24h": null,
+      "firstSeen": "2026-09-17",
+      "isNew": true
+    }
+  ],
+  "rankings": {
+    "totalStarsTop10": [
+      {
+        "repository": "acme-ai/agent-kit",
+        "url": "https://github.com/acme-ai/agent-kit",
+        "description": "Fixture repository acme-ai/agent-kit",
+        "stars": 48210,
+        "previousStars": 48000,
+        "delta24h": 210,
+        "firstSeen": "2026-08-01",
+        "isNew": false,
+        "rank": 1
+      },
+      {
+        "repository": "acme-ai/rag-engine",
+        "url": "https://github.com/acme-ai/rag-engine",
+        "description": "Fixture repository acme-ai/rag-engine",
+        "stars": 31050,
+        "previousStars": 30900,
+        "delta24h": 150,
+        "firstSeen": "2026-08-01",
+        "isNew": false,
+        "rank": 2
+      },
+      {
+        "repository": "nova-labs/mcp-server-hub",
+        "url": "https://github.com/nova-labs/mcp-server-hub",
+        "description": "Fixture repository nova-labs/mcp-server-hub",
+        "stars": 12880,
+        "previousStars": 12100,
+        "delta24h": 780,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 3
+      },
+      {
+        "repository": "nova-labs/tiny-llm",
+        "url": "https://github.com/nova-labs/tiny-llm",
+        "description": "Fixture repository nova-labs/tiny-llm",
+        "stars": 9020,
+        "previousStars": 9020,
+        "delta24h": 0,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 4
+      },
+      {
+        "repository": "orbit/genai-studio",
+        "url": "https://github.com/orbit/genai-studio",
+        "description": "Fixture repository orbit/genai-studio",
+        "stars": 7300,
+        "previousStars": 7350,
+        "delta24h": -50,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 5
+      },
+      {
+        "repository": "orbit/vector-cache",
+        "url": "https://github.com/orbit/vector-cache",
+        "description": "Fixture repository orbit/vector-cache",
+        "stars": 5100,
+        "previousStars": 5010,
+        "delta24h": 90,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 6
+      },
+      {
+        "repository": "pixel/llm-router",
+        "url": "https://github.com/pixel/llm-router",
+        "description": "Fixture repository pixel/llm-router",
+        "stars": 4200,
+        "previousStars": 3900,
+        "delta24h": 300,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 7
+      },
+      {
+        "repository": "pixel/eval-harness",
+        "url": "https://github.com/pixel/eval-harness",
+        "description": "Fixture repository pixel/eval-harness",
+        "stars": 3600,
+        "previousStars": 3598,
+        "delta24h": 2,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 8
+      },
+      {
+        "repository": "quanta/agentflow",
+        "url": "https://github.com/quanta/agentflow",
+        "description": "Fixture repository quanta/agentflow",
+        "stars": 2950,
+        "previousStars": 2800,
+        "delta24h": 150,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 9
+      },
+      {
+        "repository": "quanta/prompt-lab",
+        "url": "https://github.com/quanta/prompt-lab",
+        "description": "Fixture repository quanta/prompt-lab",
+        "stars": 2100,
+        "previousStars": 2090,
+        "delta24h": 10,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 10
+      }
+    ],
+    "growth24hTop10": [
+      {
+        "repository": "nova-labs/mcp-server-hub",
+        "url": "https://github.com/nova-labs/mcp-server-hub",
+        "description": "Fixture repository nova-labs/mcp-server-hub",
+        "stars": 12880,
+        "previousStars": 12100,
+        "delta24h": 780,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 1
+      },
+      {
+        "repository": "pixel/llm-router",
+        "url": "https://github.com/pixel/llm-router",
+        "description": "Fixture repository pixel/llm-router",
+        "stars": 4200,
+        "previousStars": 3900,
+        "delta24h": 300,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 2
+      },
+      {
+        "repository": "acme-ai/agent-kit",
+        "url": "https://github.com/acme-ai/agent-kit",
+        "description": "Fixture repository acme-ai/agent-kit",
+        "stars": 48210,
+        "previousStars": 48000,
+        "delta24h": 210,
+        "firstSeen": "2026-08-01",
+        "isNew": false,
+        "rank": 3
+      },
+      {
+        "repository": "acme-ai/rag-engine",
+        "url": "https://github.com/acme-ai/rag-engine",
+        "description": "Fixture repository acme-ai/rag-engine",
+        "stars": 31050,
+        "previousStars": 30900,
+        "delta24h": 150,
+        "firstSeen": "2026-08-01",
+        "isNew": false,
+        "rank": 4
+      },
+      {
+        "repository": "quanta/agentflow",
+        "url": "https://github.com/quanta/agentflow",
+        "description": "Fixture repository quanta/agentflow",
+        "stars": 2950,
+        "previousStars": 2800,
+        "delta24h": 150,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 5
+      },
+      {
+        "repository": "orbit/vector-cache",
+        "url": "https://github.com/orbit/vector-cache",
+        "description": "Fixture repository orbit/vector-cache",
+        "stars": 5100,
+        "previousStars": 5010,
+        "delta24h": 90,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 6
+      },
+      {
+        "repository": "quanta/prompt-lab",
+        "url": "https://github.com/quanta/prompt-lab",
+        "description": "Fixture repository quanta/prompt-lab",
+        "stars": 2100,
+        "previousStars": 2090,
+        "delta24h": 10,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 7
+      },
+      {
+        "repository": "pixel/eval-harness",
+        "url": "https://github.com/pixel/eval-harness",
+        "description": "Fixture repository pixel/eval-harness",
+        "stars": 3600,
+        "previousStars": 3598,
+        "delta24h": 2,
+        "firstSeen": "2026-09-17",
+        "isNew": false,
+        "rank": 8
+      }
+    ],
+    "newlyDiscovered": [
+      {
+        "repository": "zen/new-agent",
+        "url": "https://github.com/zen/new-agent",
+        "description": "Fixture repository zen/new-agent",
+        "stars": 1800,
+        "previousStars": null,
+        "delta24h": null,
+        "firstSeen": "2026-09-17",
+        "isNew": true
+      },
+      {
+        "repository": "zen/mcp-bridge",
+        "url": "https://github.com/zen/mcp-bridge",
+        "description": "Fixture repository zen/mcp-bridge",
+        "stars": 650,
+        "previousStars": null,
+        "delta24h": null,
+        "firstSeen": "2026-09-17",
+        "isNew": true
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "date": "2026-09-17",
+    "repositories": [
+      {
+        "repository": "acme-ai/agent-kit",
+        "stars": 48210
+      },
+      {
+        "repository": "acme-ai/rag-engine",
+        "stars": 31050
+      },
+      {
+        "repository": "nova-labs/mcp-server-hub",
+        "stars": 12880
+      },
+      {
+        "repository": "nova-labs/tiny-llm",
+        "stars": 9020
+      },
+      {
+        "repository": "orbit/genai-studio",
+        "stars": 7300
+      },
+      {
+        "repository": "orbit/vector-cache",
+        "stars": 5100
+      },
+      {
+        "repository": "pixel/eval-harness",
+        "stars": 3600
+      },
+      {
+        "repository": "pixel/llm-router",
+        "stars": 4200
+      },
+      {
+        "repository": "quanta/agentflow",
+        "stars": 2950
+      },
+      {
+        "repository": "quanta/prompt-lab",
+        "stars": 2100
+      },
+      {
+        "repository": "zen/mcp-bridge",
+        "stars": 650
+      },
+      {
+        "repository": "zen/new-agent",
+        "stars": 1800
+      }
+    ]
+  }
+}

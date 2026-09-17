@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-17",
+  "resultsByTopic": {
+    "llm": [
+      { "full_name": "acme-ai/agent-kit", "html_url": "https://github.com/acme-ai/agent-kit", "description": "Agent toolkit", "stargazers_count": 48210, "topics": ["llm", "agents"], "language": "Python", "pushed_at": "2026-09-16T10:00:00Z", "archived": false, "fork": false },
+      { "full_name": "tiny/too-small", "html_url": "https://github.com/tiny/too-small", "description": null, "stargazers_count": 42, "topics": ["llm"], "language": "Go", "pushed_at": null, "archived": false, "fork": false },
+      { "full_name": "old/archived-llm", "html_url": "https://github.com/old/archived-llm", "description": "archived", "stargazers_count": 9000, "topics": ["llm"], "language": "Python", "pushed_at": "2024-01-01T00:00:00Z", "archived": true, "fork": false }
+    ],
+    "agents": [
+      { "full_name": "Acme-AI/Agent-Kit", "html_url": "https://github.com/acme-ai/agent-kit", "description": "Agent toolkit", "stargazers_count": 48215, "topics": ["ai-agent"], "language": "Python", "pushed_at": "2026-09-16T11:00:00Z", "archived": false, "fork": false },
+      { "full_name": "someone/agent-kit-fork", "html_url": "https://github.com/someone/agent-kit-fork", "description": "fork", "stargazers_count": 300, "topics": ["agents"], "language": "Python", "pushed_at": "2026-09-01T00:00:00Z", "archived": false, "fork": true }
+    ],
+    "mcp": [
+      { "full_name": "nova-labs/mcp-server-hub", "html_url": "https://github.com/nova-labs/mcp-server-hub", "description": "MCP servers", "stargazers_count": 12880, "topics": ["mcp"], "language": "TypeScript", "pushed_at": "2026-09-17T01:00:00Z", "archived": false, "fork": false }
+    ]
+  }
+}

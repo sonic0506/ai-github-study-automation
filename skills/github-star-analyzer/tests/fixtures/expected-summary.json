@@ -1,0 +1,25 @@
+{
+  "totalStarsTop10": [
+    "acme-ai/agent-kit",
+    "acme-ai/rag-engine",
+    "nova-labs/mcp-server-hub",
+    "nova-labs/tiny-llm",
+    "orbit/genai-studio",
+    "orbit/vector-cache",
+    "pixel/llm-router",
+    "pixel/eval-harness",
+    "quanta/agentflow",
+    "quanta/prompt-lab"
+  ],
+  "growth24hTop10": [
+    ["nova-labs/mcp-server-hub", 780],
+    ["pixel/llm-router", 300],
+    ["acme-ai/agent-kit", 210],
+    ["acme-ai/rag-engine", 150],
+    ["quanta/agentflow", 150],
+    ["orbit/vector-cache", 90],
+    ["quanta/prompt-lab", 10],
+    ["pixel/eval-harness", 2]
+  ],
+  "newlyDiscovered": ["zen/new-agent", "zen/mcp-bridge"]
+}

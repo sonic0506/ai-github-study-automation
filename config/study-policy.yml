@@ -1,0 +1,17 @@
+# study-candidate-selector 설정
+
+max_daily_drafts: 3
+
+# 가중치 합계는 100을 권장 (강제는 아님). 각 항목은 0~1로 정규화된 뒤 가중치가 곱해진다.
+priority:
+  growth_24h: 40
+  repeated_top10: 25
+  total_stars: 20
+  new_repository: 15
+
+# repeated_top10 점수 계산 시, 이 일수만큼 TOP10에 등장하면 만점
+repeated_top10_window_days: 7
+
+skip_if:
+  study_exists: true
+  pr_open: true

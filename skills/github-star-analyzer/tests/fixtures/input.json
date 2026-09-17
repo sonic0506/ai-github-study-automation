@@ -1,0 +1,172 @@
+{
+  "date": "2026-09-17",
+  "current": [
+    {
+      "repository": "acme-ai/agent-kit",
+      "url": "https://github.com/acme-ai/agent-kit",
+      "description": "Fixture repository acme-ai/agent-kit",
+      "stars": 48210,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "acme-ai/rag-engine",
+      "url": "https://github.com/acme-ai/rag-engine",
+      "description": "Fixture repository acme-ai/rag-engine",
+      "stars": 31050,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "nova-labs/mcp-server-hub",
+      "url": "https://github.com/nova-labs/mcp-server-hub",
+      "description": "Fixture repository nova-labs/mcp-server-hub",
+      "stars": 12880,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "nova-labs/tiny-llm",
+      "url": "https://github.com/nova-labs/tiny-llm",
+      "description": "Fixture repository nova-labs/tiny-llm",
+      "stars": 9020,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "orbit/genai-studio",
+      "url": "https://github.com/orbit/genai-studio",
+      "description": "Fixture repository orbit/genai-studio",
+      "stars": 7300,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "orbit/vector-cache",
+      "url": "https://github.com/orbit/vector-cache",
+      "description": "Fixture repository orbit/vector-cache",
+      "stars": 5100,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "pixel/llm-router",
+      "url": "https://github.com/pixel/llm-router",
+      "description": "Fixture repository pixel/llm-router",
+      "stars": 4200,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "pixel/eval-harness",
+      "url": "https://github.com/pixel/eval-harness",
+      "description": "Fixture repository pixel/eval-harness",
+      "stars": 3600,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "quanta/agentflow",
+      "url": "https://github.com/quanta/agentflow",
+      "description": "Fixture repository quanta/agentflow",
+      "stars": 2950,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "quanta/prompt-lab",
+      "url": "https://github.com/quanta/prompt-lab",
+      "description": "Fixture repository quanta/prompt-lab",
+      "stars": 2100,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "zen/new-agent",
+      "url": "https://github.com/zen/new-agent",
+      "description": "Fixture repository zen/new-agent",
+      "stars": 1800,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "zen/mcp-bridge",
+      "url": "https://github.com/zen/mcp-bridge",
+      "description": "Fixture repository zen/mcp-bridge",
+      "stars": 650,
+      "topics": [
+        "llm"
+      ]
+    },
+    {
+      "repository": "Acme-AI/Agent-Kit",
+      "url": "https://github.com/Acme-AI/Agent-Kit",
+      "description": "Fixture repository Acme-AI/Agent-Kit",
+      "stars": 48190,
+      "topics": [
+        "llm"
+      ]
+    }
+  ],
+  "previousSnapshot": {
+    "version": 1,
+    "date": "2026-09-16",
+    "repositories": [
+      {
+        "repository": "acme-ai/agent-kit",
+        "stars": 48000
+      },
+      {
+        "repository": "acme-ai/rag-engine",
+        "stars": 30900
+      },
+      {
+        "repository": "nova-labs/mcp-server-hub",
+        "stars": 12100
+      },
+      {
+        "repository": "nova-labs/tiny-llm",
+        "stars": 9020
+      },
+      {
+        "repository": "orbit/genai-studio",
+        "stars": 7350
+      },
+      {
+        "repository": "orbit/vector-cache",
+        "stars": 5010
+      },
+      {
+        "repository": "pixel/llm-router",
+        "stars": 3900
+      },
+      {
+        "repository": "pixel/eval-harness",
+        "stars": 3598
+      },
+      {
+        "repository": "quanta/agentflow",
+        "stars": 2800
+      },
+      {
+        "repository": "quanta/prompt-lab",
+        "stars": 2090
+      }
+    ]
+  },
+  "firstSeen": {
+    "acme-ai/agent-kit": "2026-08-01",
+    "acme-ai/rag-engine": "2026-08-01"
+  }
+}

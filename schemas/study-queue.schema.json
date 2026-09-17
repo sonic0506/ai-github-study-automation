@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-github-study.local/schemas/study-queue.schema.json",
+  "title": "StudyQueue",
+  "type": "object",
+  "required": ["version", "date", "maxDailyDrafts", "candidates"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "date": { "$ref": "repository.schema.json#/$defs/isoDate" },
+    "maxDailyDrafts": { "type": "integer", "minimum": 0 },
+    "candidates": { "type": "array", "items": { "$ref": "#/$defs/studyCandidate" } }
+  },
+  "$defs": {
+    "studyCandidate": {
+      "type": "object",
+      "required": ["repository", "priority", "reasons", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "repository": { "$ref": "repository.schema.json#/$defs/repositoryId" },
+        "priority": { "type": "number", "minimum": 0 },
+        "reasons": { "type": "array", "items": { "type": "string" } },
+        "status": { "enum": ["selected", "queued", "skipped_study_exists", "skipped_pr_open"] }
+      }
+    }
+  }
+}

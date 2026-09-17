@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-github-study.local/schemas/ranking.schema.json",
+  "title": "RankingResult",
+  "type": "object",
+  "required": [
+    "totalStarsTop10",
+    "growth24hTop10",
+    "newlyDiscovered"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "totalStarsTop10": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/$defs/rankingEntry"
+      }
+    },
+    "growth24hTop10": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/$defs/growthEntry"
+      }
+    },
+    "newlyDiscovered": {
+      "type": "array",
+      "items": {
+        "$ref": "repository.schema.json"
+      }
+    }
+  },
+  "$defs": {
+    "rankingEntry": {
+      "type": "object",
+      "$ref": "repository.schema.json#/$defs/repositoryInfoFields",
+      "required": [
+        "rank"
+      ],
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "growthEntry": {
+      "type": "object",
+      "$ref": "#/$defs/rankingEntry",
+      "properties": {
+        "delta24h": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

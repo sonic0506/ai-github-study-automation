@@ -1,0 +1,19 @@
+{
+  "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.",
+  "kind": "deterministic",
+  "entries": [{ "source": "scripts/cli.ts", "output": "scripts/analyze.mjs" }],
+  "bundle": [
+    { "from": "config/discovery.yml", "to": "resources/discovery.yml" },
+    { "from": "schemas/repository.schema.json", "to": "resources/schemas/repository.schema.json" },
+    { "from": "schemas/ranking.schema.json", "to": "resources/schemas/ranking.schema.json" },
+    { "from": "schemas/snapshot.schema.json", "to": "resources/schemas/snapshot.schema.json" }
+  ],
+  "cliTests": [
+    {
+      "entry": "scripts/analyze.mjs",
+      "input": "tests/fixtures/input.json",
+      "expected": "tests/fixtures/expected-output.json",
+      "schemas": { "/rankings": "ranking.schema.json", "/snapshot": "snapshot.schema.json" }
+    }
+  ]
+}

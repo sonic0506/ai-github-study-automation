@@ -1,0 +1,32 @@
+{
+  "name": "ai-github-study",
+  "version": "0.1.0",
+  "description": "AI GitHub trend collection and study draft automation (Claude Custom Skills)",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:skills": "tsx scripts/test-skills.ts",
+    "build:skills": "tsx scripts/build-skills.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "fflate": "^0.8.3",
+    "yaml": "^2.9.1",
+    "zod": "^3.25.76"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

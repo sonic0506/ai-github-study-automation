@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-github-study.local/schemas/daily-bundle.schema.json",
+  "title": "DailyBundle",
+  "description": "Claude Cowork 가 생성하여 GitHub Actions 로 전달하는 일일 결과물",
+  "type": "object",
+  "required": ["version", "runId", "date", "generatedAt", "repositories", "rankings", "studyQueue", "dailyReport", "studyDrafts"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "runId": { "type": "string", "minLength": 1 },
+    "date": { "$ref": "repository.schema.json#/$defs/isoDate" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "repositories": { "type": "array", "items": { "$ref": "repository.schema.json" } },
+    "rankings": { "$ref": "ranking.schema.json" },
+    "studyQueue": { "$ref": "study-queue.schema.json" },
+    "dailyReport": {
+      "type": "object",
+      "required": ["path", "markdown"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "$ref": "#/$defs/relativePath" },
+        "markdown": { "type": "string" }
+      }
+    },
+    "studyDrafts": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["repository", "branch", "path", "title", "markdown", "prBody"],
+        "additionalProperties": false,
+        "properties": {
+          "repository": { "$ref": "repository.schema.json#/$defs/repositoryId" },
+          "branch": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" },
+          "path": { "$ref": "#/$defs/relativePath" },
+          "title": { "type": "string", "minLength": 1 },
+          "markdown": { "type": "string", "minLength": 1 },
+          "prBody": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "relativePath": {
+      "description": "Repository 루트 기준 상대 경로. 절대 경로 및 '..' 금지",
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(^|/)\\.\\.(/|$))[A-Za-z0-9._/-]+\\.md$"
+    }
+  }
+}
