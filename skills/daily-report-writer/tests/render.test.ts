@@ -123,7 +123,8 @@ describe('renderDailyReport', () => {
 
   it('renders the telegram summary with the configured top count', () => {
     const { telegram } = renderDailyReport(input());
-    expect(telegram.markdown).toContain('*AI GitHub Daily* — 2026-09-18');
+    expect(telegram.markdown).toContain('AI GitHub Daily — 2026-09-18');
+    expect(telegram.markdown).not.toContain('*'); // parse_mode 없이 보내므로 서식 문자 없음
     expect(telegram.markdown).toContain('1. acme/agent-kit +210⭐');
     expect(telegram.markdown).toContain('🆕 신규 1개 · 수집 347개');
     expect(telegram.markdown).toContain('• acme/agent-kit');

@@ -24,6 +24,9 @@ export const EnvSchema = z.object({
   GITHUB_MAX_RATE_LIMIT_WAIT_MS: z.coerce.number().int().min(0).default(90_000),
   /** 실행 기준 시간대 (날짜 계산) */
   AGS_TIMEZONE: z.string().default('Asia/Seoul'),
+  /** Telegram 알림 (없으면 알림을 건너뛴다) */
+  TELEGRAM_BOT_TOKEN: optionalString,
+  TELEGRAM_CHAT_ID: optionalString,
   AGS_DATA_DIR: optionalString,
   AGS_ROOT: optionalString,
 });

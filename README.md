@@ -3,7 +3,7 @@
 AI 관련 GitHub Repository 트렌드를 매일 수집하고, Study 후보를 선정해 Claude Cowork가 Study 초안을 작성하는 시스템.
 이 Repository는 **Claude Custom Skill의 Source of Truth**이며, 운영용 Skill은 ZIP으로 빌드해 Claude에 업로드한다.
 
-> 현재 단계: **Phase 4 진행 중** — Skill 7개 완료, Cowork → GitHub Actions 전달(Gist 경유) 구현
+> 현재 단계: **Phase 5** — 매일 06:00 자동 실행(GitHub Actions) + Telegram 알림. Study 초안은 필요할 때 Cowork 에 요청
 
 ## 역할 분담
 
@@ -40,6 +40,7 @@ src/core/               types.ts(공통 타입), config.ts, env.ts, schema.ts(Aj
 src/adapters/           github.ts — adapter 인터페이스 + Fixture 구현
                         github-rest.ts — GitHub REST 클라이언트 (검색·조회·쓰기·rate limit·재시도)
                         gist.ts — Gist 업로드 + repository_dispatch (Handoff)
+                        telegram.ts — Telegram 알림 (재시도·길이 제한)
 skills/{name}/
   SKILL.md              Claude가 읽는 지침 (frontmatter name = 디렉터리명)
   skill.json            빌드/테스트 메타데이터 (ZIP 제외)
@@ -50,9 +51,10 @@ templates/              daily-report / study / study-pr / telegram-daily
 data/                   registry.json, study-queue.json, snapshots/
 reports/daily/, studies/  GitHub Actions가 채우는 산출물
 tests/                  공통 테스트 (schema·config), fixtures/
-scripts/                discover.ts, demo.ts, registry.ts, bundle.ts, handoff.ts, apply-bundle.ts,
+scripts/                daily.ts, notify.ts, discover.ts, demo.ts, registry.ts, bundle.ts, handoff.ts, apply-bundle.ts,
                         test-skills.ts, build-skills.ts, lib/skill-package.ts
-.github/workflows/      daily-bundle.yml — 번들 수신 → 커밋 → PR → Gist 삭제
+.github/workflows/      daily.yml — 06:00 수집·리포트·커밋·알림
+                        daily-bundle.yml — Cowork 번들 수신 → 커밋 → PR → Gist 삭제
 output/                 로컬 실행 결과 (git 제외): discovery/, demo/, local-data/
 .env.example            환경변수 예시 (.env 는 git 제외)
 ```
@@ -81,6 +83,7 @@ cp .env.example .env      # GITHUB_TOKEN 입력 (공개 저장소 읽기 전용 
 | `GITHUB_TOKEN` | GitHub 토큰. 비우면 비인증 호출 (검색 분당 10회, 일반 API 시간당 60회) | 없음 |
 | `AGS_DATA_DIR` | Snapshot/Registry 위치. 로컬은 `output/local-data` 권장 (`data/`는 운영용) | `data` |
 | `AGS_TIMEZONE` | 실행 날짜 기준 시간대 | `Asia/Seoul` |
+| `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | Telegram 알림. 없으면 알림을 건너뛴다 | 없음 |
 | `GITHUB_MAX_RETRIES` 등 | 재시도·타임아웃·rate limit 대기 한도 (`.env.example` 참고) | — |
 
 셸에 이미 `export` 된 환경변수는 `.env` 값보다 우선한다.
@@ -98,6 +101,8 @@ npm run registry      # 로컬 Registry 조회 / Study 적합성 수동 판정
 npm run bundle        # output/demo 산출물 → DailyBundle 조립·검증
 npm run handoff       # 번들을 비공개 Gist 에 올리고 repository_dispatch 발송
 npm run apply-bundle  # (Actions 용) 번들을 저장소 파일로 반영
+npm run daily         # 수집~리포트 한 번에 (Actions 가 매일 실행)
+npm run notify        # Telegram 알림 (토큰 없으면 건너뜀)
 
 # 일부 Skill만
 npm run test:skills -- --only github-star-analyzer
@@ -188,6 +193,29 @@ github-star-analyzer.zip
 | Study 파일/브랜치 이름 | 소문자 + `owner__name` (`src/core/slug.ts`, 스키마에서 강제) |
 | AI 무관 저장소 | 명확한 것은 제외 목록, 애매한 것은 researcher가 Study 적합성 판정 → Registry `studyability` 저장 → selector `skipped_not_studyable` + 다음 후보 승격 |
 
+## 매일 자동 실행 (GitHub Actions)
+
+```
+06:00 KST (cron '0 21 * * *')
+  npm run daily      수집 → Star 분석 → Study 후보 선정 → 리포트 렌더링 → 파일 반영
+  git commit         data/(snapshot·registry·queue) + reports/daily/{date}.md
+  npm run notify     Telegram 요약 (실패하면 실패 알림)
+```
+
+- 워크플로: `.github/workflows/daily.yml` (수동 실행 시 `date`, `dry_run` 입력 가능)
+- 노트북이 꺼져 있어도 동작한다. Claude 가 필요 없는 결정적 단계만 돌기 때문이다.
+- Study 초안(조사 → 문체 → 작성)은 Claude 가 필요하므로 Cowork 에서 요청해 만들고, `.github/workflows/daily-bundle.yml` 로 반영한다.
+
+### 필요한 Secret
+
+| 이름 | 용도 | 없으면 |
+|---|---|---|
+| `TELEGRAM_BOT_TOKEN` | 알림 발송 | 알림만 건너뛴다 (실행은 정상) |
+| `TELEGRAM_CHAT_ID` | 알림 대상 | 〃 |
+| `HANDOFF_TOKEN` | Cowork 가 보낸 Gist 수신·삭제 | daily-bundle 워크플로만 실패 |
+
+수집은 Actions 기본 토큰(`GITHUB_TOKEN`)으로 하므로 별도 토큰이 필요 없다.
+
 ## Cowork → GitHub Actions 전달 (Gist 경유)
 
 ```
@@ -261,5 +289,9 @@ study-candidate-selector (selected)
 - [ ] Phase 4 — Handoff (Cowork → GitHub Actions), Actions workflow, Registry 갱신
   - [x] Gist 경유 Handoff (bundle / handoff / apply-bundle)
   - [x] daily-bundle.yml (커밋 · Study PR · Gist 삭제)
-  - [ ] 실제 저장소에서 1회 실행 검증
-- [ ] Phase 5 — PR 생성, Telegram 알림, Cowork Scheduled Task 연결
+  - [x] 실제 저장소에서 1회 실행 검증
+- [ ] Phase 5 — 자동 실행과 알림
+  - [x] npm run daily (수집~리포트 한 번에)
+  - [x] Telegram 알림 (성공 요약 / 실패 경고)
+  - [x] daily.yml cron 06:00 KST
+  - [ ] 실제 자동 실행 1회 확인
