@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-github-study.local/schemas/research-note.schema.json",
+  "title": "ResearchNote",
+  "description": "github-researcher 출력. 모든 주장은 sources 의 id 를 참조한다",
+  "type": "object",
+  "required": [
+    "repository",
+    "studyability",
+    "researchedAt"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "repository": {
+      "$ref": "repository.schema.json#/$defs/repositoryId"
+    },
+    "studyability": {
+      "$ref": "registry.schema.json#/$defs/studyability"
+    },
+    "researchedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 400
+    },
+    "problem": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "architecture": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "role",
+          "sourceIds"
+        ],
+        "properties": {
+          "component": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          },
+          "sourceIds": {
+            "$ref": "#/$defs/sourceIds"
+          }
+        }
+      }
+    },
+    "keyFeatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "detail",
+          "sourceIds"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          },
+          "sourceIds": {
+            "$ref": "#/$defs/sourceIds"
+          }
+        }
+      }
+    },
+    "gettingStarted": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "install",
+            "sourceIds"
+          ],
+          "properties": {
+            "install": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 400
+            },
+            "minimalExample": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 2000
+            },
+            "language": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sourceIds": {
+              "$ref": "#/$defs/sourceIds"
+            }
+          }
+        }
+      ]
+    },
+    "recentReleases": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "date",
+          "highlights",
+          "sourceIds"
+        ],
+        "properties": {
+          "version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "date": {
+            "$ref": "repository.schema.json#/$defs/isoDate"
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            }
+          },
+          "sourceIds": {
+            "$ref": "#/$defs/sourceIds"
+          }
+        }
+      }
+    },
+    "communitySignals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "topic",
+          "sourceIds"
+        ],
+        "properties": {
+          "topic": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "detail": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 400
+          },
+          "sourceIds": {
+            "$ref": "#/$defs/sourceIds"
+          }
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim",
+          "sourceIds"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          },
+          "sourceIds": {
+            "$ref": "#/$defs/sourceIds"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "point",
+          "sourceIds"
+        ],
+        "properties": {
+          "point": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          },
+          "sourceIds": {
+            "$ref": "#/$defs/sourceIds"
+          }
+        }
+      }
+    },
+    "openQuestions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 300
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    }
+  },
+  "if": {
+    "type": "object",
+    "required": [
+      "studyability"
+    ],
+    "properties": {
+      "studyability": {
+        "type": "object",
+        "properties": {
+          "studyable": {
+            "const": true
+          }
+        }
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "summary",
+      "problem",
+      "keyFeatures",
+      "facts",
+      "sources",
+      "openQuestions"
+    ],
+    "properties": {
+      "summary": {
+        "type": "string"
+      },
+      "problem": {
+        "type": "string"
+      },
+      "openQuestions": {
+        "type": "array"
+      },
+      "keyFeatures": {
+        "type": "array",
+        "minItems": 1
+      },
+      "facts": {
+        "type": "array",
+        "minItems": 3
+      },
+      "sources": {
+        "type": "array",
+        "minItems": 2
+      }
+    },
+    "type": "object"
+  },
+  "else": {
+    "description": "Study 대상이 아니면 조사 없이 판정만 반환한다"
+  },
+  "$defs": {
+    "sourceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^s[0-9]+$"
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^s[0-9]+$"
+        },
+        "type": {
+          "enum": [
+            "readme",
+            "docs",
+            "website",
+            "release",
+            "issues",
+            "discussions",
+            "code",
+            "paper",
+            "blog"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        }
+      }
+    }
+  }
+}

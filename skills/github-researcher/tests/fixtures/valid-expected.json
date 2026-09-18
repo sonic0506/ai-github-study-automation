@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "stats": {
+    "facts": 3,
+    "sources": 4,
+    "referencedSources": 4,
+    "sourceTypes": [
+      "docs",
+      "issues",
+      "readme",
+      "release"
+    ]
+  }
+}

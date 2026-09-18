@@ -1,0 +1,137 @@
+{
+  "repository": "owner/name",
+  "studyability": {
+    "studyable": true,
+    "category": "library",
+    "reason": "pip로 설치해 코드에서 사용하는 LLM 애플리케이션 라이브러리",
+    "checkedAt": "2026-09-18"
+  },
+  "researchedAt": "2026-09-18T06:10:00+09:00",
+  "summary": "LLM 애플리케이션에서 도구 호출과 상태 관리를 담당하는 파이썬 라이브러리",
+  "problem": "에이전트마다 도구 연동 코드를 새로 작성해야 해서 중복이 발생한다",
+  "architecture": [
+    {
+      "component": "Runtime",
+      "role": "도구 호출 순서와 재시도를 관리함",
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "component": "Adapter",
+      "role": "외부 API를 도구 형태로 감쌈",
+      "sourceIds": [
+        "s2"
+      ]
+    }
+  ],
+  "keyFeatures": [
+    {
+      "name": "도구 등록",
+      "detail": "함수에 데코레이터를 붙이면 도구 목록에 추가됨",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "name": "스트리밍 응답",
+      "detail": "0.4 버전부터 지원한다고 함",
+      "sourceIds": [
+        "s3"
+      ]
+    }
+  ],
+  "gettingStarted": {
+    "install": "pip install example-agent",
+    "minimalExample": "from example_agent import Agent\n\nagent = Agent(tools=[search])\nagent.run(\"질문\")",
+    "language": "python",
+    "sourceIds": [
+      "s1"
+    ]
+  },
+  "recentReleases": [
+    {
+      "version": "v0.4.0",
+      "date": "2026-09-10",
+      "highlights": [
+        "스트리밍 응답 추가",
+        "재시도 정책 설정 가능"
+      ],
+      "sourceIds": [
+        "s3"
+      ]
+    }
+  ],
+  "communitySignals": [
+    {
+      "topic": "윈도우 환경 설치 오류 문의가 반복됨",
+      "detail": null,
+      "sourceIds": [
+        "s4"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "claim": "MIT 라이선스로 배포된다",
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "claim": "Python 3.10 이상을 요구한다",
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "claim": "v0.4.0이 2026-09-10에 공개되었다",
+      "sourceIds": [
+        "s3"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "point": "인증 기능을 자체 제공하지 않아 프록시 단에서 처리해야 함",
+      "sourceIds": [
+        "s2"
+      ]
+    }
+  ],
+  "openQuestions": [
+    "대규모 트래픽에서의 성능은 공개 자료에서 확인하지 못했다"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "type": "readme",
+      "url": "https://github.com/owner/name#readme",
+      "title": "README"
+    },
+    {
+      "id": "s2",
+      "type": "docs",
+      "url": "https://example.com/docs/architecture",
+      "title": "Architecture"
+    },
+    {
+      "id": "s3",
+      "type": "release",
+      "url": "https://github.com/owner/name/releases/tag/v0.4.0",
+      "title": "v0.4.0"
+    },
+    {
+      "id": "s4",
+      "type": "issues",
+      "url": "https://github.com/owner/name/issues",
+      "title": "Issues"
+    },
+    {
+      "id": "s1",
+      "type": "blog",
+      "url": "https://example.com/blog"
+    }
+  ]
+}

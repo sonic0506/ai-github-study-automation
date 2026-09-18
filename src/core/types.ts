@@ -121,6 +121,38 @@ export interface RankingHistory {
   top10Days: number;
 }
 
+/** github-researcher 출력 (schemas/research-note.schema.json) */
+export type SourceType = 'readme' | 'docs' | 'website' | 'release' | 'issues' | 'discussions' | 'code' | 'paper' | 'blog';
+
+export interface ResearchSource {
+  id: string; // s1, s2 …
+  type: SourceType;
+  url: string;
+  title?: string | null;
+}
+
+/** 출처를 참조하는 모든 항목의 공통 필드 */
+export interface Sourced {
+  sourceIds: string[];
+}
+
+export interface ResearchNote {
+  repository: RepositoryId;
+  studyability: Studyability;
+  researchedAt: IsoDateTime;
+  summary?: string;
+  problem?: string;
+  architecture?: (Sourced & { component: string; role: string })[];
+  keyFeatures?: (Sourced & { name: string; detail: string })[];
+  gettingStarted?: (Sourced & { install: string; minimalExample?: string | null; language?: string | null }) | null;
+  recentReleases?: (Sourced & { version: string; date: IsoDate; highlights: string[] })[];
+  communitySignals?: (Sourced & { topic: string; detail?: string | null })[];
+  facts?: (Sourced & { claim: string })[];
+  limitations?: (Sourced & { point: string })[];
+  openQuestions?: string[];
+  sources?: ResearchSource[];
+}
+
 export interface StudyDraft {
   repository: RepositoryId;
   branch: string;

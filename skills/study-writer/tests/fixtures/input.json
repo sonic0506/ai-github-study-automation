@@ -1,0 +1,157 @@
+{
+  "date": "2026-09-18",
+  "note": {
+    "repository": "browser-use/browser-use",
+    "studyability": {
+      "studyable": true,
+      "category": "library",
+      "reason": "pip 또는 uv로 설치해 코드에서 Agent 를 만들어 쓰는 파이썬 라이브러리",
+      "checkedAt": "2026-09-18"
+    },
+    "researchedAt": "2026-09-18T12:40:00+09:00",
+    "summary": "AI 에이전트가 브라우저를 직접 조작해 웹 작업을 수행하게 해 주는 파이썬 라이브러리",
+    "problem": "웹 서비스에 API가 없거나 화면을 거쳐야만 되는 작업은 에이전트가 자동화하기 어렵다",
+    "architecture": [
+      {
+        "component": "Agent",
+        "role": "작업 지시와 LLM 을 받아 브라우저 조작 단계를 수행함",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "component": "LLM 어댑터",
+        "role": "Claude, GPT, Gemini 등 여러 공급자를 같은 인터페이스로 연결함",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "keyFeatures": [
+      {
+        "name": "브라우저 조작",
+        "detail": "클릭, 폼 입력, 데이터 추출을 사람이 하듯 수행함",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "여러 LLM 지원",
+        "detail": "Claude, GPT, Gemini 및 직접 정의한 모델을 사용할 수 있음",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "사용자 정의 도구",
+        "detail": "데코레이터로 직접 만든 도구를 에이전트에 추가할 수 있음",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "브라우저 프로필 인증",
+        "detail": "브라우저 프로필을 사용해 로그인 상태를 유지함",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "gettingStarted": {
+      "install": "uv add browser-use",
+      "minimalExample": "import asyncio\nfrom browser_use import Agent, ChatBrowserUse\n\nasync def main():\n    agent = Agent(\n        task=\"Find the number of stars of the browser-use repo\",\n        llm=ChatBrowserUse(model='openai/gpt-5.5'),\n    )\n    history = await agent.run()\n\nasyncio.run(main())",
+      "language": "python",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "communitySignals": [
+      {
+        "topic": "Release 노트에 코딩 에이전트용 skill 설치 기능(browser-use skill)이 추가됨",
+        "detail": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "facts": [
+      {
+        "claim": "MIT 라이선스로 배포된다",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "Python 3.11 이상을 요구한다",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "설치는 uv add browser-use 또는 pip install browser-use 로 한다",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "README는 Odysseys 벤치마크에서 평균 정확도 87.4%로 1위라고 밝히고 있다",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "claim": "0.13.3 릴리스에서 Browser Use CLI 3.0이 공개되었다",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "point": "CAPTCHA 처리는 자체 클라우드 서비스의 stealth 브라우저를 사용해야 한다고 안내함",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "point": "병렬 실행을 늘릴 때 Chrome 메모리 사용량을 고려해야 한다고 함",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "openQuestions": [
+      "최근 릴리스의 정확한 공개 날짜는 조회 결과가 일관되지 않아 확인하지 못했다",
+      "벤치마크 수치(87.4%)의 측정 조건은 README 밖의 자료에서 확인하지 못했다",
+      "Issues에서 반복되는 문의 주제는 이번 조사에서 확인하지 못했다"
+    ],
+    "sources": [
+      {
+        "id": "s1",
+        "type": "readme",
+        "url": "https://github.com/browser-use/browser-use#readme",
+        "title": "browser-use README"
+      },
+      {
+        "id": "s2",
+        "type": "release",
+        "url": "https://github.com/browser-use/browser-use/releases",
+        "title": "Releases"
+      }
+    ]
+  },
+  "repository": {
+    "repository": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 114886,
+    "delta24h": 320
+  },
+  "candidate": {
+    "priority": 52.41,
+    "reasons": [
+      "growth_24h: +320 stars",
+      "repeated_top10: 3/7 days",
+      "total_stars: 114886"
+    ]
+  }
+}

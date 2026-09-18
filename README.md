@@ -3,7 +3,7 @@
 AI 관련 GitHub Repository 트렌드를 매일 수집하고, Study 후보를 선정해 Claude Cowork가 Study 초안을 작성하는 시스템.
 이 Repository는 **Claude Custom Skill의 Source of Truth**이며, 운영용 Skill은 ZIP으로 빌드해 Claude에 업로드한다.
 
-> 현재 단계: **Phase 3 진행 중** — discovery 실검색 + Daily Report 렌더링 완료
+> 현재 단계: **Phase 3 완료** — 7개 Skill 구현 완료 (조사·문체·작성 흐름 포함)
 
 ## 역할 분담
 
@@ -32,7 +32,8 @@ github-ai-discovery ──► github-star-analyzer ──► study-candidate-sel
 
 ```
 config/                 discovery.yml, study-policy.yml, report.yml (Zod로 검증)
-schemas/                repository / ranking / study-queue / snapshot / registry / daily-bundle (JSON Schema 2020-12)
+schemas/                repository / ranking / study-queue / snapshot / registry / research-note / daily-bundle
+                        (JSON Schema 2020-12)
 src/core/               types.ts(공통 타입), config.ts, env.ts, schema.ts(Ajv), paths.ts, json-io.ts,
                         slug.ts, dates.ts, registry.ts, local-store.ts, template.ts(Markdown 렌더러)
 src/adapters/           github.ts — adapter 인터페이스 + Fixture 구현
@@ -59,10 +60,10 @@ output/                 로컬 실행 결과 (git 제외): discovery/, demo/, lo
 | github-ai-discovery | generative | **GitHub 실검색 구현** | `scripts/discover.mjs`, `scripts/normalize.mjs` |
 | github-star-analyzer | deterministic | **구현 완료** | `scripts/analyze.mjs` |
 | study-candidate-selector | deterministic | **구현 완료** | `scripts/select.mjs` |
-| github-researcher | generative | 적합성 판정 확정, 조사 본체는 골격 | — |
-| my-writing-style | generative | 골격 (style 리소스 TODO) | — |
+| github-researcher | generative | **구현 완료** (조사 + 검증) | `scripts/validate.mjs` |
+| my-writing-style | generative | **구현 완료** (사용자 글 6편 기반) | — |
 | daily-report-writer | deterministic | **구현 완료** | `scripts/render.mjs` |
-| study-writer | generative | 골격 | — |
+| study-writer | deterministic | **구현 완료** | `scripts/render.mjs` |
 
 ## 환경 설정
 
@@ -154,8 +155,8 @@ npx tsx skills/study-candidate-selector/scripts/cli.ts skills/study-candidate-se
 
 | 구분 | 대상 | 방법 |
 |---|---|---|
-| Deterministic | star-analyzer, candidate-selector, daily-report-writer, schema | Vitest unit test (신규/증가 0/감소/중복/후보 부족/Study 존재/PR 열림/동점/입력 오류) + 번들 CLI golden 비교 |
-| Generative | discovery, researcher, writing-style, study-writer | `tests/rubric.md`(★ 필수 기준) + `tests/fixtures/` — 문자열 Snapshot 비교 안 함 |
+| Deterministic | star-analyzer, candidate-selector, daily-report-writer, study-writer, schema | Vitest unit test (신규/증가 0/감소/중복/후보 부족/Study 존재/PR 열림/동점/입력 오류) + 번들 CLI golden 비교 |
+| Generative | discovery, researcher, writing-style | `tests/rubric.md`(★ 필수 기준) + `tests/fixtures/` — 문자열 Snapshot 비교 안 함 |
 
 `test:skills`는 staging(업로드 형태) 디렉터리에서 CLI를 실행하므로, Skill이 로컬 프로젝트 파일에 의존하지 않는지 함께 검증한다.
 
@@ -180,6 +181,20 @@ github-star-analyzer.zip
 | Study 파일/브랜치 이름 | 소문자 + `owner__name` (`src/core/slug.ts`, 스키마에서 강제) |
 | AI 무관 저장소 | 명확한 것은 제외 목록, 애매한 것은 researcher가 Study 적합성 판정 → Registry `studyability` 저장 → selector `skipped_not_studyable` + 다음 후보 승격 |
 
+## Study 작성 흐름
+
+```
+study-candidate-selector (selected)
+  → github-researcher   1) Study 적합성 판정 → 대상 아니면 중단하고 다음 후보 승격
+                        2) README·문서·Release·Issues 조사 → Research Note(JSON)
+                        3) node scripts/validate.mjs 로 출처 참조 검사 (ok: true 필수)
+  → my-writing-style    문장만 사용자 문체로 변환 (숫자·출처·판정은 불변)
+  → study-writer        Study Markdown + PR 본문 (branch/path 는 소문자 slug)
+```
+
+- Research Note의 모든 주장에는 `sourceIds`가 붙고, 검증 스크립트가 없는 출처·중복 id·스키마 위반을 잡는다.
+- 확인하지 못한 내용은 `openQuestions`로 남고, Study 문서의 "더 알아볼 것"과 PR 본문에 그대로 표시된다.
+
 ## 설정 변경
 
 - `config/discovery.yml`: topics, minimum_stars, 검색 옵션, ranking(top_n, growth_min_delta)
@@ -199,6 +214,8 @@ github-star-analyzer.zip
   - [x] discovery 실검색 (REST 클라이언트, 신규 보완 검색, 등록 저장소 추적, env 설정)
   - [x] AI 무관 저장소 필터 (제외 목록 + Study 적합성 판정)
   - [x] daily-report-writer 렌더러 (Markdown 템플릿 + Telegram 요약)
-  - [ ] researcher → writing-style → study-writer
+  - [x] github-researcher (Research Note 스키마 + 출처 검증 스크립트)
+  - [x] my-writing-style (사용자 글 6편에서 뽑은 style-guide / anti-patterns)
+  - [x] study-writer (Study Markdown + PR 본문 렌더링)
 - [ ] Phase 4 — Handoff (Cowork → GitHub Actions), Actions workflow, Registry 갱신
 - [ ] Phase 5 — PR 생성, Telegram 알림, Cowork Scheduled Task 연결

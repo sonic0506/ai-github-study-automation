@@ -1,0 +1,10 @@
+{
+  "repository": "Snailclimb/JavaGuide",
+  "studyability": {
+    "studyable": false,
+    "category": "interview-guide",
+    "reason": "Java 백엔드 면접 대비 문서 모음으로 설치해서 쓰는 코드가 아님",
+    "checkedAt": "2026-09-18"
+  },
+  "researchedAt": "2026-09-18T06:05:00+09:00"
+}

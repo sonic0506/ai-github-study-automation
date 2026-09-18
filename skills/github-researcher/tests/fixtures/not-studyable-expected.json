@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "stats": {
+    "facts": 0,
+    "sources": 0,
+    "referencedSources": 0,
+    "sourceTypes": []
+  }
+}

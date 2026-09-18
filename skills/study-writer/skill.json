@@ -1,10 +1,51 @@
 {
   "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.",
-  "kind": "generative",
-  "entries": [],
-  "bundle": [
-    { "from": "templates/study.md", "to": "resources/study.md" },
-    { "from": "templates/study-pr.md", "to": "resources/study-pr.md" }
+  "kind": "deterministic",
+  "entries": [
+    {
+      "source": "scripts/cli.ts",
+      "output": "scripts/render.mjs"
+    }
   ],
-  "cliTests": []
+  "bundle": [
+    {
+      "from": "templates/study.md",
+      "to": "resources/study.md"
+    },
+    {
+      "from": "templates/study-pr.md",
+      "to": "resources/study-pr.md"
+    },
+    {
+      "from": "schemas/research-note.schema.json",
+      "to": "resources/schemas/research-note.schema.json"
+    },
+    {
+      "from": "schemas/daily-bundle.schema.json",
+      "to": "resources/schemas/daily-bundle.schema.json"
+    },
+    {
+      "from": "schemas/repository.schema.json",
+      "to": "resources/schemas/repository.schema.json"
+    },
+    {
+      "from": "schemas/registry.schema.json",
+      "to": "resources/schemas/registry.schema.json"
+    },
+    {
+      "from": "schemas/ranking.schema.json",
+      "to": "resources/schemas/ranking.schema.json"
+    },
+    {
+      "from": "schemas/study-queue.schema.json",
+      "to": "resources/schemas/study-queue.schema.json"
+    }
+  ],
+  "cliTests": [
+    {
+      "entry": "scripts/render.mjs",
+      "input": "tests/fixtures/input.json",
+      "expected": "tests/fixtures/expected-output.json"
+    }
+  ]
 }

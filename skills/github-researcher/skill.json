@@ -1,7 +1,46 @@
 {
   "$comment": "빌드/테스트 메타데이터. ZIP에는 포함되지 않는다.",
   "kind": "generative",
-  "entries": [],
-  "bundle": [{ "from": "schemas/registry.schema.json", "to": "resources/schemas/registry.schema.json" }],
-  "cliTests": []
+  "entries": [
+    {
+      "source": "scripts/cli.ts",
+      "output": "scripts/validate.mjs"
+    }
+  ],
+  "bundle": [
+    {
+      "from": "schemas/repository.schema.json",
+      "to": "resources/schemas/repository.schema.json"
+    },
+    {
+      "from": "schemas/registry.schema.json",
+      "to": "resources/schemas/registry.schema.json"
+    },
+    {
+      "from": "schemas/research-note.schema.json",
+      "to": "resources/schemas/research-note.schema.json"
+    }
+  ],
+  "cliTests": [
+    {
+      "entry": "scripts/validate.mjs",
+      "input": "tests/fixtures/valid-note.json",
+      "expected": "tests/fixtures/valid-expected.json"
+    },
+    {
+      "entry": "scripts/validate.mjs",
+      "input": "tests/fixtures/not-studyable-note.json",
+      "expected": "tests/fixtures/not-studyable-expected.json"
+    }
+  ],
+  "fixtureSchemas": [
+    {
+      "file": "tests/fixtures/valid-note.json",
+      "schema": "research-note.schema.json"
+    },
+    {
+      "file": "tests/fixtures/not-studyable-note.json",
+      "schema": "research-note.schema.json"
+    }
+  ]
 }
