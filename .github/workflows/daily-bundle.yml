@@ -33,6 +33,21 @@ jobs:
       FILENAME: ${{ github.event.client_payload.filename || inputs.filename }}
       CHECKSUM: ${{ github.event.client_payload.checksum || inputs.checksum }}
     steps:
+      - name: 사전 점검
+        env:
+          HANDOFF_TOKEN: ${{ secrets.HANDOFF_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${HANDOFF_TOKEN}" ]; then
+            echo "::error::HANDOFF_TOKEN 시크릿이 비어 있습니다. Settings → Secrets and variables → Actions → Repository secrets 에 Gists read & write 권한 토큰을 HANDOFF_TOKEN 이름으로 등록하세요."
+            exit 1
+          fi
+          if [ -z "${GIST_ID}" ] || [ -z "${FILENAME}" ]; then
+            echo "::error::gist_id 또는 filename 이 비어 있습니다 (client_payload 확인)."
+            exit 1
+          fi
+          echo "gist=${GIST_ID} file=${FILENAME}"
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -47,7 +62,15 @@ jobs:
           GH_TOKEN: ${{ secrets.HANDOFF_TOKEN }}   # Gists read & write
         run: |
           set -euo pipefail
-          gh api "gists/${GIST_ID}" --jq ".files[\"${FILENAME}\"].content" > bundle.json
+          if ! gh api "gists/${GIST_ID}" > gist.json; then
+            echo "::error::Gist 를 읽지 못했습니다. HANDOFF_TOKEN 이 Gist 를 만든 계정의 토큰인지, Gists read & write 권한이 있는지 확인하세요."
+            exit 1
+          fi
+          jq -r --arg f "${FILENAME}" '.files[$f].content // empty' gist.json > bundle.json
+          if [ ! -s bundle.json ]; then
+            echo "::error::Gist 에 ${FILENAME} 파일이 없거나 내용이 비어 있습니다. 포함된 파일: $(jq -r '.files | keys | join(\", \")' gist.json)"
+            exit 1
+          fi
           echo "번들 $(wc -c < bundle.json) bytes"
 
       - name: 번들 검증 및 반영
