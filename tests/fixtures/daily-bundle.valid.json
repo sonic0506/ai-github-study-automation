@@ -494,11 +494,11 @@
   ],
   "studyabilityUpdates": [
     {
-      "repository": "Snailclimb/JavaGuide",
+      "repository": "quanta/prompt-lab",
       "studyability": {
         "studyable": false,
-        "category": "interview-guide",
-        "reason": "Java 백엔드 면접 대비 문서 모음으로 라이브러리/도구가 아님",
+        "category": "tutorial",
+        "reason": "프롬프트 예제를 모아 둔 학습 자료로 설치해서 쓰는 코드가 아님",
         "checkedAt": "2026-09-17"
       }
     }

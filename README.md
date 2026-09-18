@@ -3,7 +3,7 @@
 AI 관련 GitHub Repository 트렌드를 매일 수집하고, Study 후보를 선정해 Claude Cowork가 Study 초안을 작성하는 시스템.
 이 Repository는 **Claude Custom Skill의 Source of Truth**이며, 운영용 Skill은 ZIP으로 빌드해 Claude에 업로드한다.
 
-> 현재 단계: **Phase 3 완료** — 7개 Skill 구현 완료 (조사·문체·작성 흐름 포함)
+> 현재 단계: **Phase 4 진행 중** — Skill 7개 완료, Cowork → GitHub Actions 전달(Gist 경유) 구현
 
 ## 역할 분담
 
@@ -35,9 +35,11 @@ config/                 discovery.yml, study-policy.yml, report.yml (Zod로 검�
 schemas/                repository / ranking / study-queue / snapshot / registry / research-note / daily-bundle
                         (JSON Schema 2020-12)
 src/core/               types.ts(공통 타입), config.ts, env.ts, schema.ts(Ajv), paths.ts, json-io.ts,
-                        slug.ts, dates.ts, registry.ts, local-store.ts, template.ts(Markdown 렌더러)
+                        slug.ts, dates.ts, registry.ts, local-store.ts, template.ts(Markdown 렌더러),
+                        bundle.ts(DailyBundle 조립·검증), apply-bundle.ts(파일 반영)
 src/adapters/           github.ts — adapter 인터페이스 + Fixture 구현
-                        github-rest.ts — GitHub REST 클라이언트 (검색·조회·페이지·rate limit·재시도)
+                        github-rest.ts — GitHub REST 클라이언트 (검색·조회·쓰기·rate limit·재시도)
+                        gist.ts — Gist 업로드 + repository_dispatch (Handoff)
 skills/{name}/
   SKILL.md              Claude가 읽는 지침 (frontmatter name = 디렉터리명)
   skill.json            빌드/테스트 메타데이터 (ZIP 제외)
@@ -48,7 +50,9 @@ templates/              daily-report / study / study-pr / telegram-daily
 data/                   registry.json, study-queue.json, snapshots/
 reports/daily/, studies/  GitHub Actions가 채우는 산출물
 tests/                  공통 테스트 (schema·config), fixtures/
-scripts/                discover.ts, demo.ts, registry.ts, test-skills.ts, build-skills.ts, lib/skill-package.ts
+scripts/                discover.ts, demo.ts, registry.ts, bundle.ts, handoff.ts, apply-bundle.ts,
+                        test-skills.ts, build-skills.ts, lib/skill-package.ts
+.github/workflows/      daily-bundle.yml — 번들 수신 → 커밋 → PR → Gist 삭제
 output/                 로컬 실행 결과 (git 제외): discovery/, demo/, local-data/
 .env.example            환경변수 예시 (.env 는 git 제외)
 ```
@@ -91,6 +95,9 @@ npm run typecheck     # tsc --noEmit
 npm run demo          # fixture로 분석→선정 실행, 결과를 표로 출력 + output/demo/*.json 저장
 npm run discover      # 실제 GitHub 수집 → output/discovery/{date}.json
 npm run registry      # 로컬 Registry 조회 / Study 적합성 수동 판정
+npm run bundle        # output/demo 산출물 → DailyBundle 조립·검증
+npm run handoff       # 번들을 비공개 Gist 에 올리고 repository_dispatch 발송
+npm run apply-bundle  # (Actions 용) 번들을 저장소 파일로 반영
 
 # 일부 Skill만
 npm run test:skills -- --only github-star-analyzer
@@ -181,6 +188,40 @@ github-star-analyzer.zip
 | Study 파일/브랜치 이름 | 소문자 + `owner__name` (`src/core/slug.ts`, 스키마에서 강제) |
 | AI 무관 저장소 | 명확한 것은 제외 목록, 애매한 것은 researcher가 Study 적합성 판정 → Registry `studyability` 저장 → selector `skipped_not_studyable` + 다음 후보 승격 |
 
+## Cowork → GitHub Actions 전달 (Gist 경유)
+
+```
+Cowork                                   GitHub Actions (.github/workflows/daily-bundle.yml)
+  npm run bundle    DailyBundle 조립·검증
+  npm run handoff   ① 비공개 Gist 업로드
+                    ② repository_dispatch  ──▶ ③ Gist 에서 번들 수신 (checksum 확인)
+                       (주소·체크섬만 전달)      ④ Snapshot/Registry/Queue/Report 커밋
+                                                ⑤ Study 초안별 branch + PR
+                                                ⑥ Gist 삭제
+```
+
+`client_payload` 에는 주소와 체크섬만 담기므로(약 300바이트) 번들 크기 제한을 받지 않는다.
+
+### 필요한 토큰
+
+| 위치 | 권한 | 용도 |
+|---|---|---|
+| Cowork `.env`의 `GITHUB_TOKEN` | Gists: read & write, 대상 저장소 Contents: read & write | Gist 업로드, dispatch 발송 |
+| 저장소 Secret `HANDOFF_TOKEN` | Gists: read & write | Actions 가 Gist 를 받고 삭제 |
+| (자동) `GITHUB_TOKEN` | workflow 의 contents/pull-requests write | 커밋·PR 생성 |
+
+저장소 Settings → Actions → General 에서 "Allow GitHub Actions to create and approve pull requests"를 켜야 PR 이 생성된다.
+
+### 하루 실행 순서
+
+```bash
+npm run discover
+npm run demo -- --input output/discovery/<날짜>.analyzer-input.json --save
+npm run bundle
+npm run handoff -- --bundle output/bundle/<날짜>.json --repo sonic0506/ai-github-study-automation --dry-run
+npm run handoff -- --bundle output/bundle/<날짜>.json --repo sonic0506/ai-github-study-automation
+```
+
 ## Study 작성 흐름
 
 ```
@@ -218,4 +259,7 @@ study-candidate-selector (selected)
   - [x] my-writing-style (사용자 글 6편에서 뽑은 style-guide / anti-patterns)
   - [x] study-writer (Study Markdown + PR 본문 렌더링)
 - [ ] Phase 4 — Handoff (Cowork → GitHub Actions), Actions workflow, Registry 갱신
+  - [x] Gist 경유 Handoff (bundle / handoff / apply-bundle)
+  - [x] daily-bundle.yml (커밋 · Study PR · Gist 삭제)
+  - [ ] 실제 저장소에서 1회 실행 검증
 - [ ] Phase 5 — PR 생성, Telegram 알림, Cowork Scheduled Task 연결

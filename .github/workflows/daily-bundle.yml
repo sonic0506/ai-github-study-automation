@@ -1,0 +1,120 @@
+name: Daily bundle
+
+# Cowork 가 비공개 Gist 에 DailyBundle 을 올린 뒤 repository_dispatch 로 주소를 보낸다.
+# client_payload: { gist_id, gist_raw_url, filename, date, run_id, checksum, bytes }
+on:
+  repository_dispatch:
+    types: [ai-github-study-daily]
+  workflow_dispatch:
+    inputs:
+      gist_id:
+        description: Gist id (수동 재실행용)
+        required: true
+      filename:
+        description: Gist 안의 파일 이름
+        required: true
+      checksum:
+        description: 번들 sha256 (선택)
+        required: false
+
+concurrency:
+  group: daily-bundle
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    env:
+      GIST_ID: ${{ github.event.client_payload.gist_id || inputs.gist_id }}
+      FILENAME: ${{ github.event.client_payload.filename || inputs.filename }}
+      CHECKSUM: ${{ github.event.client_payload.checksum || inputs.checksum }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Gist 에서 번들 내려받기
+        env:
+          GH_TOKEN: ${{ secrets.HANDOFF_TOKEN }}   # Gists read & write
+        run: |
+          set -euo pipefail
+          gh api "gists/${GIST_ID}" --jq ".files[\"${FILENAME}\"].content" > bundle.json
+          echo "번들 $(wc -c < bundle.json) bytes"
+
+      - name: 번들 검증 및 반영
+        run: |
+          set -euo pipefail
+          if [ -n "${CHECKSUM}" ]; then
+            npm run apply-bundle -- --file bundle.json --checksum "${CHECKSUM}"
+          else
+            npm run apply-bundle -- --file bundle.json
+          fi
+
+      - name: main 에 커밋
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data reports
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "chore: daily bundle $(jq -r .date bundle.json)"
+            git push
+          fi
+
+      - name: Study 초안 branch 와 PR 생성
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}    # PR 생성은 기본 토큰으로
+        run: |
+          set -euo pipefail
+          COUNT=$(jq '.studyDrafts | length' bundle.json)
+          echo "Study 초안 ${COUNT}개"
+          for i in $(seq 0 $((COUNT - 1))); do
+            BRANCH=$(jq -r ".studyDrafts[$i].branch" bundle.json)
+            TITLE=$(jq -r ".studyDrafts[$i].title" bundle.json)
+            jq -r ".studyDrafts[$i].prBody" bundle.json > pr-body.md
+
+            git checkout -B "$BRANCH" main
+            npm run apply-bundle -- --file bundle.json --draft "$i"
+            git add studies
+            if git diff --cached --quiet; then
+              echo "$BRANCH: 변경 없음, 건너뜀"
+              git checkout main
+              continue
+            fi
+            git commit -m "docs: $TITLE"
+            git push -u origin "$BRANCH" --force-with-lease
+
+            if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+              gh pr create --base main --head "$BRANCH" --title "$TITLE" --body-file pr-body.md
+            else
+              echo "$BRANCH: 열린 PR 이 이미 있음"
+            fi
+            git checkout main
+          done
+
+      - name: Gist 삭제
+        if: always() && env.GIST_ID != ''
+        env:
+          GH_TOKEN: ${{ secrets.HANDOFF_TOKEN }}
+        run: gh api -X DELETE "gists/${GIST_ID}" || echo "Gist 삭제 실패 (이미 삭제되었을 수 있음)"
+
+      - name: 요약
+        if: always()
+        run: |
+          {
+            echo "### Daily bundle"
+            echo "- date: $(jq -r .date bundle.json 2>/dev/null || echo '-')"
+            echo "- repositories: $(jq -r '.repositories | length' bundle.json 2>/dev/null || echo '-')"
+            echo "- study drafts: $(jq -r '.studyDrafts | length' bundle.json 2>/dev/null || echo '-')"
+          } >> "$GITHUB_STEP_SUMMARY"

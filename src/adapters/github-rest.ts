@@ -58,6 +58,17 @@ const SECONDARY_LIMIT_WAIT_MS = 60_000;
 
 type Params = Record<string, string | number>;
 
+export interface RequestOptions {
+  /** 쿼리 파라미터 */
+  params?: Params;
+  /** 기본 GET */
+  method?: 'GET' | 'POST' | 'PATCH' | 'DELETE';
+  /** JSON 본문 (POST/PATCH) */
+  body?: unknown;
+  /** 오류 대신 null 을 반환할 상태 코드 (예: 404) */
+  nullOn?: number[];
+}
+
 export class GitHubRestClient implements GitHubReadAdapter {
   readonly rateLimit: RateLimitState = { resource: null, limit: null, remaining: null, resetAt: null };
   requestCount = 0;
@@ -91,11 +102,7 @@ export class GitHubRestClient implements GitHubReadAdapter {
     const out: GitHubRepoItem[] = [];
     for (let page = 1; out.length < wanted; page++) {
       const res = await this.request<{ total_count: number; items: unknown[] }>('/search/repositories', {
-        q,
-        sort: 'stars',
-        order: 'desc',
-        per_page: perPage,
-        page,
+        params: { q, sort: 'stars', order: 'desc', per_page: perPage, page },
       });
       if (!res) break;
       const items = (res.items ?? []).map(pickRepo);
@@ -109,16 +116,14 @@ export class GitHubRestClient implements GitHubReadAdapter {
   async getRepository(fullName: string): Promise<GitHubRepoItem | null> {
     const [owner, name, ...rest] = fullName.split('/');
     if (!owner || !name || rest.length) throw new Error(`Invalid repository id: ${fullName}`);
-    const res = await this.request<unknown>(`/repos/${encodeURIComponent(owner)}/${encodeURIComponent(name)}`, {}, [
-      404, 451,
-    ]);
+    const res = await this.request<unknown>(`/repos/${encodeURIComponent(owner)}/${encodeURIComponent(name)}`, {
+      nullOn: [404, 451],
+    });
     return res ? pickRepo(res) : null;
   }
 
-  /**
-   * @param nullOn 이 상태 코드는 오류 대신 null 반환 (예: 404)
-   */
-  async request<T>(path: string, params: Params = {}, nullOn: number[] = []): Promise<T | null> {
+  async request<T>(path: string, options: RequestOptions = {}): Promise<T | null> {
+    const { params = {}, method = 'GET', body, nullOn = [] } = options;
     const url = new URL(path.replace(/^\//, ''), this.o.baseUrl.endsWith('/') ? this.o.baseUrl : `${this.o.baseUrl}/`);
     for (const [k, v] of Object.entries(params)) url.searchParams.set(k, String(v));
 
@@ -127,7 +132,12 @@ export class GitHubRestClient implements GitHubReadAdapter {
       let res: Response;
       try {
         this.requestCount++;
-        res = await this.o.fetch(url, { headers: this.headers(), signal: AbortSignal.timeout(this.o.timeoutMs) });
+        res = await this.o.fetch(url, {
+          method,
+          headers: body === undefined ? this.headers() : { ...this.headers(), 'Content-Type': 'application/json' },
+          body: body === undefined ? undefined : JSON.stringify(body),
+          signal: AbortSignal.timeout(this.o.timeoutMs),
+        });
       } catch (err) {
         if (attempt >= this.o.maxRetries) throw new GitHubApiError(0, path, `network error: ${(err as Error).message}`);
         await this.wait(path, backoff(attempt), `network error: ${(err as Error).message}`);
@@ -135,7 +145,7 @@ export class GitHubRestClient implements GitHubReadAdapter {
       }
 
       this.updateRateLimit(res.headers);
-      if (res.ok) return (await res.json()) as T;
+      if (res.ok) return res.status === 204 ? (null as T) : ((await res.json()) as T);
       if (nullOn.includes(res.status)) return null;
 
       const message = await readMessage(res);

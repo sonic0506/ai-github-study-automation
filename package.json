@@ -10,7 +10,10 @@
     "typecheck": "tsc --noEmit",
     "demo": "tsx scripts/demo.ts",
     "discover": "tsx scripts/discover.ts",
-    "registry": "tsx scripts/registry.ts"
+    "registry": "tsx scripts/registry.ts",
+    "bundle": "tsx scripts/bundle.ts",
+    "handoff": "tsx scripts/handoff.ts",
+    "apply-bundle": "tsx scripts/apply-bundle.ts"
   },
   "license": "UNLICENSED",
   "devDependencies": {
