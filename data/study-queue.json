@@ -1,6 +1,106 @@
 {
   "version": 1,
-  "date": "1970-01-01",
+  "date": "2026-09-18",
   "maxDailyDrafts": 3,
-  "candidates": []
+  "candidates": [
+    {
+      "repository": "affaan-m/ECC",
+      "priority": 23.57,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 261283"
+      ],
+      "status": "selected"
+    },
+    {
+      "repository": "NousResearch/hermes-agent",
+      "priority": 23.48,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 246608"
+      ],
+      "status": "selected"
+    },
+    {
+      "repository": "n8n-io/n8n",
+      "priority": 23.18,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 205077"
+      ],
+      "status": "selected"
+    },
+    {
+      "repository": "Significant-Gravitas/AutoGPT",
+      "priority": 23.04,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 187421"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "firecrawl/firecrawl",
+      "priority": 22.99,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 181735"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "ollama/ollama",
+      "priority": 22.98,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 181182"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "f/prompts.chat",
+      "priority": 22.89,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 170594"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "itshen/source-reading-methodology",
+      "priority": 22.88,
+      "reasons": [
+        "total_stars: 135",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "huggingface/transformers",
+      "priority": 22.85,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 166260"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "langgenius/dify",
+      "priority": 22.75,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 156210"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "langflow-ai/langflow",
+      "priority": 22.73,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 154959"
+      ],
+      "status": "queued"
+    }
+  ]
 }
