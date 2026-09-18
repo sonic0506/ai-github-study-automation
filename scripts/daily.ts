@@ -125,7 +125,7 @@ async function main(): Promise<void> {
   const selected = selectedRepositories(studyQueue);
   console.log(`
 ■ 결과
-  비교 기준 ${analysis.baseline ? `${analysis.baseline.date} (${analysis.baseline.gapDays}일 전)` : '없음 (첫 수집)'}
+  비교 기준 ${analysis.baseline ? `${analysis.baseline.date} (${analysis.baseline.gapDays}일 전)` : '없음 (이전 스냅샷 없음)'}
   신규 ${analysis.rankings.newlyDiscovered.length}개 · Growth ${analysis.rankings.growth24hTop10.length}개 · Study 후보 ${selected.length}개${selected.length ? ` (${selected.join(', ')})` : ''}
   기록: ${applied.written.join(', ')}
   알림 본문: ${rel(join(paths.output, 'notify', `${date}.md`))}

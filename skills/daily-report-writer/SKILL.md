@@ -47,7 +47,7 @@ node scripts/render.mjs input.json > report.json
 | 머리말 | 수집·신규·Study 개수, 비교 기준일 (`gapDays`가 2 이상이면 "N일 전"으로 표시) |
 | 24h Growth TOP | 순위, Star, 증가량, 설명. 증가분이 없으면 이유 문장 |
 | Total Stars TOP | 순위, Star, 증가량(`NEW` 포함), 설명 |
-| 신규 발견 | Star 순 상위 `newly_discovered_limit`개 + "외 N개". 첫 수집이면 안내 문구 |
+| 신규 발견 | Star 순 상위 `newly_discovered_limit`개 + "외 N개". 전부 신규인 첫 수집이면 안내 문구 |
 | 오늘의 Study | `selected` 후보만. 전체 Queue는 접이식 표 |
 
 설정: `resources/report.yml` (`newly_discovered_limit`, `description_max_length`, `telegram_growth_top`, `report_path`)

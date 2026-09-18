@@ -64,7 +64,7 @@ describe('helpers', () => {
   it('labels the baseline', () => {
     expect(baselineLabel({ date: '2026-09-17', gapDays: 1 })).toBe('2026-09-17 (전날)');
     expect(baselineLabel({ date: '2026-09-14', gapDays: 4 })).toBe('2026-09-14 (4일 전)');
-    expect(baselineLabel(null)).toMatch(/첫 수집/);
+    expect(baselineLabel(null)).toMatch(/이전 스냅샷 없음/);
   });
 });
 
@@ -100,12 +100,30 @@ describe('renderDailyReport', () => {
   });
 
   it('explains the first run instead of showing an empty growth table', () => {
+    const newly = [info('zen/new-agent', 1800, null), info('zen/new-tools', 900, null)];
     const md = renderDailyReport(
-      input({ baseline: null, rankings: { ...input().rankings, growth24hTop10: [] } }),
+      input({
+        baseline: null,
+        rankings: { totalStarsTop10: ranked(newly), growth24hTop10: [], newlyDiscovered: newly },
+        repositoryCount: 2,
+      }),
     ).dailyReport.markdown;
-    expect(md).toContain('비교할 이전 기록이 없어');
+    expect(md).toContain('비교할 이전 스냅샷이 없어');
     expect(md).toContain('첫 수집이라 모든 저장소가 신규로 잡혔다.');
     expect(md).not.toContain('| # | Repository | ⭐ Stars | Δ | 설명 |\n|---:|---|---:|---:|---|\n\n');
+  });
+
+  it('does not claim a first collection when the repositories are already known', () => {
+    // 같은 날짜 스냅샷만 있어 기준이 없는 재실행: 신규 0개인데 "첫 수집"이라고 하면 모순이다.
+    const md = renderDailyReport(
+      input({
+        baseline: null,
+        rankings: { ...input().rankings, growth24hTop10: [], newlyDiscovered: [] },
+      }),
+    ).dailyReport.markdown;
+    expect(md).toContain('비교할 이전 스냅샷이 없어');
+    expect(md).not.toContain('첫 수집이라');
+    expect(md).toContain('오늘 새로 발견한 저장소가 없다.');
   });
 
   it('handles empty rankings and an empty queue', () => {
