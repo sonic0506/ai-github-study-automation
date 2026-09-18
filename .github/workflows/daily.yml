@@ -4,7 +4,7 @@ name: Daily AI GitHub report
 # Study 초안은 포함하지 않는다 (Claude 가 필요한 단계라 Cowork 에서 따로 작성).
 on:
   schedule:
-    - cron: '0 21 * * *'
+    - cron: '15 23 * * *'
   workflow_dispatch:
     inputs:
       date:
