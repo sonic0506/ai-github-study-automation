@@ -68,6 +68,26 @@ export const StudyPolicySchema = z.object({
 });
 export type StudyPolicy = z.infer<typeof StudyPolicySchema>;
 
+export const ReportConfigSchema = z.object({
+  newly_discovered_limit: z.number().int().nonnegative().default(10),
+  description_max_length: z.number().int().positive().default(80),
+  telegram_growth_top: z.number().int().nonnegative().default(3),
+  report_path: z
+    .string()
+    .regex(/^(?!\/)[A-Za-z0-9._{}/-]+\.md$/, '상대 경로여야 하며 .md 로 끝나야 합니다')
+    .refine((p) => p.includes('{date}'), '{date} 를 포함해야 합니다')
+    .default('reports/daily/{date}.md'),
+});
+export type ReportConfig = z.infer<typeof ReportConfigSchema>;
+
+export function parseReportConfig(input: string | unknown): ReportConfig {
+  return ReportConfigSchema.parse(typeof input === 'string' ? parse(input) : input);
+}
+
+export async function loadReportConfig(path: string): Promise<ReportConfig> {
+  return parseReportConfig(await readFile(path, 'utf8'));
+}
+
 export function parseDiscoveryConfig(input: string | unknown): DiscoveryConfig {
   return DiscoveryConfigSchema.parse(typeof input === 'string' ? parse(input) : input);
 }

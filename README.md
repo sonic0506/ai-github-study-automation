@@ -3,7 +3,7 @@
 AI 관련 GitHub Repository 트렌드를 매일 수집하고, Study 후보를 선정해 Claude Cowork가 Study 초안을 작성하는 시스템.
 이 Repository는 **Claude Custom Skill의 Source of Truth**이며, 운영용 Skill은 ZIP으로 빌드해 Claude에 업로드한다.
 
-> 현재 단계: **Phase 3 진행 중** — GitHub 실검색(discovery) 연동 완료
+> 현재 단계: **Phase 3 진행 중** — discovery 실검색 + Daily Report 렌더링 완료
 
 ## 역할 분담
 
@@ -31,10 +31,10 @@ github-ai-discovery ──► github-star-analyzer ──► study-candidate-sel
 ## 디렉터리
 
 ```
-config/                 discovery.yml, study-policy.yml (Zod로 검증)
+config/                 discovery.yml, study-policy.yml, report.yml (Zod로 검증)
 schemas/                repository / ranking / study-queue / snapshot / registry / daily-bundle (JSON Schema 2020-12)
 src/core/               types.ts(공통 타입), config.ts, env.ts, schema.ts(Ajv), paths.ts, json-io.ts,
-                        slug.ts, dates.ts, registry.ts, local-store.ts
+                        slug.ts, dates.ts, registry.ts, local-store.ts, template.ts(Markdown 렌더러)
 src/adapters/           github.ts — adapter 인터페이스 + Fixture 구현
                         github-rest.ts — GitHub REST 클라이언트 (검색·조회·페이지·rate limit·재시도)
 skills/{name}/
@@ -59,9 +59,9 @@ output/                 로컬 실행 결과 (git 제외): discovery/, demo/, lo
 | github-ai-discovery | generative | **GitHub 실검색 구현** | `scripts/discover.mjs`, `scripts/normalize.mjs` |
 | github-star-analyzer | deterministic | **구현 완료** | `scripts/analyze.mjs` |
 | study-candidate-selector | deterministic | **구현 완료** | `scripts/select.mjs` |
-| github-researcher | generative | 골격 | — |
+| github-researcher | generative | 적합성 판정 확정, 조사 본체는 골격 | — |
 | my-writing-style | generative | 골격 (style 리소스 TODO) | — |
-| daily-report-writer | generative | 골격 | — |
+| daily-report-writer | deterministic | **구현 완료** | `scripts/render.mjs` |
 | study-writer | generative | 골격 | — |
 
 ## 환경 설정
@@ -132,8 +132,14 @@ npm run demo -- --input my-input.json          # 직접 만든 analyzer 입력
 npm run demo -- --selector my-selector.json    # history / studyStates 지정
 ```
 
-TOP10, Growth TOP10, 신규 목록, Study Queue(점수·상태·사유)를 표로 출력하고
-`output/demo/analysis.json`, `output/demo/study-queue.json`에 저장한다 (`output/`은 git 제외).
+TOP10, Growth TOP10, 신규 목록, Study Queue(점수·상태·사유)를 표로 출력하고 아래 파일을 만든다 (`output/`은 git 제외).
+
+| 파일 | 내용 |
+|---|---|
+| `output/demo/analysis.json` | 저장소별 Star·증가량, Ranking, 그날 Snapshot |
+| `output/demo/study-queue.json` | 후보별 점수·상태·사유 |
+| `output/demo/daily-report.md` | 한국어 Daily Report (운영 시 `reports/daily/{date}.md`) |
+| `output/demo/telegram.md` | Telegram 요약 |
 
 ### 스크립트 단독 실행 (로컬)
 
@@ -148,8 +154,8 @@ npx tsx skills/study-candidate-selector/scripts/cli.ts skills/study-candidate-se
 
 | 구분 | 대상 | 방법 |
 |---|---|---|
-| Deterministic | star-analyzer, candidate-selector, schema | Vitest unit test (신규/증가 0/감소/중복/후보 부족/Study 존재/PR 열림/동점/입력 오류) + 번들 CLI golden 비교 |
-| Generative | discovery, researcher, writing-style, report-writer, study-writer | `tests/rubric.md`(★ 필수 기준) + `tests/fixtures/` — 문자열 Snapshot 비교 안 함 |
+| Deterministic | star-analyzer, candidate-selector, daily-report-writer, schema | Vitest unit test (신규/증가 0/감소/중복/후보 부족/Study 존재/PR 열림/동점/입력 오류) + 번들 CLI golden 비교 |
+| Generative | discovery, researcher, writing-style, study-writer | `tests/rubric.md`(★ 필수 기준) + `tests/fixtures/` — 문자열 Snapshot 비교 안 함 |
 
 `test:skills`는 staging(업로드 형태) 디렉터리에서 CLI를 실행하므로, Skill이 로컬 프로젝트 파일에 의존하지 않는지 함께 검증한다.
 
@@ -169,7 +175,8 @@ github-star-analyzer.zip
 |---|---|
 | 신규(`isNew`) 판단 | Registry에 한 번도 등록된 적 없는 Repository만 신규. 목록에서 빠졌다 돌아온 Repository는 신규 아님 |
 | Snapshot 누락일 | 오늘 이전의 가장 최근 Snapshot과 비교 (`selectBaselineDate`). `baseline.gapDays`로 기간을 리포트에 표시 |
-| 템플릿 렌더링 | 표·숫자·순위는 코드가 채우고, Claude는 한 줄 요약·본문만 작성 (Phase 3) |
+| 템플릿 렌더링 | 표·숫자·순위·한 줄 요약(GitHub 설명문 원문)을 코드가 채운다. Daily Report는 결정적 Skill |
+| 리포트 언어·분량 | 한국어. 신규 저장소는 Star 순 상위 `newly_discovered_limit`개 + "외 N개" |
 | Study 파일/브랜치 이름 | 소문자 + `owner__name` (`src/core/slug.ts`, 스키마에서 강제) |
 | AI 무관 저장소 | 명확한 것은 제외 목록, 애매한 것은 researcher가 Study 적합성 판정 → Registry `studyability` 저장 → selector `skipped_not_studyable` + 다음 후보 승격 |
 
@@ -177,6 +184,8 @@ github-star-analyzer.zip
 
 - `config/discovery.yml`: topics, minimum_stars, 검색 옵션, ranking(top_n, growth_min_delta)
 - `config/discovery.yml`의 `exclude.repositories`: 수집 제외 목록
+- `config/report.yml`: newly_discovered_limit, description_max_length, telegram_growth_top, report_path
+- `templates/daily-report.md`, `templates/telegram-daily.md`: 리포트 문구·레이아웃 (`{{var}}`, `{{#list}}` 문법)
 - `config/study-policy.yml`: max_daily_drafts, priority 가중치, repeated_top10_window_days, skip_if(study_exists, pr_open, not_studyable)
 
 설정은 빌드 시 각 Skill의 `resources/`에 복사되며, 실행 시 입력 JSON의 `policy`/`config`로 덮어쓸 수 있다.
@@ -189,7 +198,7 @@ github-star-analyzer.zip
 - [ ] Phase 3 — 생성형 Skill 본 구현
   - [x] discovery 실검색 (REST 클라이언트, 신규 보완 검색, 등록 저장소 추적, env 설정)
   - [x] AI 무관 저장소 필터 (제외 목록 + Study 적합성 판정)
-  - [ ] daily-report-writer 렌더러
+  - [x] daily-report-writer 렌더러 (Markdown 템플릿 + Telegram 요약)
   - [ ] researcher → writing-style → study-writer
 - [ ] Phase 4 — Handoff (Cowork → GitHub Actions), Actions workflow, Registry 갱신
 - [ ] Phase 5 — PR 생성, Telegram 알림, Cowork Scheduled Task 연결

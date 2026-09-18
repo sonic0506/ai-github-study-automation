@@ -10,7 +10,7 @@ const DEFAULT_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..'
 
 export interface ProjectPaths {
   root: string;
-  config: { discovery: string; studyPolicy: string };
+  config: { discovery: string; studyPolicy: string; report: string };
   schemas: string;
   skills: string;
   templates: string;
@@ -33,7 +33,11 @@ export function getProjectPaths(
   const d = (...p: string[]) => resolve(root, dataDir, ...p);
   return {
     root,
-    config: { discovery: r('config/discovery.yml'), studyPolicy: r('config/study-policy.yml') },
+    config: {
+      discovery: r('config/discovery.yml'),
+      studyPolicy: r('config/study-policy.yml'),
+      report: r('config/report.yml'),
+    },
     schemas: r('schemas'),
     skills: r('skills'),
     templates: r('templates'),

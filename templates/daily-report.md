@@ -1,41 +1,61 @@
 # AI GitHub Daily — {{date}}
 
 > 수집 {{repositoryCount}}개 · 신규 {{newCount}}개 · 오늘의 Study {{selectedCount}}개
+> 비교 기준: {{baselineLabel}}
 
-## 🔥 24h Growth TOP 10
+## 🔥 24h Growth TOP {{topN}}
 
-| # | Repository | ⭐ Stars | Δ 24h | 한 줄 요약 |
+{{#hasGrowth}}
+| # | Repository | ⭐ Stars | Δ | 설명 |
 |---:|---|---:|---:|---|
-{{#growth24hTop10}}
-| {{rank}} | [{{repository}}]({{url}}) | {{stars}} | +{{delta24h}} | {{comment}} |
-{{/growth24hTop10}}
+{{#growth}}
+| {{rank}} | [{{repository}}]({{url}}) | {{stars}} | {{delta}} | {{description}} |
+{{/growth}}
+{{/hasGrowth}}
+{{^hasGrowth}}
+{{noGrowthReason}}
+{{/hasGrowth}}
 
-## ⭐ Total Stars TOP 10
+## ⭐ Total Stars TOP {{topN}}
 
-| # | Repository | ⭐ Stars | Δ 24h |
-|---:|---|---:|---:|
-{{#totalStarsTop10}}
-| {{rank}} | [{{repository}}]({{url}}) | {{stars}} | {{delta24hOrNew}} |
-{{/totalStarsTop10}}
+| # | Repository | ⭐ Stars | Δ | 설명 |
+|---:|---|---:|---:|---|
+{{#totalStars}}
+| {{rank}} | [{{repository}}]({{url}}) | {{stars}} | {{delta}} | {{description}} |
+{{/totalStars}}
 
-## 🆕 Newly Discovered
+## 🆕 신규 발견 {{newCount}}개
 
-{{#newlyDiscovered}}
+{{#bootstrapNote}}
+{{bootstrapNote}}
+
+{{/bootstrapNote}}
+{{#newly}}
 - [{{repository}}]({{url}}) — ⭐ {{stars}} · {{description}}
-{{/newlyDiscovered}}
+{{/newly}}
+{{^newly}}
+오늘 새로 발견한 저장소가 없다.
+{{/newly}}
+{{#newMoreCount}}
+
+외 {{newMoreCount}}개는 `study-queue.json`에서 확인할 수 있다.
+{{/newMoreCount}}
 
 ## 📚 오늘의 Study
 
 {{#selected}}
-- **{{repository}}** (priority {{priority}}) — {{reasons}}
+- **[{{repository}}]({{url}})** (점수 {{priority}}) — {{reasons}}
+{{/selected}}
+{{^selected}}
+오늘 선정된 Study 후보가 없다.
 {{/selected}}
 
-<details><summary>Study Queue 전체</summary>
+<details><summary>Study Queue 전체 ({{candidateCount}}개)</summary>
 
-| Repository | Priority | Status |
-|---|---:|---|
+| Repository | 점수 | 상태 | 사유 |
+|---|---:|---|---|
 {{#candidates}}
-| {{repository}} | {{priority}} | {{status}} |
+| {{repository}} | {{priority}} | {{status}} | {{reasons}} |
 {{/candidates}}
 
 </details>

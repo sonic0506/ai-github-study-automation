@@ -3,15 +3,15 @@
  *
  * 테스트 fixture(또는 지정한 입력)로 결정적 파이프라인을 실제 실행하고
  *   1) 결과를 표로 출력하고
- *   2) JSON 을 output/demo/ 에 저장한다 (git 제외).
+ *   2) JSON 과 Markdown 리포트를 output/demo/ 에 저장한다 (git 제외).
  *   3) --save: 오늘 Snapshot 과 갱신된 Registry 를 AGS_DATA_DIR 에 저장 (다음 실행의 비교 기준)
  *      AGS_DATA_DIR 이 운영 폴더(data)이면 --force 가 있어야 저장한다.
  *
- * 파이프라인: github-star-analyzer → study-candidate-selector
+ * 파이프라인: github-star-analyzer → study-candidate-selector → daily-report-writer
  */
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
-import { loadStudyPolicy } from '../src/core/config.js';
+import { loadReportConfig, loadStudyPolicy } from '../src/core/config.js';
 import { loadEnv } from '../src/core/env.js';
 import { readRegistry, writeJson, writeSnapshot } from '../src/core/local-store.js';
 import { getProjectPaths } from '../src/core/paths.js';
@@ -19,6 +19,7 @@ import { studyStatesFromRegistry, updateRegistry } from '../src/core/registry.js
 import type { RankingEntry, RepositoryInfo, StudyCandidate } from '../src/core/types.js';
 import { analyzeStars, type AnalyzerInput } from '../skills/github-star-analyzer/scripts/analyze.js';
 import { selectStudyCandidates, type SelectorInput } from '../skills/study-candidate-selector/scripts/select.js';
+import { renderDailyReport } from '../skills/daily-report-writer/scripts/render.js';
 
 loadEnv();
 const paths = getProjectPaths();
@@ -97,10 +98,27 @@ async function main(): Promise<void> {
   );
   if (selectorInputPath) console.log(`\n※ history / studyStates: ${relative(paths.root, selectorInputPath)}`);
 
+  const report = renderDailyReport({
+    date: analysis.date,
+    baseline: analysis.baseline,
+    rankings: analysis.rankings,
+    studyQueue: queue,
+    repositoryCount: analysis.repositories.length,
+    config: await loadReportConfig(paths.config.report),
+    templates: {
+      report: await readFile(join(paths.templates, 'daily-report.md'), 'utf8'),
+      telegram: await readFile(join(paths.templates, 'telegram-daily.md'), 'utf8'),
+    },
+  });
+
   await mkdir(outDir, { recursive: true });
   await writeFile(join(outDir, 'analysis.json'), `${JSON.stringify(analysis, null, 2)}\n`);
   await writeFile(join(outDir, 'study-queue.json'), `${JSON.stringify(queue, null, 2)}\n`);
-  console.log(`\nJSON 저장: ${relative(paths.root, outDir)}/analysis.json, study-queue.json`);
+  await writeFile(join(outDir, 'daily-report.md'), report.dailyReport.markdown);
+  await writeFile(join(outDir, 'telegram.md'), report.telegram.markdown);
+  const rel = relative(paths.root, outDir);
+  console.log(`\n저장: ${rel}/analysis.json, study-queue.json`);
+  console.log(`리포트: ${rel}/daily-report.md (${report.dailyReport.path}), ${rel}/telegram.md`);
 
   if (process.argv.includes('--save')) await saveState(analysis);
   console.log('');
