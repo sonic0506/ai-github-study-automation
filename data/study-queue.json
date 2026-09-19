@@ -5,216 +5,171 @@
   "candidates": [
     {
       "repository": "hypit-ai/hypit",
-      "priority": 58.34,
+      "priority": 58.35,
       "reasons": [
-        "growth_24h: +869 stars",
+        "growth_24h: +907 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 10050"
+        "total_stars: 10088"
       ],
       "status": "selected"
     },
     {
       "repository": "affaan-m/ECC",
-      "priority": 56.67,
+      "priority": 57.75,
       "reasons": [
-        "growth_24h: +719 stars",
+        "growth_24h: +775 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 262022"
+        "total_stars: 262078"
       ],
       "status": "selected"
     },
     {
       "repository": "DietrichGebert/ponytail",
-      "priority": 47.22,
+      "priority": 47.37,
       "reasons": [
-        "growth_24h: +535 stars",
+        "growth_24h: +562 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 142005"
+        "total_stars: 142032"
       ],
       "status": "selected"
     },
     {
       "repository": "Tencent/WeKnora",
-      "priority": 40.96,
+      "priority": 41.85,
       "reasons": [
-        "growth_24h: +457 stars",
+        "growth_24h: +497 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 26944"
+        "total_stars: 26984"
       ],
       "status": "queued"
     },
     {
       "repository": "trycua/cua",
-      "priority": 37.46,
+      "priority": 41.8,
       "reasons": [
-        "growth_24h: +386 stars",
+        "growth_24h: +501 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 23331"
+        "total_stars: 23446"
       ],
       "status": "queued"
     },
     {
       "repository": "diegosouzapw/OmniRoute",
-      "priority": 36.6,
+      "priority": 37.37,
       "reasons": [
-        "growth_24h: +330 stars",
+        "growth_24h: +362 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 67868"
+        "total_stars: 67900"
       ],
       "status": "queued"
     },
     {
       "repository": "NousResearch/hermes-agent",
-      "priority": 36.32,
+      "priority": 36.88,
       "reasons": [
-        "growth_24h: +279 stars",
+        "growth_24h: +304 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 246897"
+        "total_stars: 246922"
       ],
       "status": "queued"
     },
     {
       "repository": "firecrawl/firecrawl",
-      "priority": 34.82,
+      "priority": 34.94,
       "reasons": [
-        "growth_24h: +257 stars",
+        "growth_24h: +271 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 182002"
+        "total_stars: 182016"
       ],
       "status": "queued"
     },
     {
       "repository": "JuliusBrussee/caveman",
-      "priority": 33.96,
+      "priority": 33.95,
       "reasons": [
-        "growth_24h: +257 stars",
+        "growth_24h: +268 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 106594"
+        "total_stars: 106605"
       ],
       "status": "queued"
     },
     {
       "repository": "heygen-com/hyperframes",
-      "priority": 33.07,
+      "priority": 33.4,
       "reasons": [
-        "growth_24h: +263 stars",
+        "growth_24h: +282 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 51368"
+        "total_stars: 51387"
       ],
       "status": "queued"
     },
     {
       "repository": "n8n-io/n8n",
-      "priority": 31.88,
+      "priority": 31.96,
       "reasons": [
-        "growth_24h: +189 stars",
+        "growth_24h: +199 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 205279"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "budtmo/docker-android",
-      "priority": 30.5,
-      "reasons": [
-        "total_stars: 15866",
-        "new_repository"
+        "total_stars: 205289"
       ],
       "status": "queued"
     },
     {
       "repository": "langgenius/dify",
-      "priority": 28.77,
+      "priority": 29.09,
       "reasons": [
-        "growth_24h: +131 stars",
+        "growth_24h: +144 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 156346"
+        "total_stars: 156359"
       ],
       "status": "queued"
     },
     {
       "repository": "f/prompts.chat",
-      "priority": 27.17,
+      "priority": 27.16,
       "reasons": [
-        "growth_24h: +93 stars",
+        "growth_24h: +97 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 170689"
+        "total_stars: 170693"
       ],
       "status": "queued"
     },
     {
       "repository": "ollama/ollama",
-      "priority": 24.96,
+      "priority": 25.05,
       "reasons": [
-        "growth_24h: +43 stars",
+        "growth_24h: +47 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 181227"
+        "total_stars: 181231"
       ],
       "status": "queued"
     },
     {
       "repository": "huggingface/transformers",
-      "priority": 24.68,
+      "priority": 24.78,
       "reasons": [
-        "growth_24h: +40 stars",
+        "growth_24h: +44 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 166302"
+        "total_stars: 166306"
       ],
       "status": "queued"
     },
     {
       "repository": "langflow-ai/langflow",
-      "priority": 23.93,
+      "priority": 23.96,
       "reasons": [
-        "growth_24h: +26 stars",
+        "growth_24h: +28 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 154986"
+        "total_stars: 154988"
       ],
       "status": "queued"
     },
     {
       "repository": "Significant-Gravitas/AutoGPT",
-      "priority": 23.82,
+      "priority": 23.83,
       "reasons": [
-        "growth_24h: +17 stars",
+        "growth_24h: +18 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 187438"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "AbdelStark/awesome-typesafe",
-      "priority": 23.68,
-      "reasons": [
-        "total_stars: 224",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "huang-sh/PiX",
-      "priority": 22.99,
-      "reasons": [
-        "total_stars: 145",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "emma-sue/AegisOps",
-      "priority": 22.96,
-      "reasons": [
-        "total_stars: 142",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "richard7463/askgrokwallet",
-      "priority": 22.89,
-      "reasons": [
-        "total_stars: 136",
-        "new_repository"
+        "total_stars: 187439"
       ],
       "status": "queued"
     }
