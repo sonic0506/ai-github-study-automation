@@ -38,6 +38,7 @@ src/core/               types.ts(공통 타입), config.ts, env.ts, schema.ts(Aj
                         slug.ts, dates.ts, registry.ts, local-store.ts, template.ts(Markdown 렌더러),
                         bundle.ts(DailyBundle 조립·검증), apply-bundle.ts(파일 반영)
 src/adapters/           github.ts — adapter 인터페이스 + Fixture 구현
+                        study-state.ts — 기존 Study 파일·열린 PR 로 studyExists/prOpen 판정
                         github-rest.ts — GitHub REST 클라이언트 (검색·조회·쓰기·rate limit·재시도)
                         gist.ts — Gist 업로드 + repository_dispatch (Handoff)
                         telegram.ts — Telegram 알림 (재시도·길이 제한)
@@ -84,6 +85,7 @@ cp .env.example .env      # GITHUB_TOKEN 입력 (공개 저장소 읽기 전용 
 | `AGS_DATA_DIR` | Snapshot/Registry 위치. 로컬은 `output/local-data` 권장 (`data/`는 운영용) | `data` |
 | `AGS_TIMEZONE` | 실행 날짜 기준 시간대 | `Asia/Seoul` |
 | `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | Telegram 알림. 없으면 알림을 건너뛴다 | 없음 |
+| `AGS_STUDY_REPOSITORY` | Study 초안 PR이 올라가는 저장소(`owner/name`). 열린 `study/*` PR을 후보에서 제외할 때 조회. 비우면 Actions의 `GITHUB_REPOSITORY`, 둘 다 없으면 PR 확인 생략 | 없음 |
 | `GITHUB_MAX_RETRIES` 등 | 재시도·타임아웃·rate limit 대기 한도 (`.env.example` 참고) | — |
 
 셸에 이미 `export` 된 환경변수는 `.env` 값보다 우선한다.
@@ -128,6 +130,7 @@ npm run demo -- --input output/discovery/<날짜>.analyzer-input.json --save
 |---|---|---|
 | `config/discovery.yml`의 `exclude.repositories` | AI 도구가 아닌 게 명확할 때 | 수집·순위·추적에서 완전히 제외 |
 | Study 적합성 판정 (`github-researcher` 1단계) | awesome-list, 튜토리얼, 면접 가이드 등 | 순위에는 남고 Study 후보에서만 제외 (Registry에 저장) |
+| 이미 작성한 Study / 열린 초안 PR | 자동 | `studies/{slug}.md`가 있거나 `study/{slug}` PR이 열려 있으면 `skipped_study_exists` / `skipped_pr_open` (`src/adapters/study-state.ts`) |
 
 ```bash
 npm run registry -- list --not-studyable
@@ -192,6 +195,7 @@ github-star-analyzer.zip
 | 리포트 언어·분량 | 한국어. 신규 저장소는 Star 순 상위 `newly_discovered_limit`개 + "외 N개" |
 | Study 파일/브랜치 이름 | 소문자 + `owner__name` (`src/core/slug.ts`, 스키마에서 강제) |
 | AI 무관 저장소 | 명확한 것은 제외 목록, 애매한 것은 researcher가 Study 적합성 판정 → Registry `studyability` 저장 → selector `skipped_not_studyable` + 다음 후보 승격 |
+| 이미 작성한 Study | `daily`/`demo --input`가 `studies/` 파일 목록과 열린 `study/*` PR을 읽어 `studyExists`/`prOpen`을 채움 → selector `skip_if` 규칙으로 제외. 파일 이름은 slug 기준이라 대소문자 무관 |
 
 ## 매일 자동 실행 (GitHub Actions)
 
