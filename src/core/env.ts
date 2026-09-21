@@ -29,6 +29,9 @@ export const EnvSchema = z.object({
   TELEGRAM_CHAT_ID: optionalString,
   AGS_DATA_DIR: optionalString,
   AGS_ROOT: optionalString,
+  /** Study 파일·PR 이 올라가는 저장소 (owner/name). 비우면 GitHub Actions 의 GITHUB_REPOSITORY 를 쓰고, 둘 다 없으면 열린 PR 확인을 건너뛴다 */
+  AGS_STUDY_REPOSITORY: optionalString,
+  GITHUB_REPOSITORY: optionalString,
 });
 export type Env = z.infer<typeof EnvSchema>;
 
@@ -46,6 +49,10 @@ export function loadEnv(envFile = '.env'): Env {
   if (existsSync(envFile)) process.loadEnvFile(envFile);
   return parseEnv(process.env);
 }
+
+/** 열린 Study PR 을 조회할 저장소. AGS_STUDY_REPOSITORY > GITHUB_REPOSITORY, 없으면 undefined */
+export const studyRepositoryOf = (env: Pick<Env, 'AGS_STUDY_REPOSITORY' | 'GITHUB_REPOSITORY'>): string | undefined =>
+  env.AGS_STUDY_REPOSITORY ?? env.GITHUB_REPOSITORY;
 
 /** 토큰을 로그에 남기지 않기 위한 마스킹 */
 export function maskToken(token: string | undefined): string {

@@ -12,13 +12,14 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { loadReportConfig, loadStudyPolicy } from '../src/core/config.js';
+import { LocalStudyStateAdapter, mergeStudyStates } from '../src/adapters/study-state.js';
 import { loadEnv } from '../src/core/env.js';
 import { readRegistry, writeJson, writeSnapshot } from '../src/core/local-store.js';
 import { getProjectPaths } from '../src/core/paths.js';
 import { studyStatesFromRegistry, updateRegistry } from '../src/core/registry.js';
 import type { RankingEntry, RepositoryInfo, StudyCandidate } from '../src/core/types.js';
 import { analyzeStars, type AnalyzerInput } from '../skills/github-star-analyzer/scripts/analyze.js';
-import { selectStudyCandidates, type SelectorInput } from '../skills/study-candidate-selector/scripts/select.js';
+import { buildCandidatePool, selectStudyCandidates, type SelectorInput } from '../skills/study-candidate-selector/scripts/select.js';
 import { renderDailyReport } from '../skills/daily-report-writer/scripts/render.js';
 
 loadEnv();
@@ -69,14 +70,20 @@ async function main(): Promise<void> {
     ? (JSON.parse(await readFile(selectorInputPath, 'utf8')) as Partial<SelectorInput>)
     : {};
   const policy = await loadStudyPolicy(paths.config.studyPolicy);
-  // 실데이터 실행이면 Registry 의 Study 적합성 판정을 반영한다
-  const registryStates = customInput ? studyStatesFromRegistry(await readRegistry(paths.data.registry)) : {};
+  // 실데이터 실행이면 Registry 의 Study 적합성 판정과 studies/ 에 이미 있는 Study 파일을 반영한다 (열린 PR 은 daily 에서만 조회)
+  const candidates = buildCandidatePool(analysis.rankings).map((c) => c.info.repository);
+  const localStates = customInput
+    ? mergeStudyStates(
+        await new LocalStudyStateAdapter(paths.studies).getStudyStates(candidates),
+        studyStatesFromRegistry(await readRegistry(paths.data.registry)),
+      )
+    : {};
   const queue = selectStudyCandidates({
     date: analysis.date,
     rankings: analysis.rankings,
     policy,
     history: selectorExtra.history ?? {},
-    studyStates: { ...registryStates, ...(selectorExtra.studyStates ?? {}) },
+    studyStates: mergeStudyStates(localStates, selectorExtra.studyStates ?? {}),
   });
 
   console.log(`\nAI GitHub Study — demo run (${analysis.date})`);

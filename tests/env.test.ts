@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { maskToken, parseEnv, todayIn } from '../src/core/env.js';
+import { maskToken, parseEnv, studyRepositoryOf, todayIn } from '../src/core/env.js';
 import { getProjectPaths } from '../src/core/paths.js';
 
 describe('env', () => {
@@ -34,5 +34,11 @@ describe('env', () => {
     expect(p.data.registry).toBe('/proj/output/local-data/registry.json');
     expect(p.data.snapshots).toBe('/proj/output/local-data/snapshots');
     expect(getProjectPaths('/proj', 'data').data.dir).toBe('/proj/data');
+  });
+
+  it('picks the study repository from AGS_STUDY_REPOSITORY, then GITHUB_REPOSITORY', () => {
+    expect(studyRepositoryOf(parseEnv({ AGS_STUDY_REPOSITORY: 'me/study', GITHUB_REPOSITORY: 'ci/repo' }))).toBe('me/study');
+    expect(studyRepositoryOf(parseEnv({ GITHUB_REPOSITORY: 'ci/repo' }))).toBe('ci/repo');
+    expect(studyRepositoryOf(parseEnv({}))).toBeUndefined();
   });
 });

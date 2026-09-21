@@ -13,10 +13,11 @@
 import { readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { GitHubRestClient } from '../src/adapters/github-rest.js';
+import { CompositeStudyStateAdapter, LocalStudyStateAdapter, PullRequestStudyStateAdapter, mergeStudyStates } from '../src/adapters/study-state.js';
 import { applyBundle } from '../src/core/apply-bundle.js';
 import { buildDailyBundle } from '../src/core/bundle.js';
 import { loadDiscoveryConfig, loadReportConfig, loadStudyPolicy } from '../src/core/config.js';
-import { loadEnv, maskToken, todayIn } from '../src/core/env.js';
+import { loadEnv, maskToken, studyRepositoryOf, todayIn } from '../src/core/env.js';
 import { listSnapshotDates, readRegistry, readSnapshot, writeJson } from '../src/core/local-store.js';
 import { getProjectPaths } from '../src/core/paths.js';
 import { firstSeenMap, registeredRepositories, studyStatesFromRegistry } from '../src/core/registry.js';
@@ -24,7 +25,7 @@ import { loadValidator } from '../src/core/schema.js';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { discoverRepositories } from '../skills/github-ai-discovery/scripts/discover.js';
 import { analyzeStars, selectBaselineDate } from '../skills/github-star-analyzer/scripts/analyze.js';
-import { selectStudyCandidates, selectedRepositories } from '../skills/study-candidate-selector/scripts/select.js';
+import { buildCandidatePool, selectStudyCandidates, selectedRepositories } from '../skills/study-candidate-selector/scripts/select.js';
 import { renderDailyReport } from '../skills/daily-report-writer/scripts/render.js';
 
 const arg = (name: string): string | undefined => {
@@ -78,12 +79,21 @@ async function main(): Promise<void> {
     firstSeen: firstSeenMap(registry),
     options: { topN: discoveryConfig.ranking.top_n, growthMinDelta: discoveryConfig.ranking.growth_min_delta },
   });
-  const studyQueue = selectStudyCandidates({
-    date,
-    rankings: analysis.rankings,
-    policy,
-    studyStates: studyStatesFromRegistry(registry),
-  });
+  // 이미 Study 를 쓴 저장소(studies/ 파일) 와 초안 PR 이 열린 저장소는 선정에서 제외한다 (study-policy skip_if)
+  const studyRepository = studyRepositoryOf(env);
+  const studyStateAdapter = new CompositeStudyStateAdapter([
+    new LocalStudyStateAdapter(paths.studies),
+    ...(studyRepository ? [new PullRequestStudyStateAdapter(client, studyRepository)] : []),
+  ]);
+  const candidates = buildCandidatePool(analysis.rankings).map((c) => c.info.repository);
+  const studyStates = mergeStudyStates(await studyStateAdapter.getStudyStates(candidates), studyStatesFromRegistry(registry));
+  const studyQueue = selectStudyCandidates({ date, rankings: analysis.rankings, policy, studyStates });
+  const skipped = studyQueue.candidates.filter((c) => c.status.startsWith('skipped_'));
+  console.log(
+    `  Study 상태: 기존 파일 ${Object.values(studyStates).filter((s) => s.studyExists).length}개 · 열린 PR ${Object.values(studyStates).filter((s) => s.prOpen).length}개` +
+      `${studyRepository ? ` (${studyRepository})` : ' (저장소 미지정: PR 확인 생략)'}` +
+      `${skipped.length ? ` · 제외 ${skipped.map((c) => `${c.repository}[${c.status.replace('skipped_', '')}]`).join(', ')}` : ''}`,
+  );
   const report = renderDailyReport({
     date,
     baseline: analysis.baseline,
