@@ -1,0 +1,1622 @@
+{
+  "version": 1,
+  "date": "2026-09-27",
+  "repositories": [
+    {
+      "repository": "0x4m4/hexstrike-ai",
+      "stars": 12114
+    },
+    {
+      "repository": "0xPlaygrounds/rig",
+      "stars": 8740
+    },
+    {
+      "repository": "1jehuang/jcode",
+      "stars": 20149
+    },
+    {
+      "repository": "1Panel-dev/MaxKB",
+      "stars": 22876
+    },
+    {
+      "repository": "2akouwu/reverify",
+      "stars": 1245
+    },
+    {
+      "repository": "2noise/ChatTTS",
+      "stars": 39871
+    },
+    {
+      "repository": "a2aproject/A2A",
+      "stars": 25942
+    },
+    {
+      "repository": "aaif-goose/goose",
+      "stars": 54688
+    },
+    {
+      "repository": "aaravshah1311/Agent-2",
+      "stars": 132
+    },
+    {
+      "repository": "AbdelStark/awesome-typesafe-jev",
+      "stars": 528
+    },
+    {
+      "repository": "AccumulateMore/CV",
+      "stars": 23826
+    },
+    {
+      "repository": "Acly/krita-ai-diffusion",
+      "stars": 10643
+    },
+    {
+      "repository": "acryldev/acryl",
+      "stars": 257
+    },
+    {
+      "repository": "activepieces/activepieces",
+      "stars": 24738
+    },
+    {
+      "repository": "adtexterry-lgtm/unigit-ecosystem",
+      "stars": 1317
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "stars": 267930
+    },
+    {
+      "repository": "agent-labs-dev/fastbrowse",
+      "stars": 104
+    },
+    {
+      "repository": "agent-launch/agent-launcher",
+      "stars": 328
+    },
+    {
+      "repository": "Agenta-AI/awesome-ai-agent-platforms",
+      "stars": 321
+    },
+    {
+      "repository": "agentscope-ai/agentscope",
+      "stars": 32412
+    },
+    {
+      "repository": "agentscope-ai/QwenPaw",
+      "stars": 35277
+    },
+    {
+      "repository": "agno-agi/agno",
+      "stars": 42351
+    },
+    {
+      "repository": "ahujasid/mcp-for-blender",
+      "stars": 29424
+    },
+    {
+      "repository": "ai-shifu/ChatALL",
+      "stars": 16504
+    },
+    {
+      "repository": "aimeoa/hanshuang-codex",
+      "stars": 596
+    },
+    {
+      "repository": "aishwaryanr/awesome-generative-ai-guide",
+      "stars": 29600
+    },
+    {
+      "repository": "AlephAITech/DoubaoWorkGuide",
+      "stars": 185
+    },
+    {
+      "repository": "alibaba/nacos",
+      "stars": 33419
+    },
+    {
+      "repository": "amark/gun",
+      "stars": 19140
+    },
+    {
+      "repository": "amitshekhariitbhu/ai-system-design",
+      "stars": 388
+    },
+    {
+      "repository": "Anil-matcha/Open-Generative-AI",
+      "stars": 29251
+    },
+    {
+      "repository": "anthropics/claude-plugins-official",
+      "stars": 37054
+    },
+    {
+      "repository": "arc53/DocsGPT",
+      "stars": 18289
+    },
+    {
+      "repository": "ArihantDeva/heimdall",
+      "stars": 130
+    },
+    {
+      "repository": "aru-labs/lossless-memory",
+      "stars": 127
+    },
+    {
+      "repository": "asgeirtj/system_prompts_leaks",
+      "stars": 68401
+    },
+    {
+      "repository": "ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "stars": 37006
+    },
+    {
+      "repository": "ashutoshsinghpr7/wikiskill",
+      "stars": 250
+    },
+    {
+      "repository": "AstrBotDevs/AstrBot",
+      "stars": 41059
+    },
+    {
+      "repository": "Atomburstofficial/geiger",
+      "stars": 153
+    },
+    {
+      "repository": "atria-asi/Atria-Dawn-Preview",
+      "stars": 554
+    },
+    {
+      "repository": "bam-bam-2/solo-skills",
+      "stars": 367
+    },
+    {
+      "repository": "bee-san/Ciphey",
+      "stars": 21634
+    },
+    {
+      "repository": "bentoml/BentoML",
+      "stars": 8866
+    },
+    {
+      "repository": "BerriAI/litellm",
+      "stars": 59672
+    },
+    {
+      "repository": "big0lives/codex-task-pointer",
+      "stars": 246
+    },
+    {
+      "repository": "bighadj22/codflow",
+      "stars": 301
+    },
+    {
+      "repository": "BoardUI/boardui",
+      "stars": 532
+    },
+    {
+      "repository": "bojieli/ai-agent-book",
+      "stars": 51171
+    },
+    {
+      "repository": "bojieli/ai-infra-book",
+      "stars": 5350
+    },
+    {
+      "repository": "browser-use/browser-harness",
+      "stars": 18133
+    },
+    {
+      "repository": "browser-use/browser-use",
+      "stars": 116404
+    },
+    {
+      "repository": "browser-use/web-ui",
+      "stars": 16597
+    },
+    {
+      "repository": "browserbase/stagehand",
+      "stars": 25403
+    },
+    {
+      "repository": "budtmo/docker-android",
+      "stars": 15881
+    },
+    {
+      "repository": "bytedance/deer-flow",
+      "stars": 83004
+    },
+    {
+      "repository": "bytedance/UI-TARS-desktop",
+      "stars": 39119
+    },
+    {
+      "repository": "camel-ai/camel",
+      "stars": 17779
+    },
+    {
+      "repository": "camel-ai/owl",
+      "stars": 20146
+    },
+    {
+      "repository": "can1357/oh-my-pi",
+      "stars": 33401
+    },
+    {
+      "repository": "canivel/dynolab",
+      "stars": 178
+    },
+    {
+      "repository": "Canner/WrenAI",
+      "stars": 17756
+    },
+    {
+      "repository": "career-ops-hq/career-ops",
+      "stars": 72873
+    },
+    {
+      "repository": "carla-simulator/carla",
+      "stars": 14434
+    },
+    {
+      "repository": "carloslfu/slotstream",
+      "stars": 399
+    },
+    {
+      "repository": "cbrock84/headcount",
+      "stars": 1679
+    },
+    {
+      "repository": "CherryHQ/cherry-studio",
+      "stars": 52163
+    },
+    {
+      "repository": "chroma-core/chroma",
+      "stars": 29389
+    },
+    {
+      "repository": "ChromeDevTools/chrome-devtools-mcp",
+      "stars": 52637
+    },
+    {
+      "repository": "Cinnamon/kotaemon",
+      "stars": 25777
+    },
+    {
+      "repository": "citrolabs/ego-lite",
+      "stars": 16528
+    },
+    {
+      "repository": "ComposioHQ/awesome-claude-skills",
+      "stars": 75675
+    },
+    {
+      "repository": "ComposioHQ/composio",
+      "stars": 30334
+    },
+    {
+      "repository": "Continuum-AI-Corp/OrcaReplay",
+      "stars": 267
+    },
+    {
+      "repository": "CopilotKit/CopilotKit",
+      "stars": 37557
+    },
+    {
+      "repository": "coze-dev/coze-studio",
+      "stars": 21648
+    },
+    {
+      "repository": "crewAIInc/crewAI",
+      "stars": 59066
+    },
+    {
+      "repository": "cube-js/cube",
+      "stars": 20909
+    },
+    {
+      "repository": "D4Vinci/Scrapling",
+      "stars": 83881
+    },
+    {
+      "repository": "datawhalechina/happy-llm",
+      "stars": 34066
+    },
+    {
+      "repository": "datawhalechina/hello-agents",
+      "stars": 80902
+    },
+    {
+      "repository": "datawhalechina/zero-to-sglang",
+      "stars": 1296
+    },
+    {
+      "repository": "deeplearning4j/deeplearning4j",
+      "stars": 14264
+    },
+    {
+      "repository": "deepset-ai/haystack",
+      "stars": 26612
+    },
+    {
+      "repository": "Derpyu520/qq-bridge",
+      "stars": 452
+    },
+    {
+      "repository": "DeusData/codebase-memory-mcp",
+      "stars": 44987
+    },
+    {
+      "repository": "DevDock-AI/claude-unlimited",
+      "stars": 243
+    },
+    {
+      "repository": "diegosouzapw/OmniRoute",
+      "stars": 70483
+    },
+    {
+      "repository": "DietrichGebert/ponytail",
+      "stars": 146463
+    },
+    {
+      "repository": "dmoshehun-prog/learn-from-materials",
+      "stars": 512
+    },
+    {
+      "repository": "Dokploy/dokploy",
+      "stars": 37523
+    },
+    {
+      "repository": "dom-actions/doma",
+      "stars": 131
+    },
+    {
+      "repository": "dottxt-ai/outlines",
+      "stars": 15885
+    },
+    {
+      "repository": "dragonked2/alphacode",
+      "stars": 105
+    },
+    {
+      "repository": "drawdb-io/drawdb",
+      "stars": 39711
+    },
+    {
+      "repository": "duty1g/x64dbg-mcp-server",
+      "stars": 2089
+    },
+    {
+      "repository": "dyad-sh/dyad",
+      "stars": 21612
+    },
+    {
+      "repository": "e2b-dev/awesome-ai-agents",
+      "stars": 30179
+    },
+    {
+      "repository": "e2b-dev/E2B",
+      "stars": 13977
+    },
+    {
+      "repository": "EKKOLearnAI/ekko-studio",
+      "stars": 11200
+    },
+    {
+      "repository": "ekzhang/openjev-sglang",
+      "stars": 327
+    },
+    {
+      "repository": "elder-plinius/CL4R1T4S",
+      "stars": 50713
+    },
+    {
+      "repository": "elizaOS/eliza",
+      "stars": 19505
+    },
+    {
+      "repository": "emma-sue/AegisOps",
+      "stars": 325
+    },
+    {
+      "repository": "eosphoros-ai/DB-GPT",
+      "stars": 20049
+    },
+    {
+      "repository": "esengine/DeepSeek-Reasonix",
+      "stars": 35718
+    },
+    {
+      "repository": "Eurekaleo/awesome-ai-for-games",
+      "stars": 282
+    },
+    {
+      "repository": "EvoLinkAI/awesome-gpt-image-2-API-and-Prompts",
+      "stars": 17248
+    },
+    {
+      "repository": "explosion/spaCy",
+      "stars": 33923
+    },
+    {
+      "repository": "f/prompts.chat",
+      "stars": 171335
+    },
+    {
+      "repository": "farion1231/cc-switch",
+      "stars": 137162
+    },
+    {
+      "repository": "fathah/hermes-desktop",
+      "stars": 14315
+    },
+    {
+      "repository": "feder-cr/invisible_playwright_mcp",
+      "stars": 31674
+    },
+    {
+      "repository": "fidetolabs/qanat",
+      "stars": 257
+    },
+    {
+      "repository": "firecrawl/firecrawl",
+      "stars": 185111
+    },
+    {
+      "repository": "fitchmultz/pi-posthorse",
+      "stars": 248
+    },
+    {
+      "repository": "Fosowl/agenticSeek",
+      "stars": 27339
+    },
+    {
+      "repository": "fqgate/FQGate-agent",
+      "stars": 233
+    },
+    {
+      "repository": "freestylefly/awesome-gpt-image-2",
+      "stars": 33555
+    },
+    {
+      "repository": "freestylefly/WeChatBridge",
+      "stars": 786
+    },
+    {
+      "repository": "Garbo9779/XW-Agent-Saas",
+      "stars": 103
+    },
+    {
+      "repository": "gastownhall/beads",
+      "stars": 27452
+    },
+    {
+      "repository": "getpaseo/paseo",
+      "stars": 18624
+    },
+    {
+      "repository": "getzep/graphiti",
+      "stars": 31183
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "stars": 39426
+    },
+    {
+      "repository": "github/github-mcp-server",
+      "stars": 33223
+    },
+    {
+      "repository": "Gitlawb/openclaude",
+      "stars": 33539
+    },
+    {
+      "repository": "google/adk-python",
+      "stars": 21652
+    },
+    {
+      "repository": "GoogleCloudPlatform/generative-ai",
+      "stars": 17763
+    },
+    {
+      "repository": "googleworkspace/cli",
+      "stars": 31159
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "stars": 121662
+    },
+    {
+      "repository": "hacksider/Deep-Live-Cam",
+      "stars": 96830
+    },
+    {
+      "repository": "HandsOnLLM/Hands-On-Large-Language-Models",
+      "stars": 29296
+    },
+    {
+      "repository": "HanyuanWang/LiveStream-Agent-Studio",
+      "stars": 1024
+    },
+    {
+      "repository": "harry0703/MoneyPrinterTurbo",
+      "stars": 126100
+    },
+    {
+      "repository": "harvard-edge/cs249r_book",
+      "stars": 28502
+    },
+    {
+      "repository": "HBAI-Ltd/Toonflow-app",
+      "stars": 16057
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "stars": 73880
+    },
+    {
+      "repository": "helloianneo/ian-xiaohei-illustrations",
+      "stars": 12118
+    },
+    {
+      "repository": "hesreallyhim/awesome-claude-code",
+      "stars": 54647
+    },
+    {
+      "repository": "heygen-com/hyperframes",
+      "stars": 53321
+    },
+    {
+      "repository": "heyman333/agent-notion-template-docs",
+      "stars": 106
+    },
+    {
+      "repository": "himovo/movo",
+      "stars": 163
+    },
+    {
+      "repository": "hirotomasato/yowes",
+      "stars": 182
+    },
+    {
+      "repository": "hiyouga/LlamaFactory",
+      "stars": 75025
+    },
+    {
+      "repository": "HKUDS/DeepTutor",
+      "stars": 40335
+    },
+    {
+      "repository": "HKUDS/LightRAG",
+      "stars": 39873
+    },
+    {
+      "repository": "HKUDS/nanobot",
+      "stars": 48598
+    },
+    {
+      "repository": "HKUDS/Vibe-Trading",
+      "stars": 34078
+    },
+    {
+      "repository": "Hmbown/Codewhale",
+      "stars": 41033
+    },
+    {
+      "repository": "holaboss-ai/holaOS",
+      "stars": 11410
+    },
+    {
+      "repository": "huang-sh/PiX",
+      "stars": 188
+    },
+    {
+      "repository": "huggingface/agents-course",
+      "stars": 32908
+    },
+    {
+      "repository": "huggingface/datasets",
+      "stars": 22012
+    },
+    {
+      "repository": "huggingface/transformers",
+      "stars": 166696
+    },
+    {
+      "repository": "hugohe3/ppt-master",
+      "stars": 56502
+    },
+    {
+      "repository": "Human-Agent-Society/reef",
+      "stars": 5702
+    },
+    {
+      "repository": "hypit-ai/hypit",
+      "stars": 16320
+    },
+    {
+      "repository": "iii-hq/iii",
+      "stars": 18809
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "stars": 91332
+    },
+    {
+      "repository": "inikolax/remiqora",
+      "stars": 125
+    },
+    {
+      "repository": "Inkloom-art/inkloom",
+      "stars": 344
+    },
+    {
+      "repository": "invoke-ai/InvokeAI",
+      "stars": 28300
+    },
+    {
+      "repository": "iOfficeAI/AionUi",
+      "stars": 33151
+    },
+    {
+      "repository": "itshen/source-reading-methodology",
+      "stars": 136
+    },
+    {
+      "repository": "itsmostafa/system-one-connector",
+      "stars": 313
+    },
+    {
+      "repository": "ItzCrazyKns/Vane",
+      "stars": 36914
+    },
+    {
+      "repository": "jackwener/OpenCLI",
+      "stars": 29633
+    },
+    {
+      "repository": "janhq/jan",
+      "stars": 44659
+    },
+    {
+      "repository": "jeecgboot/JeecgBoot",
+      "stars": 47974
+    },
+    {
+      "repository": "jev-chat/jev-chat-jarvis",
+      "stars": 6669
+    },
+    {
+      "repository": "jev-chat/jev-chat-jarvis-mac",
+      "stars": 409
+    },
+    {
+      "repository": "jev-chat/jev-chat-windows",
+      "stars": 590
+    },
+    {
+      "repository": "jiabaobei/memory-bridge",
+      "stars": 200
+    },
+    {
+      "repository": "jianruntech/geo-score",
+      "stars": 477
+    },
+    {
+      "repository": "jingyaogong/minimind",
+      "stars": 62660
+    },
+    {
+      "repository": "jinzijian/EvoTrace",
+      "stars": 292
+    },
+    {
+      "repository": "jo-inc/camofox-browser",
+      "stars": 11227
+    },
+    {
+      "repository": "JordyZomer/lemmalog",
+      "stars": 324
+    },
+    {
+      "repository": "JourniOne-ai/JourniOne-Planning-Skills",
+      "stars": 259
+    },
+    {
+      "repository": "jsdhwfmax/EvalForge",
+      "stars": 211
+    },
+    {
+      "repository": "judegomila/OnCo",
+      "stars": 188
+    },
+    {
+      "repository": "JuliusBrussee/caveman",
+      "stars": 107951
+    },
+    {
+      "repository": "KalyanKS-NLP/llm-engineer-toolkit",
+      "stars": 10876
+    },
+    {
+      "repository": "karuvanan/MiniMax-H3-Director-Cut-Studio",
+      "stars": 121
+    },
+    {
+      "repository": "Kayforkind/reimagine-it",
+      "stars": 188
+    },
+    {
+      "repository": "KelaoHu/dsh-lowtide",
+      "stars": 170
+    },
+    {
+      "repository": "kepano/obsidian-skills",
+      "stars": 48910
+    },
+    {
+      "repository": "kgoedecke/doop",
+      "stars": 769
+    },
+    {
+      "repository": "khoj-ai/khoj",
+      "stars": 37510
+    },
+    {
+      "repository": "koala73/worldmonitor",
+      "stars": 87427
+    },
+    {
+      "repository": "Kong/kong",
+      "stars": 44200
+    },
+    {
+      "repository": "kornia/kornia",
+      "stars": 11384
+    },
+    {
+      "repository": "kraayenjon/awesome-jev",
+      "stars": 142
+    },
+    {
+      "repository": "kydlikebtc/awesome-grokbot",
+      "stars": 319
+    },
+    {
+      "repository": "kydlikebtc/awesome-jev",
+      "stars": 441
+    },
+    {
+      "repository": "labring/FastGPT",
+      "stars": 29748
+    },
+    {
+      "repository": "langbot-app/LangBot",
+      "stars": 17965
+    },
+    {
+      "repository": "langchain-ai/langchain",
+      "stars": 147115
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "stars": 42328
+    },
+    {
+      "repository": "langflow-ai/langflow",
+      "stars": 155283
+    },
+    {
+      "repository": "langgenius/dify",
+      "stars": 157282
+    },
+    {
+      "repository": "leon-ai/leon",
+      "stars": 17549
+    },
+    {
+      "repository": "libenxier-beep/codex-memories",
+      "stars": 102
+    },
+    {
+      "repository": "LibreChat-AI/LibreChat",
+      "stars": 44978
+    },
+    {
+      "repository": "Lightning-AI/litgpt",
+      "stars": 13686
+    },
+    {
+      "repository": "Lightning-AI/pytorch-lightning",
+      "stars": 31362
+    },
+    {
+      "repository": "Lightricks/LTX-2",
+      "stars": 9533
+    },
+    {
+      "repository": "Lincb522/GitGatto",
+      "stars": 310
+    },
+    {
+      "repository": "liyupi/ai-guide",
+      "stars": 20498
+    },
+    {
+      "repository": "lobehub/lobehub",
+      "stars": 82839
+    },
+    {
+      "repository": "Loopera-ai/loopera",
+      "stars": 358
+    },
+    {
+      "repository": "lotchuazzz-crypto/papergraph-mcp",
+      "stars": 269
+    },
+    {
+      "repository": "lsdefine/GenericAgent",
+      "stars": 14256
+    },
+    {
+      "repository": "lucidrains/vit-pytorch",
+      "stars": 25523
+    },
+    {
+      "repository": "lyogavin/airllm",
+      "stars": 35009
+    },
+    {
+      "repository": "marimo-team/marimo",
+      "stars": 22910
+    },
+    {
+      "repository": "mastra-ai/mastra",
+      "stars": 28349
+    },
+    {
+      "repository": "MathFoundationRL/Book-Mathematical-Foundation-of-Reinforcement-Learning",
+      "stars": 17895
+    },
+    {
+      "repository": "mem0ai/mem0",
+      "stars": 66031
+    },
+    {
+      "repository": "MemPalace/mempalace",
+      "stars": 59292
+    },
+    {
+      "repository": "MichaelKinsy/PiG",
+      "stars": 164
+    },
+    {
+      "repository": "microsoft/ai-agents-for-beginners",
+      "stars": 75731
+    },
+    {
+      "repository": "microsoft/AI-For-Beginners",
+      "stars": 69101
+    },
+    {
+      "repository": "microsoft/AirSim",
+      "stars": 18516
+    },
+    {
+      "repository": "microsoft/autogen",
+      "stars": 61179
+    },
+    {
+      "repository": "microsoft/generative-ai-for-beginners",
+      "stars": 120614
+    },
+    {
+      "repository": "microsoft/graphrag",
+      "stars": 36111
+    },
+    {
+      "repository": "microsoft/playwright-mcp",
+      "stars": 37592
+    },
+    {
+      "repository": "microsoft/semantic-kernel",
+      "stars": 28607
+    },
+    {
+      "repository": "milvus-io/milvus",
+      "stars": 46257
+    },
+    {
+      "repository": "mindsdb/mindshub",
+      "stars": 39775
+    },
+    {
+      "repository": "Mintplex-Labs/anything-llm",
+      "stars": 66499
+    },
+    {
+      "repository": "miurla/morphic",
+      "stars": 9145
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "stars": 28147
+    },
+    {
+      "repository": "modelscope/ms-cookbook",
+      "stars": 397
+    },
+    {
+      "repository": "mudler/LocalAI",
+      "stars": 49284
+    },
+    {
+      "repository": "mukul975/Anthropic-Cybersecurity-Skills",
+      "stars": 33419
+    },
+    {
+      "repository": "muratmula/ai-robinhood-chain",
+      "stars": 134
+    },
+    {
+      "repository": "n8n-io/n8n",
+      "stars": 206054
+    },
+    {
+      "repository": "Nanako0129/sepia",
+      "stars": 2862
+    },
+    {
+      "repository": "NanmiCoder/cc-haha",
+      "stars": 14724
+    },
+    {
+      "repository": "Narcooo/inkos",
+      "stars": 10054
+    },
+    {
+      "repository": "nautechsystems/nautilus_trader",
+      "stars": 29426
+    },
+    {
+      "repository": "naw103/foremerge",
+      "stars": 511
+    },
+    {
+      "repository": "Nehanth/swarmllm",
+      "stars": 460
+    },
+    {
+      "repository": "netdata/netdata",
+      "stars": 80665
+    },
+    {
+      "repository": "Netflix/metaflow",
+      "stars": 10282
+    },
+    {
+      "repository": "nexu-io/html-anything",
+      "stars": 8953
+    },
+    {
+      "repository": "NiazMorshed2007/jev-review",
+      "stars": 227
+    },
+    {
+      "repository": "nikivdev/code",
+      "stars": 21111
+    },
+    {
+      "repository": "NiluK/worldmodels101",
+      "stars": 205
+    },
+    {
+      "repository": "NirDiamant/agents-towards-production",
+      "stars": 21495
+    },
+    {
+      "repository": "NirDiamant/GenAI_Agents",
+      "stars": 24391
+    },
+    {
+      "repository": "NirDiamant/RAG_Techniques",
+      "stars": 29604
+    },
+    {
+      "repository": "nocobase/nocobase",
+      "stars": 24369
+    },
+    {
+      "repository": "nokia-applied-research/AnyJev",
+      "stars": 795
+    },
+    {
+      "repository": "noskillish/bankmcp",
+      "stars": 263
+    },
+    {
+      "repository": "NousResearch/hermes-agent",
+      "stars": 249226
+    },
+    {
+      "repository": "novuhq/novu",
+      "stars": 40074
+    },
+    {
+      "repository": "NVIDIA-NeMo/Speech",
+      "stars": 18509
+    },
+    {
+      "repository": "okf-memory/okf-agent-memory",
+      "stars": 725
+    },
+    {
+      "repository": "ollama/ollama",
+      "stars": 181774
+    },
+    {
+      "repository": "omaekumiko2-create/kru",
+      "stars": 126
+    },
+    {
+      "repository": "OmniJev/awesome-jev-gallery",
+      "stars": 448
+    },
+    {
+      "repository": "OnlyTerp/opengrok",
+      "stars": 463
+    },
+    {
+      "repository": "onnx/onnx",
+      "stars": 21531
+    },
+    {
+      "repository": "onyx-dot-app/onyx",
+      "stars": 32258
+    },
+    {
+      "repository": "op7418/guizang-ppt-skill",
+      "stars": 26972
+    },
+    {
+      "repository": "op7418/guizang-yingzao-skill",
+      "stars": 461
+    },
+    {
+      "repository": "open-webui/open-webui",
+      "stars": 153260
+    },
+    {
+      "repository": "openai/openai-agents-python",
+      "stars": 29709
+    },
+    {
+      "repository": "opendataloader-project/opendataloader-pdf",
+      "stars": 29384
+    },
+    {
+      "repository": "OpenHands/OpenHands",
+      "stars": 89230
+    },
+    {
+      "repository": "opensandbox-group/OpenSandbox",
+      "stars": 15526
+    },
+    {
+      "repository": "openvinotoolkit/openvino",
+      "stars": 10920
+    },
+    {
+      "repository": "orbi-build/orbi",
+      "stars": 194
+    },
+    {
+      "repository": "owainlewis/awesome-artificial-intelligence",
+      "stars": 16565
+    },
+    {
+      "repository": "PaddlePaddle/PaddleOCR",
+      "stars": 90249
+    },
+    {
+      "repository": "Pal-AI-Lab/Cortico",
+      "stars": 152
+    },
+    {
+      "repository": "Panniantong/Agent-Reach",
+      "stars": 85592
+    },
+    {
+      "repository": "panxunying/ai-coding-welfare",
+      "stars": 798
+    },
+    {
+      "repository": "paperless-ngx/paperless-ngx",
+      "stars": 46064
+    },
+    {
+      "repository": "patchy631/ai-engineering-hub",
+      "stars": 38041
+    },
+    {
+      "repository": "pathwaycom/llm-app",
+      "stars": 58888
+    },
+    {
+      "repository": "PaulineWang183/daytrace",
+      "stars": 107
+    },
+    {
+      "repository": "pax-beehive/dsh-hub-cli",
+      "stars": 458
+    },
+    {
+      "repository": "PDFMathTranslate/PDFMathTranslate",
+      "stars": 37202
+    },
+    {
+      "repository": "peonist-ai/halogen-flash-server",
+      "stars": 716
+    },
+    {
+      "repository": "Player-YN/BrowserKitten",
+      "stars": 2857
+    },
+    {
+      "repository": "poloclub/transformer-explainer",
+      "stars": 8746
+    },
+    {
+      "repository": "Portkey-AI/gateway",
+      "stars": 13087
+    },
+    {
+      "repository": "PrefectHQ/fastmcp",
+      "stars": 27907
+    },
+    {
+      "repository": "promptfoo/promptfoo",
+      "stars": 25478
+    },
+    {
+      "repository": "punkpeye/awesome-mcp-servers",
+      "stars": 95554
+    },
+    {
+      "repository": "punkpeye/awesome-remote-mcp-servers",
+      "stars": 451
+    },
+    {
+      "repository": "qiz029/dscode",
+      "stars": 599
+    },
+    {
+      "repository": "QwenLM/qwen-code",
+      "stars": 28143
+    },
+    {
+      "repository": "r1c7/CluxMate",
+      "stars": 146
+    },
+    {
+      "repository": "rasbt/LLMs-from-scratch",
+      "stars": 105618
+    },
+    {
+      "repository": "ray-project/ray",
+      "stars": 43932
+    },
+    {
+      "repository": "recommenders-team/recommenders",
+      "stars": 21921
+    },
+    {
+      "repository": "RectangleStory/Superpowers_Multi_AI",
+      "stars": 100
+    },
+    {
+      "repository": "richard7463/askgrokwallet",
+      "stars": 14
+    },
+    {
+      "repository": "rockbenben/ChatGPT-Shortcut",
+      "stars": 8785
+    },
+    {
+      "repository": "rohitg00/agentmemory",
+      "stars": 28891
+    },
+    {
+      "repository": "rohitg00/ai-engineering-from-scratch",
+      "stars": 58323
+    },
+    {
+      "repository": "rokbenko/quackd",
+      "stars": 241
+    },
+    {
+      "repository": "rome-os/rome",
+      "stars": 549
+    },
+    {
+      "repository": "rowboatlabs/rowboat",
+      "stars": 17974
+    },
+    {
+      "repository": "rtk-ai/rtk",
+      "stars": 81772
+    },
+    {
+      "repository": "ruc-datalab/EvoOntology",
+      "stars": 421
+    },
+    {
+      "repository": "run-llama/llama_index",
+      "stars": 52326
+    },
+    {
+      "repository": "ruvnet/ruflo",
+      "stars": 73325
+    },
+    {
+      "repository": "RyanCodrai/turbovec",
+      "stars": 17243
+    },
+    {
+      "repository": "Rylaispirit/cinematic-video-prompt-skill",
+      "stars": 102
+    },
+    {
+      "repository": "Ryze-AI-Adgent/open-seo-mcp-skills",
+      "stars": 2111
+    },
+    {
+      "repository": "S1N6H/pentest-harness",
+      "stars": 398
+    },
+    {
+      "repository": "sansan0/TrendRadar",
+      "stars": 62549
+    },
+    {
+      "repository": "ScrapeGraphAI/Scrapegraph-ai",
+      "stars": 31328
+    },
+    {
+      "repository": "screenpipe/screenpipe",
+      "stars": 21720
+    },
+    {
+      "repository": "semantica-agi/semantica",
+      "stars": 13483
+    },
+    {
+      "repository": "shadcn-ui/lint",
+      "stars": 2831
+    },
+    {
+      "repository": "shareAI-lab/learn-claude-code",
+      "stars": 77635
+    },
+    {
+      "repository": "Shellishack/infinite-pokemon",
+      "stars": 161
+    },
+    {
+      "repository": "shinthink/blitzstrike",
+      "stars": 512
+    },
+    {
+      "repository": "Shubhamsaboo/awesome-llm-apps",
+      "stars": 139881
+    },
+    {
+      "repository": "sickn33/agentic-awesome-skills",
+      "stars": 46954
+    },
+    {
+      "repository": "Significant-Gravitas/AutoGPT",
+      "stars": 187578
+    },
+    {
+      "repository": "simstudioai/sim",
+      "stars": 29722
+    },
+    {
+      "repository": "siyuan-note/siyuan",
+      "stars": 46526
+    },
+    {
+      "repository": "Sreehari05055/thesys-core",
+      "stars": 155
+    },
+    {
+      "repository": "stefan-jansen/machine-learning-for-trading",
+      "stars": 21055
+    },
+    {
+      "repository": "steven2358/awesome-generative-ai",
+      "stars": 12685
+    },
+    {
+      "repository": "sunyuzheng/lizheng-open-context",
+      "stars": 115
+    },
+    {
+      "repository": "Superior-Trade/trading-terminal",
+      "stars": 154
+    },
+    {
+      "repository": "tabtin-ai/TabTin",
+      "stars": 424
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "stars": 108768
+    },
+    {
+      "repository": "Tcotl/AgentCapture",
+      "stars": 122
+    },
+    {
+      "repository": "teableio/teable",
+      "stars": 21828
+    },
+    {
+      "repository": "Tencent/ncnn",
+      "stars": 23873
+    },
+    {
+      "repository": "Tencent/WeKnora",
+      "stars": 30324
+    },
+    {
+      "repository": "TencentCloud/TencentDB-Agent-Memory",
+      "stars": 27296
+    },
+    {
+      "repository": "The-Art-of-Hacking/h4cker",
+      "stars": 29539
+    },
+    {
+      "repository": "The-Pocket/PocketFlow",
+      "stars": 11196
+    },
+    {
+      "repository": "The-Vibe-Company/quivr",
+      "stars": 39555
+    },
+    {
+      "repository": "thedaviddias/Front-End-Checklist",
+      "stars": 74280
+    },
+    {
+      "repository": "thedotmack/claude-mem",
+      "stars": 94740
+    },
+    {
+      "repository": "thomasbek3/hermes-bot-kit",
+      "stars": 167
+    },
+    {
+      "repository": "tigerless-labs/agent-memory",
+      "stars": 1094
+    },
+    {
+      "repository": "tinyhumansai/openhuman",
+      "stars": 40123
+    },
+    {
+      "repository": "titanwings/distilly",
+      "stars": 25047
+    },
+    {
+      "repository": "TokenRhythm/NeoHorse",
+      "stars": 1070
+    },
+    {
+      "repository": "totec448-spec/chat-on-steroids",
+      "stars": 4050
+    },
+    {
+      "repository": "tradecatlabs/vibe-coding-cn",
+      "stars": 16496
+    },
+    {
+      "repository": "trycua/cua",
+      "stars": 26558
+    },
+    {
+      "repository": "udaysharmadev/Not-Ai",
+      "stars": 103
+    },
+    {
+      "repository": "unclecode/crawl4ai",
+      "stars": 84310
+    },
+    {
+      "repository": "undefined-ui/second-brain-os",
+      "stars": 666
+    },
+    {
+      "repository": "unslothai/unsloth",
+      "stars": 76835
+    },
+    {
+      "repository": "upstash/context7",
+      "stars": 62452
+    },
+    {
+      "repository": "useagenthq/useagent",
+      "stars": 359
+    },
+    {
+      "repository": "usestrix/strix",
+      "stars": 65028
+    },
+    {
+      "repository": "v-modal/awesome-jev-tools",
+      "stars": 725
+    },
+    {
+      "repository": "VectifyAI/PageIndex",
+      "stars": 35863
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "stars": 32080
+    },
+    {
+      "repository": "vercel/ai",
+      "stars": 26968
+    },
+    {
+      "repository": "Vincentwei1021/video-talkcraft",
+      "stars": 1239
+    },
+    {
+      "repository": "virgiliojr94/book-to-skill",
+      "stars": 32576
+    },
+    {
+      "repository": "vllm-project/vllm",
+      "stars": 92727
+    },
+    {
+      "repository": "voxel51/fiftyone",
+      "stars": 11122
+    },
+    {
+      "repository": "Vuk97/forward-implementation-first",
+      "stars": 172
+    },
+    {
+      "repository": "walidboulanouar/awesome-jev-use-cases",
+      "stars": 242
+    },
+    {
+      "repository": "walkinglabs/learn-harness-engineering",
+      "stars": 16205
+    },
+    {
+      "repository": "wandb/openui",
+      "stars": 22567
+    },
+    {
+      "repository": "waooAI/waoowaoo",
+      "stars": 14293
+    },
+    {
+      "repository": "wemux-ai/wemux",
+      "stars": 150
+    },
+    {
+      "repository": "whitecircle/halo",
+      "stars": 734
+    },
+    {
+      "repository": "wshobson/agents",
+      "stars": 40003
+    },
+    {
+      "repository": "xbtlin/ai-berkshire",
+      "stars": 16549
+    },
+    {
+      "repository": "XHToken/Spark-X2.5",
+      "stars": 386
+    },
+    {
+      "repository": "XiaoDuoYa/codex-with-chatgpt",
+      "stars": 6699
+    },
+    {
+      "repository": "xiaomoBoy/pi-bluebook",
+      "stars": 288
+    },
+    {
+      "repository": "xiaYuTian11/maskit",
+      "stars": 279
+    },
+    {
+      "repository": "yamadashy/repomix",
+      "stars": 28501
+    },
+    {
+      "repository": "yanliudesign/mono-color-skill",
+      "stars": 3276
+    },
+    {
+      "repository": "YashjitPal/BetterGravity",
+      "stars": 215
+    },
+    {
+      "repository": "yetone/magpie",
+      "stars": 994
+    },
+    {
+      "repository": "yibie/awesome-jev",
+      "stars": 1744
+    },
+    {
+      "repository": "Yinsongxu/LLM2Jev",
+      "stars": 339
+    },
+    {
+      "repository": "youngyangyang04/llm-master",
+      "stars": 963
+    },
+    {
+      "repository": "yukitorido/short-video-generator-AI",
+      "stars": 717
+    },
+    {
+      "repository": "yuyuanweb/ai-picture-editor",
+      "stars": 249
+    },
+    {
+      "repository": "Yzw202011/OmniSpace",
+      "stars": 227
+    },
+    {
+      "repository": "ZeroDayEvil/ai-security-tool",
+      "stars": 414
+    },
+    {
+      "repository": "zhayujie/CowAgent",
+      "stars": 47125
+    },
+    {
+      "repository": "zhu1090093659/dsh-trading",
+      "stars": 211
+    },
+    {
+      "repository": "ZhuLinsen/daily_stock_analysis",
+      "stars": 65683
+    },
+    {
+      "repository": "ZJU-REAL/Easel",
+      "stars": 1595
+    },
+    {
+      "repository": "zoicware/RemoveWindowsAI",
+      "stars": 13101
+    },
+    {
+      "repository": "ZSeven-W/dsh-android",
+      "stars": 163
+    },
+    {
+      "repository": "ZSeven-W/dsh-ios",
+      "stars": 308
+    },
+    {
+      "repository": "ZSeven-W/rish-app",
+      "stars": 148
+    },
+    {
+      "repository": "Zyrexnn/Cybermes",
+      "stars": 882
+    }
+  ]
+}
