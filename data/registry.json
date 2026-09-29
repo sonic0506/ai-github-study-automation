@@ -1,46 +1,50 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-29T00:21:24.119Z",
+  "updatedAt": "2026-09-29T23:40:31.217Z",
   "repositories": {
     "0x4m4/hexstrike-ai": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "0xPlaygrounds/rig": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "1jehuang/jcode": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "1Panel-dev/MaxKB": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
+    },
+    "255308153/CtxGuard": {
+      "firstSeen": "2026-09-30",
+      "lastSeen": "2026-09-30"
     },
     "2akouwu/reverify": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "2noise/ChatTTS": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "849879772/recruitops-agent": {
       "firstSeen": "2026-09-29",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "a2aproject/A2A": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "aaif-goose/goose": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "aaravshah1311/Agent-2": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "AbdelStark/awesome-typesafe": {
       "firstSeen": "2026-09-19",
@@ -48,299 +52,303 @@
     },
     "AbdelStark/awesome-typesafe-jev": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "AccumulateMore/CV": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Acly/krita-ai-diffusion": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "acryldev/acryl": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "activepieces/activepieces": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "adtexterry-lgtm/unigit-ecosystem": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "affaan-m/ECC": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "agent-labs-dev/fastbrowse": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "agent-launch/agent-launcher": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Agenta-AI/awesome-ai-agent-platforms": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "agentscope-ai/agentscope": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "agentscope-ai/QwenPaw": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "agno-agi/agno": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ahujasid/mcp-for-blender": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ai-shifu/ChatALL": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "aimeoa/hanshuang-codex": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "aishwaryanr/awesome-generative-ai-guide": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "AlephAITech/DoubaoWorkGuide": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Alex314618-create/JevRev": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "alibaba/nacos": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Amal-David/awesome-jev": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "amark/gun": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "amitshekhariitbhu/ai-system-design": {
       "firstSeen": "2026-09-27",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Anil-matcha/Open-Generative-AI": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "anthropics/claude-plugins-official": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "arc53/DocsGPT": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ArihantDeva/heimdall": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "aru-labs/lossless-memory": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "asgeirtj/system_prompts_leaks": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code": {
       "firstSeen": "2026-09-27",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ashutoshsinghpr7/wikiskill": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "AstrBotDevs/AstrBot": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Atomburstofficial/geiger": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "atria-asi/Atria-Dawn-Preview": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
+    },
+    "awangwang123/jianhao-travel-planner": {
+      "firstSeen": "2026-09-30",
+      "lastSeen": "2026-09-30"
     },
     "bam-bam-2/solo-skills": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "bee-san/Ciphey": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "bentoml/BentoML": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "BerriAI/litellm": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "big0lives/codex-task-pointer": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "bighadj22/codflow": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "blader/humanizer": {
       "firstSeen": "2026-09-29",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "BoardUI/boardui": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "bojieli/ai-agent-book": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "bojieli/ai-infra-book": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "breakstageaxe61/genspark-claw": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "browser-use/browser-harness": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "browser-use/browser-use": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "browser-use/web-ui": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "browserbase/stagehand": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "budtmo/docker-android": {
       "firstSeen": "2026-09-19",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "bytedance/deer-flow": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "bytedance/UI-TARS-desktop": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "camel-ai/camel": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "camel-ai/owl": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "can1357/oh-my-pi": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "canivel/dynolab": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Canner/WrenAI": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "career-ops-hq/career-ops": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "carla-simulator/carla": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "carloslfu/slotstream": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "cbrock84/headcount": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "CherryHQ/cherry-studio": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "chroma-core/chroma": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ChromeDevTools/chrome-devtools-mcp": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Cinnamon/kotaemon": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "citrolabs/ego-lite": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ComposioHQ/awesome-claude-skills": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ComposioHQ/composio": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Continuum-AI-Corp/OrcaReplay": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "CopilotKit/CopilotKit": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "coze-dev/coze-studio": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "crewAIInc/crewAI": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "cube-js/cube": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "D4Vinci/Scrapling": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "danny-avila/LibreChat": {
       "firstSeen": "2026-09-18",
@@ -348,87 +356,87 @@
     },
     "datawhalechina/happy-llm": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "datawhalechina/hello-agents": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "datawhalechina/zero-to-sglang": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "deeplearning4j/deeplearning4j": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "deepset-ai/haystack": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Derpyu520/qq-bridge": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "DeusData/codebase-memory-mcp": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "DevDock-AI/claude-unlimited": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "diegosouzapw/OmniRoute": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "DietrichGebert/ponytail": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "dmoshehun-prog/learn-from-materials": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Dokploy/dokploy": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "dom-actions/doma": {
       "firstSeen": "2026-09-20",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "dottxt-ai/outlines": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "dragonked2/alphacode": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "drawdb-io/drawdb": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "duty1g/x64dbg-mcp-server": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "dyad-sh/dyad": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "e2b-dev/awesome-ai-agents": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "e2b-dev/E2B": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "EKKOLearnAI/ekko-studio": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "EKKOLearnAI/hermes-studio": {
       "firstSeen": "2026-09-18",
@@ -436,51 +444,51 @@
     },
     "ekzhang/openjev-sglang": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "elder-plinius/CL4R1T4S": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "elizaOS/eliza": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "emma-sue/AegisOps": {
       "firstSeen": "2026-09-19",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "eosphoros-ai/DB-GPT": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "esengine/DeepSeek-Reasonix": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Eurekaleo/awesome-ai-for-games": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "EvoLinkAI/awesome-gpt-image-2-API-and-Prompts": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "explosion/spaCy": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "f/prompts.chat": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "farion1231/cc-switch": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "fathah/hermes-desktop": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "feder-cr/AIHawk": {
       "firstSeen": "2026-09-18",
@@ -488,63 +496,63 @@
     },
     "feder-cr/invisible_playwright_mcp": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "fidetolabs/qanat": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "firecrawl/firecrawl": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "fitchmultz/pi-posthorse": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Fosowl/agenticSeek": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "fqgate/FQGate-agent": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "freestylefly/awesome-gpt-image-2": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "freestylefly/WeChatBridge": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Garbo9779/XW-Agent-Saas": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "gastownhall/beads": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "georgeding/Relate": {
       "firstSeen": "2026-09-29",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "getpaseo/paseo": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "getzep/graphiti": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "github/awesome-copilot": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "github/github-mcp-server": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Gitlawb/openclaude": {
       "firstSeen": "2026-09-18",
@@ -552,163 +560,167 @@
     },
     "google/adk-python": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "GoogleCloudPlatform/generative-ai": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "googleworkspace/cli": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Graphify-Labs/graphify": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "graygnatconsole/mcp-audit-tool": {
       "firstSeen": "2026-09-29",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "hacksider/Deep-Live-Cam": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "HandsOnLLM/Hands-On-Large-Language-Models": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "HanyuanWang/LiveStream-Agent-Studio": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "harry0703/MoneyPrinterTurbo": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "harvard-edge/cs249r_book": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "HBAI-Ltd/Toonflow-app": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "headroomlabs-ai/headroom": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "helloianneo/ian-xiaohei-illustrations": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "hesreallyhim/awesome-claude-code": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "heygen-com/hyperframes": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "heyman333/agent-notion-template-docs": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
+    },
+    "Heyosseus/sloppy": {
+      "firstSeen": "2026-09-30",
+      "lastSeen": "2026-09-30"
     },
     "himovo/movo": {
       "firstSeen": "2026-09-21",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "hirotomasato/yowes": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "hiyouga/LlamaFactory": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "HKUDS/DeepTutor": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "HKUDS/LightRAG": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "HKUDS/nanobot": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "HKUDS/Vibe-Trading": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Hmbown/Codewhale": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "holaboss-ai/holaOS": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "huang-sh/PiX": {
       "firstSeen": "2026-09-19",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "huggingface/agents-course": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "huggingface/datasets": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "huggingface/transformers": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "hugohe3/ppt-master": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Human-Agent-Society/reef": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "hypit-ai/hypit": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "iii-hq/iii": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "infiniflow/ragflow": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "inikolax/remiqora": {
       "firstSeen": "2026-09-21",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Inkloom-art/inkloom": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "invoke-ai/InvokeAI": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "iOfficeAI/AionUi": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "itshen/source-reading-methodology": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "itsmostafa/system-one-connector": {
       "firstSeen": "2026-09-26",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "itsmostafa/typesafe-mcp": {
       "firstSeen": "2026-09-21",
@@ -716,339 +728,347 @@
     },
     "ItzCrazyKns/Vane": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jackwener/OpenCLI": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "janhq/jan": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jeecgboot/JeecgBoot": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jev-chat/jev-chat-jarvis": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jev-chat/jev-chat-jarvis-mac": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jev-chat/jev-chat-windows": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jiabaobei/memory-bridge": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jianruntech/geo-score": {
       "firstSeen": "2026-09-26",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jingyaogong/minimind": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jinzijian/EvoTrace": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jo-inc/camofox-browser": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "JordyZomer/lemmalog": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "JourniOne-ai/JourniOne-Planning-Skills": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "js713-lab/sonic-match-mcp": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "jsdhwfmax/EvalForge": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "judegomila/OnCo": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "JuliusBrussee/caveman": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "KalyanKS-NLP/llm-engineer-toolkit": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "karuvanan/MiniMax-H3-Director-Cut-Studio": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Kayforkind/reimagine-it": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "KelaoHu/dsh-lowtide": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "kepano/obsidian-skills": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "kgoedecke/doop": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "khoj-ai/khoj": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
+    },
+    "KKKKhazix/AIHOT": {
+      "firstSeen": "2026-09-30",
+      "lastSeen": "2026-09-30"
     },
     "koala73/worldmonitor": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Kong/kong": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "kornia/kornia": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "kraayenjon/awesome-jev": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "kydlikebtc/awesome-grokbot": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "kydlikebtc/awesome-jev": {
       "firstSeen": "2026-09-26",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "labring/FastGPT": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "langbot-app/LangBot": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "langchain-ai/langchain": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "langchain-ai/langgraph": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "langflow-ai/langflow": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "langgenius/dify": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "leon-ai/leon": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "libenxier-beep/codex-memories": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "libingzheren/Jev-Mem": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "LibreChat-AI/LibreChat": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Lightning-AI/litgpt": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Lightning-AI/pytorch-lightning": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Lightricks/LTX-2": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
+    },
+    "limelit-co/open": {
+      "firstSeen": "2026-09-30",
+      "lastSeen": "2026-09-30"
     },
     "Lincb522/GitGatto": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "liyupi/ai-guide": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "lobehub/lobehub": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Loopera-ai/loopera": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "lotchuazzz-crypto/papergraph-mcp": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "lsdefine/GenericAgent": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "lucidrains/vit-pytorch": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "lyogavin/airllm": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "marimo-team/marimo": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mastra-ai/mastra": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "MathFoundationRL/Book-Mathematical-Foundation-of-Reinforcement-Learning": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mem0ai/mem0": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "MemPalace/mempalace": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "MichaelKinsy/PiG": {
       "firstSeen": "2026-09-27",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/ai-agents-for-beginners": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/AI-For-Beginners": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/AirSim": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/autogen": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/generative-ai-for-beginners": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/graphrag": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/playwright-mcp": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "microsoft/semantic-kernel": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "milvus-io/milvus": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mindsdb/mindshub": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Mintplex-Labs/anything-llm": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "miurla/morphic": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mlflow/mlflow": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mmdju/digikala-mcp": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "modelscope/ms-cookbook": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mrtinkz/ai-charter": {
       "firstSeen": "2026-09-29",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mudler/LocalAI": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "mukul975/Anthropic-Cybersecurity-Skills": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "muratmula/ai-robinhood-chain": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "n8n-io/n8n": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Nanako0129/sepia": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NanmiCoder/cc-haha": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Narcooo/inkos": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "nautechsystems/nautilus_trader": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "naw103/foremerge": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Nehanth/pooled": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Nehanth/swarmllm": {
       "firstSeen": "2026-09-18",
@@ -1056,179 +1076,179 @@
     },
     "netdata/netdata": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Netflix/metaflow": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "nexu-io/html-anything": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NiazMorshed2007/jev-review": {
       "firstSeen": "2026-09-20",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "nikivdev/code": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NiluK/worldmodels101": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NirDiamant/agents-towards-production": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NirDiamant/GenAI_Agents": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NirDiamant/RAG_Techniques": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "nocobase/nocobase": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "nokia-applied-research/AnyJev": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "noskillish/bankmcp": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NousResearch/hermes-agent": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "novuhq/novu": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "NVIDIA-NeMo/Speech": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "okf-memory/okf-agent-memory": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ollama/ollama": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "omaekumiko2-create/kru": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "OmniJev/awesome-jev-gallery": {
       "firstSeen": "2026-09-26",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "OnlyTerp/opengrok": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "onnx/onnx": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "onyx-dot-app/onyx": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "op7418/guizang-ppt-skill": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "op7418/guizang-yingzao-skill": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "open-webui/open-webui": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "openai/openai-agents-python": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "opendataloader-project/opendataloader-pdf": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "OpenHands/OpenHands": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "opensandbox-group/OpenSandbox": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "openvinotoolkit/openvino": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "orbi-build/orbi": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "owainlewis/awesome-artificial-intelligence": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "PaddlePaddle/PaddleOCR": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Pal-AI-Lab/Cortico": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Panniantong/Agent-Reach": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "panxunying/ai-coding-welfare": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "paperless-ngx/paperless-ngx": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "patchy631/ai-engineering-hub": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "pathwaycom/llm-app": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "PaulineWang183/daytrace": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "pax-beehive/dsh-hub-cli": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "PDFMathTranslate/PDFMathTranslate": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "peonist-ai/halogen-flash-server": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Player-YN/BrowserKitten": {
       "firstSeen": "2026-09-21",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Player-YN/PawWork_ZhuaZhua": {
       "firstSeen": "2026-09-18",
@@ -1236,415 +1256,419 @@
     },
     "poloclub/transformer-explainer": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Portkey-AI/gateway": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "PrefectHQ/fastmcp": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "promptfoo/promptfoo": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "punkpeye/awesome-mcp-servers": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "punkpeye/awesome-remote-mcp-servers": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "qiz029/dscode": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "QwenLM/qwen-code": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "r1c7/CluxMate": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rasbt/LLMs-from-scratch": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ray-project/ray": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "reality-opened/openreality": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "recommenders-team/recommenders": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "RectangleStory/Superpowers_Multi_AI": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "richard7463/askgrokwallet": {
       "firstSeen": "2026-09-19",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rockbenben/ChatGPT-Shortcut": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rohitg00/agentmemory": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rohitg00/ai-engineering-from-scratch": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rokbenko/quackd": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rome-os/rome": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rowboatlabs/rowboat": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "rtk-ai/rtk": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ruc-datalab/EvoOntology": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "run-llama/llama_index": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ruvnet/ruflo": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "RyanCodrai/turbovec": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Rylaispirit/cinematic-video-prompt-skill": {
       "firstSeen": "2026-09-27",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Ryze-AI-Adgent/open-seo-mcp-skills": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "S1N6H/pentest-harness": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "sansan0/TrendRadar": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ScrapeGraphAI/Scrapegraph-ai": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "screenpipe/screenpipe": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "semantica-agi/semantica": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "shadcn-ui/lint": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "shareAI-lab/learn-claude-code": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Shellishack/infinite-pokemon": {
       "firstSeen": "2026-09-21",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "shinthink/blitzstrike": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Shubhamsaboo/awesome-llm-apps": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "sickn33/agentic-awesome-skills": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Significant-Gravitas/AutoGPT": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "simstudioai/sim": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "siyuan-note/siyuan": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Sreehari05055/thesys-core": {
       "firstSeen": "2026-09-21",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "stefan-jansen/machine-learning-for-trading": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "steven2358/awesome-generative-ai": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "sunyuzheng/lizheng-open-context": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Superior-Trade/trading-terminal": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "tabtin-ai/TabTin": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "TauricResearch/TradingAgents": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Tcotl/AgentCapture": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "teableio/teable": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Tencent/ncnn": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Tencent/WeKnora": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "TencentCloud/TencentDB-Agent-Memory": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "The-Art-of-Hacking/h4cker": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "The-Pocket/PocketFlow": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "The-Vibe-Company/quivr": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "thedaviddias/Front-End-Checklist": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "thedotmack/claude-mem": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "thomasbek3/hermes-bot-kit": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "tigerless-labs/agent-memory": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "tinyhumansai/openhuman": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "titanwings/distilly": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "TokenRhythm/NeoHorse": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "totec448-spec/chat-on-steroids": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "tradecatlabs/vibe-coding-cn": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "trycua/cua": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
+    },
+    "Twigpine/openclaude": {
+      "firstSeen": "2026-09-30",
+      "lastSeen": "2026-09-30"
     },
     "udaysharmadev/Not-Ai": {
       "firstSeen": "2026-09-27",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "unclecode/crawl4ai": {
       "firstSeen": "2026-09-26",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "undefined-ui/second-brain-os": {
       "firstSeen": "2026-09-23",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "unslothai/unsloth": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "upstash/context7": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "useagenthq/useagent": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "usestrix/strix": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "v-modal/awesome-jev-tools": {
       "firstSeen": "2026-09-21",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "VectifyAI/PageIndex": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "vectorize-io/hindsight": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "vercel/ai": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Vincentwei1021/video-talkcraft": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "virgiliojr94/book-to-skill": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "vllm-project/vllm": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "voxel51/fiftyone": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Vuk97/forward-implementation-first": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "walidboulanouar/awesome-jev-use-cases": {
       "firstSeen": "2026-09-24",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "walkinglabs/learn-harness-engineering": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "wandb/openui": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "waooAI/waoowaoo": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "wemux-ai/wemux": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "whitecircle/halo": {
       "firstSeen": "2026-09-22",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "wshobson/agents": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "xbtlin/ai-berkshire": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "XHToken/Spark-X2.5": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "XiaoDuoYa/codex-with-chatgpt": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "xiaomoBoy/pi-bluebook": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "XiaoPuOuO/openchatx-mcp": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "xiaYuTian11/maskit": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "yamadashy/repomix": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "yanliudesign/mono-color-skill": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "YashjitPal/BetterGravity": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "yetone/magpie": {
       "firstSeen": "2026-09-25",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "yibie/awesome-jev": {
       "firstSeen": "2026-09-20",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Yinsongxu/LLM2Jev": {
       "firstSeen": "2026-09-27",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "youngyangyang04/llm-master": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "yukitorido/short-video-generator-AI": {
       "firstSeen": "2026-09-26",
@@ -1652,31 +1676,31 @@
     },
     "yuyuanweb/ai-picture-editor": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Yzw202011/OmniSpace": {
       "firstSeen": "2026-09-20",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "zero11924065-dev/VetarAI": {
       "firstSeen": "2026-09-28",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ZeroDayEvil/ai-security-tool": {
       "firstSeen": "2026-09-20",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "zhayujie/CowAgent": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "zhu1090093659/dsh-trading": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ZhuLinsen/daily_stock_analysis": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "zhuyifang/FQGate-agent": {
       "firstSeen": "2026-09-21",
@@ -1688,31 +1712,31 @@
     },
     "ZJU-REAL/Easel": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "zoicware/RemoveWindowsAI": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "zouyuxuan122/dsh-our-free-model": {
       "firstSeen": "2026-09-29",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ZSeven-W/dsh-android": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ZSeven-W/dsh-ios": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "ZSeven-W/rish-app": {
       "firstSeen": "2026-09-21",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     },
     "Zyrexnn/Cybermes": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-09-29"
+      "lastSeen": "2026-09-30"
     }
   }
 }
