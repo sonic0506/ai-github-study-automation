@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-30T23:42:58.236Z",
+  "updatedAt": "2026-10-01T02:02:36.455Z",
   "repositories": {
     "0x4m4/hexstrike-ai": {
       "firstSeen": "2026-09-18",
@@ -172,7 +172,13 @@
     },
     "ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code": {
       "firstSeen": "2026-09-27",
-      "lastSeen": "2026-10-01"
+      "lastSeen": "2026-10-01",
+      "studyability": {
+        "studyable": false,
+        "category": "awesome-list",
+        "reason": "README 하나에 AI/ML 프로젝트 링크를 모아 둔 목록으로 코드가 없음",
+        "checkedAt": "2026-10-01"
+      }
     },
     "ashutoshsinghpr7/wikiskill": {
       "firstSeen": "2026-09-18",
@@ -232,7 +238,13 @@
     },
     "bojieli/ai-agent-book": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-10-01"
+      "lastSeen": "2026-10-01",
+      "studyability": {
+        "studyable": false,
+        "category": "documentation",
+        "reason": "《深入理解 AI Agent》 책 원고·PDF와 장별 예제 코드를 담은 도서 저장소",
+        "checkedAt": "2026-10-01"
+      }
     },
     "bojieli/ai-infra-book": {
       "firstSeen": "2026-09-18",
@@ -1344,7 +1356,13 @@
     },
     "rohitg00/ai-engineering-from-scratch": {
       "firstSeen": "2026-09-18",
-      "lastSeen": "2026-10-01"
+      "lastSeen": "2026-10-01",
+      "studyability": {
+        "studyable": false,
+        "category": "course",
+        "reason": "phases·lessons·learning-paths 로 구성된 AI 엔지니어링 학습 커리큘럼으로 설치해서 쓰는 소프트웨어가 아님",
+        "checkedAt": "2026-10-01"
+      }
     },
     "rokbenko/quackd": {
       "firstSeen": "2026-09-18",
