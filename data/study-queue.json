@@ -1,253 +1,241 @@
 {
   "version": 1,
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "maxDailyDrafts": 3,
   "candidates": [
     {
-      "repository": "shader-effects-inc/shaders",
-      "priority": 56.04,
-      "reasons": [
-        "growth_24h: +1251 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 2461"
-      ],
-      "status": "selected"
-    },
-    {
       "repository": "Ebony-Vinyl/dsh-our-free-model",
-      "priority": 53.7,
+      "priority": 56.99,
       "reasons": [
-        "growth_24h: +1162 stars",
+        "growth_24h: +1088 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 3378"
+        "total_stars: 4466"
       ],
       "status": "selected"
     },
     {
       "repository": "Panniantong/Agent-Reach",
-      "priority": 40.87,
+      "priority": 55.39,
       "reasons": [
-        "growth_24h: +595 stars",
+        "growth_24h: +912 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 93218"
+        "total_stars: 94130"
       ],
       "status": "selected"
     },
     {
-      "repository": "heygen-com/hyperframes",
-      "priority": 40.16,
+      "repository": "shader-effects-inc/shaders",
+      "priority": 51.75,
       "reasons": [
-        "growth_24h: +596 stars",
+        "growth_24h: +957 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 58526"
+        "total_stars: 3418"
+      ],
+      "status": "selected"
+    },
+    {
+      "repository": "tt-a1i/archify",
+      "priority": 50.13,
+      "reasons": [
+        "growth_24h: +776 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 79994"
       ],
       "status": "queued"
     },
     {
       "repository": "thedotmack/claude-mem",
-      "priority": 39.57,
+      "priority": 49.54,
       "reasons": [
-        "growth_24h: +552 stars",
+        "growth_24h: +751 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 97702"
+        "total_stars: 98453"
       ],
       "status": "queued"
     },
     {
-      "repository": "tt-a1i/archify",
-      "priority": 38.69,
+      "repository": "heygen-com/hyperframes",
+      "priority": 45.38,
       "reasons": [
-        "growth_24h: +535 stars",
+        "growth_24h: +660 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 79218"
+        "total_stars: 59186"
       ],
       "status": "queued"
     },
     {
-      "repository": "rehan-remade/universal-modder",
-      "priority": 37.03,
+      "repository": "dipakkr/awesome-ai-engineering",
+      "priority": 30.99,
       "reasons": [
-        "growth_24h: +619 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 5200"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "feder-cr/invisible_dots",
-      "priority": 31.56,
-      "reasons": [
-        "total_stars: 31805",
+        "total_stars: 22340",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "f/prompts.chat",
-      "priority": 26.5,
+      "repository": "strands-agents/box",
+      "priority": 23.7,
       "reasons": [
-        "growth_24h: +115 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 172312"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "ollama/ollama",
-      "priority": 26.24,
-      "reasons": [
-        "growth_24h: +104 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 182499"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "langgenius/dify",
-      "priority": 24.93,
-      "reasons": [
-        "growth_24h: +70 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 158040"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "jiwoochris/artex-ko",
-      "priority": 23.91,
-      "reasons": [
-        "total_stars: 264",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "huggingface/transformers",
-      "priority": 23.86,
-      "reasons": [
-        "growth_24h: +34 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 167034"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "nano-muse/nanoMuse",
-      "priority": 23.62,
-      "reasons": [
-        "total_stars: 220",
+        "total_stars: 232",
         "new_repository"
       ],
       "status": "queued"
     },
     {
       "repository": "Significant-Gravitas/AutoGPT",
-      "priority": 23.44,
+      "priority": 22.96,
       "reasons": [
-        "growth_24h: +15 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 187687"
+        "total_stars: 187487"
       ],
       "status": "queued"
     },
     {
-      "repository": "scaleapi/agentenv-framework",
-      "priority": 23.27,
+      "repository": "ollama/ollama",
+      "priority": 22.91,
       "reasons": [
-        "total_stars: 177",
+        "repeated_top10: 1/7 days",
+        "total_stars: 182412"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "f/prompts.chat",
+      "priority": 22.82,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 172184"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "huggingface/transformers",
+      "priority": 22.77,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 166860"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "langgenius/dify",
+      "priority": 22.68,
+      "reasons": [
+        "repeated_top10: 1/7 days",
+        "total_stars: 157929"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "heaven999b/hello-agent-system",
+      "priority": 22.53,
+      "reasons": [
+        "total_stars: 111",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "cv-cat/catbus",
-      "priority": 23.17,
+      "repository": "S4US/Roqer",
+      "priority": 22.48,
       "reasons": [
-        "total_stars: 166",
+        "total_stars: 107",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "iamlukethedev/Herald-OS",
-      "priority": 22.49,
+      "repository": "langchain-ai/paid-media-agent",
+      "priority": 22.37,
       "reasons": [
-        "total_stars: 108",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "VectifyAI/jev-doc-search",
-      "priority": 22.49,
-      "reasons": [
-        "total_stars: 108",
+        "total_stars: 100",
         "new_repository"
       ],
       "status": "queued"
     },
     {
       "repository": "DietrichGebert/ponytail",
-      "priority": 47.05,
+      "priority": 57.06,
       "reasons": [
-        "growth_24h: +762 stars",
+        "growth_24h: +935 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 157578",
+        "total_stars: 158513",
+        "skip: study_exists"
+      ],
+      "status": "skipped_study_exists"
+    },
+    {
+      "repository": "yetone/magpie",
+      "priority": 50,
+      "reasons": [
+        "growth_24h: +880 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 6741",
+        "skip: study_exists"
+      ],
+      "status": "skipped_study_exists"
+    },
+    {
+      "repository": "farion1231/cc-switch",
+      "priority": 43.61,
+      "reasons": [
+        "growth_24h: +574 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 141350",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "affaan-m/ECC",
-      "priority": 44.19,
+      "priority": 40.41,
       "reasons": [
-        "growth_24h: +645 stars",
+        "growth_24h: +458 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 274928",
+        "total_stars: 275386",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "vectorize-io/hindsight",
-      "priority": 36.67,
+      "priority": 38.04,
       "reasons": [
-        "growth_24h: +498 stars",
+        "growth_24h: +470 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 46813",
+        "total_stars: 47283",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "firecrawl/firecrawl",
-      "priority": 32.41,
+      "priority": 27.79,
       "reasons": [
-        "growth_24h: +295 stars",
+        "growth_24h: +131 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 189493",
+        "total_stars: 189624",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "NousResearch/hermes-agent",
-      "priority": 31.52,
+      "priority": 27.07,
       "reasons": [
-        "growth_24h: +253 stars",
+        "growth_24h: +99 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 251942",
+        "total_stars: 252041",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "n8n-io/n8n",
-      "priority": 24.97,
+      "priority": 23.11,
       "reasons": [
-        "growth_24h: +58 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 206837",
+        "total_stars: 206728",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
