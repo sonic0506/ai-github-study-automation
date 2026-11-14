@@ -1,459 +1,503 @@
 {
   "version": 1,
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "maxDailyDrafts": 3,
   "candidates": [
     {
       "repository": "morluto/rea",
       "priority": 63.57,
       "reasons": [
-        "growth_24h: +2376 stars",
+        "growth_24h: +2146 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 457674"
-      ],
-      "status": "selected"
-    },
-    {
-      "repository": "vercel-labs/ui",
-      "priority": 55.14,
-      "reasons": [
-        "growth_24h: +2311 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 3826"
+        "total_stars: 459820"
       ],
       "status": "selected"
     },
     {
       "repository": "Ebony-Vinyl/dsh-our-free-model",
-      "priority": 45.75,
+      "priority": 48.98,
       "reasons": [
-        "growth_24h: +1485 stars",
+        "growth_24h: +1513 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 72819"
+        "total_stars: 74332"
       ],
       "status": "selected"
     },
     {
       "repository": "pingdotgg/t3code",
-      "priority": 40.78,
+      "priority": 38.93,
       "reasons": [
-        "growth_24h: +1208 stars",
+        "growth_24h: +991 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 59596"
+        "total_stars: 60587"
       ],
-      "status": "queued"
+      "status": "selected"
     },
     {
       "repository": "ccch1mneyyy/dsh-Go",
-      "priority": 36.39,
+      "priority": 35.98,
       "reasons": [
-        "growth_24h: +1039 stars",
+        "growth_24h: +913 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 21806"
+        "total_stars: 22719"
       ],
       "status": "queued"
     },
     {
-      "repository": "kuafuai/andee",
-      "priority": 31.98,
+      "repository": "ChromeDevTools/chrome-devtools-mcp",
+      "priority": 35.71,
       "reasons": [
-        "growth_24h: +893 stars",
+        "growth_24h: +824 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 6118"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "streamlit/streamlit",
-      "priority": 31.49,
-      "reasons": [
-        "total_stars: 46348",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "Graphify-Labs/graphify",
-      "priority": 30.75,
-      "reasons": [
-        "growth_24h: +530 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 147293"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "heygen-com/hyperframes",
-      "priority": 29.45,
-      "reasons": [
-        "growth_24h: +504 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 83944"
+        "total_stars: 56276"
       ],
       "status": "queued"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
-      "priority": 29.34,
+      "priority": 32.94,
       "reasons": [
-        "growth_24h: +512 stars",
+        "growth_24h: +655 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 71596"
+        "total_stars: 72251"
       ],
       "status": "queued"
     },
     {
-      "repository": "DIYgod/pinky",
-      "priority": 26.72,
+      "repository": "Graphify-Labs/graphify",
+      "priority": 30.46,
       "reasons": [
-        "total_stars: 2078",
-        "new_repository"
+        "growth_24h: +463 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 147756"
       ],
       "status": "queued"
     },
     {
-      "repository": "hyperionaidev/smolmaxxing",
-      "priority": 24.91,
+      "repository": "vercel-labs/ui",
+      "priority": 29.93,
       "reasons": [
-        "total_stars: 638",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "simpsoka/zigzag",
-      "priority": 24.85,
-      "reasons": [
-        "total_stars: 611",
-        "new_repository"
+        "growth_24h: +721 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 4547"
       ],
       "status": "queued"
     },
     {
       "repository": "f/prompts.chat",
-      "priority": 23.61,
+      "priority": 26.9,
       "reasons": [
-        "growth_24h: +89 stars",
+        "growth_24h: +257 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 177096"
+        "total_stars: 177353"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Topkiflare74/ai--manus2.0",
+      "priority": 25,
+      "reasons": [
+        "total_stars: 677",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "topapothecarycanal/ai--manus2.0",
+      "priority": 24.97,
+      "reasons": [
+        "total_stars: 666",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "toppatronweave/ai--manus2.0",
+      "priority": 24.97,
+      "reasons": [
+        "total_stars: 665",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "topconstableinlet67/ai--manus2.0",
+      "priority": 24.97,
+      "reasons": [
+        "total_stars: 663",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "TitanShieldRavine/ai--manus2.0",
+      "priority": 24.96,
+      "reasons": [
+        "total_stars: 659",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "tornadonovicewhirl40/ai--manus2.0",
+      "priority": 24.96,
+      "reasons": [
+        "total_stars: 659",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "trackersnailgrip/ai--manus2.0",
+      "priority": 24.95,
+      "reasons": [
+        "total_stars: 654",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Ultimateakiln/ai--manus2.0",
+      "priority": 24.95,
+      "reasons": [
+        "total_stars: 654",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Torusdrasocket/ai--manus2.0",
+      "priority": 24.94,
+      "reasons": [
+        "total_stars: 653",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "TrapBladesmith/ai--manus2.0",
+      "priority": 24.94,
+      "reasons": [
+        "total_stars: 653",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "TremorRatTackle/ai--manus2.0",
+      "priority": 24.94,
+      "reasons": [
+        "total_stars: 652",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "taboospecialistblade/ai--manus2.0",
+      "priority": 24.94,
+      "reasons": [
+        "total_stars: 651",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "violetkomodolimit/ai--manus2.0",
+      "priority": 24.94,
+      "reasons": [
+        "total_stars: 651",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Tonephorepair/ai--manus2.0",
+      "priority": 24.94,
+      "reasons": [
+        "total_stars: 650",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "trackboatwrightplan/ai--manus2.0",
+      "priority": 24.94,
+      "reasons": [
+        "total_stars: 649",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "dansugc/reverse-engineer-marketing",
+      "priority": 24.88,
+      "reasons": [
+        "total_stars: 628",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "jazzenchen/agent-hud-open",
+      "priority": 24.47,
+      "reasons": [
+        "total_stars: 479",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Outpostkrewhirl86/Capri-AI",
+      "priority": 23.97,
+      "reasons": [
+        "total_stars: 345",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "armsworminterface/ai--manus",
+      "priority": 23.74,
+      "reasons": [
+        "total_stars: 297",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "WinnerBrokerBarrow/ai--manus",
+      "priority": 23.74,
+      "reasons": [
+        "total_stars: 297",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "AdvisorShake/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "AgentLobster/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "ArcticPrawnEmporium/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "assassinswandemolish/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "AtomEmissary/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "BrickMosquito/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "ceilingthunderretort/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "ClampOverlord46/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "GryphonEmpress/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "HurricaneMonarchDart/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Lowbydemodulator/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "WestLightningMove/ai--manus",
+      "priority": 23.73,
+      "reasons": [
+        "total_stars: 296",
+        "new_repository"
       ],
       "status": "queued"
     },
     {
       "repository": "ollama/ollama",
-      "priority": 23.54,
+      "priority": 23.66,
       "reasons": [
-        "growth_24h: +80 stars",
+        "growth_24h: +79 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 186897"
+        "total_stars: 186976"
       ],
       "status": "queued"
     },
     {
-      "repository": "agdinis/ai--manus",
-      "priority": 22.66,
+      "repository": "StormBrawlerSack/legwork-osint-ai-investigator",
+      "priority": 23.29,
       "reasons": [
-        "total_stars: 146",
+        "total_stars: 221",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "alphafalcongamer-creator/ai--manus",
-      "priority": 22.66,
+      "repository": "Balanov/shim",
+      "priority": 23.07,
       "reasons": [
-        "total_stars: 146",
+        "total_stars: 192",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "arberpilafi8-blip/ai--manus",
-      "priority": 22.66,
+      "repository": "fendouai/ViralForge",
+      "priority": 22.82,
       "reasons": [
-        "total_stars: 146",
+        "total_stars: 163",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "eagrafki-byte/ai--manus",
-      "priority": 22.66,
+      "repository": "RouteInferno/shamus-osint-ai-agent",
+      "priority": 22.77,
       "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "ITprogamatikDedSec/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "jose-perez-thecloudgroup/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "kazim768/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "lloweryfn-rgb/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "melchersimon011-bot/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "melchersimon011-bot/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "mtn-imran-khan/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "PrathmeshYa/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "python001-dev/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "qweqeqeqweqeqwe/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "qweqeqeqweqeqwe/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "rambotronado112-sudo/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "Redderz-code/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "Redderz-code/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "Ronni35/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "SandyPandyMandy/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "sofixleon-arch/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "stancaedy10-glitch/ai--manus",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "stancaedy10-glitch/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "WLfear/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "XTwiNSaraX/manus--ai",
-      "priority": 22.66,
-      "reasons": [
-        "total_stars: 146",
+        "total_stars: 157",
         "new_repository"
       ],
       "status": "queued"
     },
     {
       "repository": "huggingface/transformers",
-      "priority": 22.46,
+      "priority": 22.56,
       "reasons": [
-        "growth_24h: +25 stars",
+        "growth_24h: +28 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 168951"
+        "total_stars: 168979"
       ],
       "status": "queued"
     },
     {
       "repository": "Significant-Gravitas/AutoGPT",
-      "priority": 22.31,
+      "priority": 22.29,
       "reasons": [
-        "growth_24h: +6 stars",
+        "growth_24h: +5 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 188019"
+        "total_stars: 188024"
       ],
       "status": "queued"
     },
     {
-      "repository": "8hjkkwikl8/ai-portfolio",
-      "priority": 22.08,
+      "repository": "affaan-m/ECC",
+      "priority": 33.61,
       "reasons": [
-        "total_stars: 100",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "DietrichGebert/ponytail",
-      "priority": 31.92,
-      "reasons": [
-        "growth_24h: +576 stars",
+        "growth_24h: +573 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 190367",
+        "total_stars: 303039",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
-      "repository": "affaan-m/ECC",
-      "priority": 30.38,
+      "repository": "DietrichGebert/ponytail",
+      "priority": 32.38,
       "reasons": [
-        "growth_24h: +442 stars",
+        "growth_24h: +545 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 302466",
+        "total_stars: 190912",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "firecrawl/firecrawl",
-      "priority": 27.25,
+      "priority": 26.58,
       "reasons": [
-        "growth_24h: +293 stars",
+        "growth_24h: +229 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 201587",
+        "total_stars: 201816",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "NousResearch/hermes-agent",
-      "priority": 26.95,
+      "priority": 26.02,
       "reasons": [
-        "growth_24h: +251 stars",
+        "growth_24h: +177 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 263223",
+        "total_stars: 263400",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "n8n-io/n8n",
-      "priority": 23.78,
+      "priority": 24.03,
       "reasons": [
-        "growth_24h: +83 stars",
+        "growth_24h: +89 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 210415",
+        "total_stars: 210504",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
