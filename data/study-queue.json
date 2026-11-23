@@ -1,231 +1,314 @@
 {
   "version": 1,
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "maxDailyDrafts": 3,
   "candidates": [
     {
       "repository": "pingdotgg/t3code",
-      "priority": 60.64,
+      "priority": 60.68,
       "reasons": [
-        "growth_24h: +1623 stars",
+        "growth_24h: +2095 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 69524"
+        "total_stars: 71619"
       ],
       "status": "selected"
     },
     {
       "repository": "morluto/rea",
-      "priority": 54.4,
+      "priority": 48.79,
       "reasons": [
-        "growth_24h: +1251 stars",
+        "growth_24h: +1321 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 472777"
+        "total_stars: 474098"
       ],
       "status": "selected"
     },
     {
       "repository": "Ebony-Vinyl/dsh-our-free-model",
-      "priority": 45.19,
+      "priority": 37.34,
       "reasons": [
-        "growth_24h: +985 stars",
+        "growth_24h: +860 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 83093"
+        "total_stars: 83953"
       ],
       "status": "selected"
     },
     {
-      "repository": "nexu-io/openmotion",
-      "priority": 36.05,
+      "repository": "mvanhorn/last30days-skill",
+      "priority": 32.13,
       "reasons": [
-        "growth_24h: +722 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 14702"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "erkamyaman/rust-anything",
-      "priority": 35.57,
-      "reasons": [
-        "growth_24h: +745 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 7410"
+        "total_stars: 72713",
+        "new_repository"
       ],
       "status": "queued"
     },
     {
       "repository": "ccch1mneyyy/dsh-Go",
-      "priority": 33.38,
+      "priority": 30.53,
       "reasons": [
-        "growth_24h: +570 stars",
+        "growth_24h: +585 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 29594"
+        "total_stars: 30179"
       ],
       "status": "queued"
     },
     {
-      "repository": "bookwjitchieni1986/blender-ai-mcp-addon",
-      "priority": 30.16,
+      "repository": "nexu-io/openmotion",
+      "priority": 30.29,
       "reasons": [
-        "growth_24h: +596 stars",
+        "growth_24h: +627 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 2382"
+        "total_stars: 15329"
       ],
       "status": "queued"
     },
     {
       "repository": "zhouxiaoka/autoclip",
-      "priority": 29.48,
+      "priority": 29.38,
       "reasons": [
-        "total_stars: 12841",
-        "new_repository"
+        "growth_24h: +590 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 13431"
       ],
       "status": "queued"
     },
     {
       "repository": "XinaTian/MROffice",
-      "priority": 26.11,
+      "priority": 28.74,
       "reasons": [
-        "total_stars: 1423",
-        "new_repository"
-      ],
-      "status": "queued"
-    },
-    {
-      "repository": "f/prompts.chat",
-      "priority": 25.82,
-      "reasons": [
-        "growth_24h: +152 stars",
+        "growth_24h: +704 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 178188"
+        "total_stars: 2127"
       ],
       "status": "queued"
     },
     {
-      "repository": "molly554/whiteboard-ai-tutor",
-      "priority": 24.65,
+      "repository": "erkamyaman/rust-anything",
+      "priority": 28.55,
       "reasons": [
-        "total_stars: 546",
+        "growth_24h: +588 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 7998"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "EL4CTEO/fast-anything",
+      "priority": 26.55,
+      "reasons": [
+        "total_stars: 1900",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "fumbdendade19718/blender-ai-copilot-desk",
-      "priority": 24.53,
+      "repository": "pierridotite/mobile-agent-testers",
+      "priority": 24.62,
       "reasons": [
-        "total_stars: 506",
+        "total_stars: 537",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "w01fb0ss/PiBot",
-      "priority": 22.87,
+      "repository": "INK-Q/agy-fast",
+      "priority": 24.56,
       "reasons": [
-        "total_stars: 170",
+        "total_stars: 517",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Juanlabs1989/descript-pro-win",
+      "priority": 24.02,
+      "reasons": [
+        "total_stars: 363",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Morriswawan05/elevenlabs-pro-win",
+      "priority": 24.02,
+      "reasons": [
+        "total_stars: 362",
         "new_repository"
       ],
       "status": "queued"
     },
     {
       "repository": "ollama/ollama",
-      "priority": 22.8,
+      "priority": 24.01,
       "reasons": [
-        "growth_24h: +26 stars",
+        "growth_24h: +97 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 187791"
+        "total_stars: 187888"
       ],
       "status": "queued"
     },
     {
-      "repository": "LofiSu/dsh-super-agent",
-      "priority": 22.64,
+      "repository": "GuzmanJacqueline93/copy-ai-pro-win",
+      "priority": 24.01,
       "reasons": [
-        "total_stars: 146",
+        "total_stars: 360",
         "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "Significant-Gravitas/AutoGPT",
-      "priority": 22.33,
+      "repository": "debugdigital677/descript-pro-win",
+      "priority": 24,
       "reasons": [
-        "growth_24h: +7 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 188128"
+        "total_stars: 358",
+        "new_repository"
       ],
       "status": "queued"
     },
     {
-      "repository": "bytedance/axion1_0",
-      "priority": 22.09,
+      "repository": "Aroralayla99/capcut-seedance-win",
+      "priority": 24,
       "reasons": [
-        "total_stars: 102",
+        "total_stars: 357",
         "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Cloudcode04/runway-ml-pro-win",
+      "priority": 23.99,
+      "reasons": [
+        "total_stars: 356",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "christinesoft17/claude-desktop-app-win",
+      "priority": 23.99,
+      "reasons": [
+        "total_stars: 355",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "JieFedorov81/runway-ml-pro-win",
+      "priority": 23.98,
+      "reasons": [
+        "total_stars: 353",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "josephyoung28/capcut-seedance-win",
+      "priority": 23.98,
+      "reasons": [
+        "total_stars: 352",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "suryacode04/jasper-ai-win",
+      "priority": 23.97,
+      "reasons": [
+        "total_stars: 351",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "isanders5152/descript-pro-win",
+      "priority": 23.95,
+      "reasons": [
+        "total_stars: 345",
+        "new_repository"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "f/prompts.chat",
+      "priority": 23.83,
+      "reasons": [
+        "growth_24h: +92 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 178280"
       ],
       "status": "queued"
     },
     {
       "repository": "huggingface/transformers",
-      "priority": 22,
+      "priority": 23.7,
       "reasons": [
+        "growth_24h: +89 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 169310"
+        "total_stars: 169399"
+      ],
+      "status": "queued"
+    },
+    {
+      "repository": "Significant-Gravitas/AutoGPT",
+      "priority": 22.31,
+      "reasons": [
+        "growth_24h: +8 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 188136"
       ],
       "status": "queued"
     },
     {
       "repository": "firecrawl/firecrawl",
-      "priority": 44.21,
+      "priority": 38.63,
       "reasons": [
-        "growth_24h: +889 stars",
+        "growth_24h: +855 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 206182",
-        "skip: study_exists"
-      ],
-      "status": "skipped_study_exists"
-    },
-    {
-      "repository": "DietrichGebert/ponytail",
-      "priority": 39.95,
-      "reasons": [
-        "growth_24h: +719 stars",
-        "repeated_top10: 1/7 days",
-        "total_stars: 196363",
+        "total_stars: 207037",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "affaan-m/ECC",
-      "priority": 35.36,
+      "priority": 35.56,
       "reasons": [
-        "growth_24h: +505 stars",
+        "growth_24h: +662 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 308368",
+        "total_stars: 309030",
+        "skip: study_exists"
+      ],
+      "status": "skipped_study_exists"
+    },
+    {
+      "repository": "DietrichGebert/ponytail",
+      "priority": 32.19,
+      "reasons": [
+        "growth_24h: +522 stars",
+        "repeated_top10: 1/7 days",
+        "total_stars: 196885",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "NousResearch/hermes-agent",
-      "priority": 27.66,
+      "priority": 26.94,
       "reasons": [
-        "growth_24h: +202 stars",
+        "growth_24h: +223 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 265202",
+        "total_stars: 265425",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
     },
     {
       "repository": "n8n-io/n8n",
-      "priority": 24.76,
+      "priority": 25.91,
       "reasons": [
-        "growth_24h: +98 stars",
+        "growth_24h: +187 stars",
         "repeated_top10: 1/7 days",
-        "total_stars: 211653",
+        "total_stars: 211840",
         "skip: study_exists"
       ],
       "status": "skipped_study_exists"
